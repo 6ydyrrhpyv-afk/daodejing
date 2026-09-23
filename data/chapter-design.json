@@ -1,0 +1,3370 @@
+{
+  "version": "1",
+  "meta": {
+    "updated": "2026-09-23",
+    "note": "81 章视觉配置：themeId 与 layoutVariant 固定，刷新后不随机。"
+  },
+  "themes": {
+    "xuanzhi": {
+      "name": "宣纸白",
+      "pageBg": "#f7f5ef",
+      "surfaceBg": "#faf8f2",
+      "text": "#242722",
+      "muted": "#635d52",
+      "accent": "#294b49",
+      "link": "#294b49",
+      "border": "#ddd5c2",
+      "chipBg": "rgba(41, 75, 73, .08)",
+      "chipActiveBg": "#294b49",
+      "chipActiveText": "#fdfcf7",
+      "btnHoverBg": "rgba(41, 75, 73, .07)",
+      "focus": "#294b49",
+      "selection": "rgba(41, 75, 73, .18)",
+      "shadow": "rgba(36, 39, 34, .06)",
+      "isDark": false,
+      "atmosphere": "素纸晨光，干净中立",
+      "error": "#a3352c"
+    },
+    "wuqing": {
+      "name": "雾青灰",
+      "pageBg": "#e8efec",
+      "surfaceBg": "#f2f6f4",
+      "text": "#25312e",
+      "muted": "#4f5c57",
+      "accent": "#3d5c55",
+      "link": "#3d5c55",
+      "border": "#c9d4ce",
+      "chipBg": "rgba(61, 92, 85, .08)",
+      "chipActiveBg": "#3d5c55",
+      "chipActiveText": "#f6f8f7",
+      "btnHoverBg": "rgba(61, 92, 85, .07)",
+      "focus": "#3d5c55",
+      "selection": "rgba(61, 92, 85, .18)",
+      "shadow": "rgba(37, 49, 46, .06)",
+      "isDark": false,
+      "atmosphere": "山间薄雾，克制青灰",
+      "error": "#a3352c"
+    },
+    "qianshui": {
+      "name": "浅水青",
+      "pageBg": "#eaf3ef",
+      "surfaceBg": "#f4f8f6",
+      "text": "#223531",
+      "muted": "#4b5f59",
+      "accent": "#2d6b5e",
+      "link": "#2d6b5e",
+      "border": "#c9ddd6",
+      "chipBg": "rgba(45, 107, 94, .08)",
+      "chipActiveBg": "#2d6b5e",
+      "chipActiveText": "#f5f9f8",
+      "btnHoverBg": "rgba(45, 107, 94, .07)",
+      "focus": "#2d6b5e",
+      "selection": "rgba(45, 107, 94, .18)",
+      "shadow": "rgba(34, 53, 49, .06)",
+      "isDark": false,
+      "atmosphere": "水边浅滩，清冷静谧",
+      "error": "#a3352c"
+    },
+    "chenwu": {
+      "name": "晨雾蓝",
+      "pageBg": "#e8eff5",
+      "surfaceBg": "#f2f6f9",
+      "text": "#243038",
+      "muted": "#4d5a64",
+      "accent": "#3a5a6d",
+      "link": "#3a5a6d",
+      "border": "#c7d3dc",
+      "chipBg": "rgba(58, 90, 109, .08)",
+      "chipActiveBg": "#3a5a6d",
+      "chipActiveText": "#f4f7f9",
+      "btnHoverBg": "rgba(58, 90, 109, .07)",
+      "focus": "#3a5a6d",
+      "selection": "rgba(58, 90, 109, .18)",
+      "shadow": "rgba(36, 48, 56, .06)",
+      "isDark": false,
+      "atmosphere": "清晨薄光，远山水蓝",
+      "error": "#a3352c"
+    },
+    "qiantai": {
+      "name": "浅苔绿",
+      "pageBg": "#eaf0e1",
+      "surfaceBg": "#f3f6ee",
+      "text": "#2a3226",
+      "muted": "#56614d",
+      "accent": "#4b633d",
+      "link": "#4b633d",
+      "border": "#cdd6c2",
+      "chipBg": "rgba(75, 99, 61, .08)",
+      "chipActiveBg": "#4b633d",
+      "chipActiveText": "#f7f9f4",
+      "btnHoverBg": "rgba(75, 99, 61, .07)",
+      "focus": "#4b633d",
+      "selection": "rgba(75, 99, 61, .18)",
+      "shadow": "rgba(42, 50, 38, .06)",
+      "isDark": false,
+      "atmosphere": "苔痕初绿，生机沉静",
+      "error": "#a3352c"
+    },
+    "qianmai": {
+      "name": "浅麦色",
+      "pageBg": "#f3ecd9",
+      "surfaceBg": "#faf6ec",
+      "text": "#342f25",
+      "muted": "#6b6150",
+      "accent": "#8a6d3b",
+      "link": "#8a6d3b",
+      "border": "#ddd3bb",
+      "chipBg": "rgba(138, 109, 59, .08)",
+      "chipActiveBg": "#8a6d3b",
+      "chipActiveText": "#fdfbf6",
+      "btnHoverBg": "rgba(138, 109, 59, .07)",
+      "focus": "#8a6d3b",
+      "selection": "rgba(138, 109, 59, .18)",
+      "shadow": "rgba(52, 47, 37, .06)",
+      "isDark": false,
+      "atmosphere": "秋日麦芒，暖而不燥",
+      "error": "#a3352c"
+    },
+    "qiantao": {
+      "name": "浅陶粉",
+      "pageBg": "#f3eae4",
+      "surfaceBg": "#faf5f2",
+      "text": "#362c28",
+      "muted": "#6d5d55",
+      "accent": "#8c5d4d",
+      "link": "#8c5d4d",
+      "border": "#ded1c9",
+      "chipBg": "rgba(140, 93, 77, .08)",
+      "chipActiveBg": "#8c5d4d",
+      "chipActiveText": "#fdf9f7",
+      "btnHoverBg": "rgba(140, 93, 77, .07)",
+      "focus": "#8c5d4d",
+      "selection": "rgba(140, 93, 77, .18)",
+      "shadow": "rgba(54, 44, 40, .06)",
+      "isDark": false,
+      "atmosphere": "陶土余温，温润内敛",
+      "error": "#a3352c"
+    },
+    "shihui": {
+      "name": "石灰白",
+      "pageBg": "#ecece7",
+      "surfaceBg": "#f5f5f1",
+      "text": "#252724",
+      "muted": "#5d5f58",
+      "accent": "#4a5247",
+      "link": "#4a5247",
+      "border": "#d2d3cb",
+      "chipBg": "rgba(74, 82, 71, .08)",
+      "chipActiveBg": "#4a5247",
+      "chipActiveText": "#f6f7f4",
+      "btnHoverBg": "rgba(74, 82, 71, .07)",
+      "focus": "#4a5247",
+      "selection": "rgba(74, 82, 71, .18)",
+      "shadow": "rgba(37, 39, 36, .06)",
+      "isDark": false,
+      "atmosphere": "素石石灰，安定朴素",
+      "error": "#a3352c"
+    },
+    "shenqing": {
+      "name": "深青",
+      "pageBg": "#203d3c",
+      "surfaceBg": "#284b49",
+      "text": "#f1f3f0",
+      "muted": "#c5ccc8",
+      "accent": "#d9c89a",
+      "link": "#e8dfbf",
+      "border": "#3a5b59",
+      "chipBg": "rgba(217, 200, 154, .10)",
+      "chipActiveBg": "#d9c89a",
+      "chipActiveText": "#203d3c",
+      "btnHoverBg": "rgba(217, 200, 154, .12)",
+      "focus": "#e8dfbf",
+      "selection": "rgba(217, 200, 154, .25)",
+      "shadow": "rgba(0, 0, 0, .18)",
+      "isDark": true,
+      "atmosphere": "深潭静水，柔金微光",
+      "error": "#eda49a"
+    },
+    "yelan": {
+      "name": "夜蓝灰",
+      "pageBg": "#283744",
+      "surfaceBg": "#334453",
+      "text": "#eef0f2",
+      "muted": "#c1c7cd",
+      "accent": "#a8c4d9",
+      "link": "#c8dce9",
+      "border": "#435565",
+      "chipBg": "rgba(168, 196, 217, .10)",
+      "chipActiveBg": "#a8c4d9",
+      "chipActiveText": "#283744",
+      "btnHoverBg": "rgba(168, 196, 217, .12)",
+      "focus": "#c8dce9",
+      "selection": "rgba(168, 196, 217, .25)",
+      "shadow": "rgba(0, 0, 0, .18)",
+      "isDark": true,
+      "atmosphere": "月夜山脊，浅蓝清辉",
+      "error": "#eda49a"
+    }
+  },
+  "chapters": [
+    {
+      "chapterId": "ddj-01",
+      "chapterNumber": 1,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "道可道，非常道，名可名，非常名；",
+        "故常无欲，以观其妙，常有欲，以观其徼；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道可道，非常道，名可名，非常名；无名，天地之始，有名，万物之母。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "故常无欲，以观其妙，常有欲，以观其徼；此两者，同出而异名，同谓之玄。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "玄之又玄，众妙之门。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "复归与根本，取树干根部轮廓，静水式，配浅水青。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-02",
+      "chapterNumber": 2,
+      "themeId": "chenwu",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "天下皆知美之为美，斯恶已。",
+        "是以圣人处无为之事，行不言之教；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下皆知美之为美，斯恶已。皆知善之为善，斯不善已。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故有无相生，难易相成，长短相较，高下相倾，音声相和，前后相随。是以圣人处无为之事，行不言之教；万物作焉而不辞，生而不有，为而不恃，功成而弗居。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫唯弗居，是以不去。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "between",
+      "designReason": "柔与生长，取自然弯曲的细枝，行旅式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-03",
+      "chapterNumber": 3,
+      "themeId": "wuqing",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "不尚贤，使民不争；",
+        "使夫智者不敢为也。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "不尚贤，使民不争；不贵难得之货，使民不为盗；不见可欲，使民心不乱。是以圣人之治，虚其心，实其腹，弱其志，强其骨。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "常使民无知无欲。使夫智者不敢为也。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "为无为，则无不治。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配雾青灰。"
+    },
+    {
+      "chapterId": "ddj-04",
+      "chapterNumber": 4,
+      "themeId": "qianshui",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "道冲而用之或不盈，渊兮似万物之宗；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道冲而用之或不盈，渊兮似万物之宗；挫其锐，解其纷，和其光，同其尘，湛兮似或存。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "吾不知谁之子，象帝之先。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "water",
+        "reason": "水意象，取不完全闭合的水纹细线"
+      },
+      "motifId": "water",
+      "illustrationPlacement": "prologue",
+      "designReason": "水意象，取不完全闭合的水纹细线，疏密式，配浅水青。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-05",
+      "chapterNumber": 5,
+      "themeId": "yelan",
+      "layoutVariant": "void-room",
+      "highlightQuotes": [
+        "天地不仁，以万物为刍狗；",
+        "虚而不屈，动而愈出。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天地不仁，以万物为刍狗；圣人不仁，以百姓为刍狗。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "天地之间，其犹橐籥乎？虚而不屈，动而愈出。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "多言数穷，不如守中。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，虚室式，配夜蓝灰。"
+    },
+    {
+      "chapterId": "ddj-06",
+      "chapterNumber": 6,
+      "themeId": "qiantai",
+      "layoutVariant": "void-room",
+      "highlightQuotes": [
+        "谷神不死，是谓玄牝。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "谷神不死，是谓玄牝。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "玄牝之门，是谓天地根。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "绵绵若存，用之不勤。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "side",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，虚室式，配浅苔绿。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-07",
+      "chapterNumber": 7,
+      "themeId": "qianshui",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "天长地久。",
+        "天地所以能长且久者，以其不自生，故能长生。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天长地久。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "天地所以能长且久者，以其不自生，故能长生。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以圣人后其身而身先；外其身而身存。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "非以其无私邪，故能成其私。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "between",
+      "designReason": "柔与生长，取自然弯曲的细枝，行旅式，配浅水青。"
+    },
+    {
+      "chapterId": "ddj-08",
+      "chapterNumber": 8,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "上善若水。",
+        "水善利万物而不争，处众人之所恶，故几于道。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "上善若水。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "水善利万物而不争，处众人之所恶，故几于道。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "居善地，心善渊，与善仁，言善信，正善治，事善能，动善时。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "夫唯不争，故无尤。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "water",
+        "reason": "水意象，静水流深"
+      },
+      "motifId": "water",
+      "illustrationPlacement": "prologue",
+      "designReason": "水意象，静水流深，静水式，配浅水青。",
+      "illustration": {
+        "asset": "ripple",
+        "layout": "ripple-carry",
+        "desktop": 170,
+        "mobile": 110,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-09",
+      "chapterNumber": 9,
+      "themeId": "wuqing",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "持而盈之，不如其已；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "持而盈之，不如其已；揣而棁之，不可长保。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "金玉满堂，莫之能守；富贵而骄，自遗其咎。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "功遂身退，天之道。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配雾青灰。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-10",
+      "chapterNumber": 10,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "载营魄抱一，能无离乎？",
+        "生而不有，为而不恃，长而不宰，是谓玄德。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "载营魄抱一，能无离乎？专气致柔，能婴兒乎？涤除玄览，能无疵乎？爱国治民，能无知乎？天门开阖，能为雌乎？明白四达，能无为乎？生之，畜之。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "生而不有，为而不恃，长而不宰，是谓玄德。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "edge-right",
+      "designReason": "柔与生长，取自然弯曲的细枝，远景式，配晨雾蓝。",
+      "illustration": {
+        "asset": "sprout",
+        "layout": "passage-seal",
+        "desktop": 95,
+        "mobile": 75,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-11",
+      "chapterNumber": 11,
+      "themeId": "xuanzhi",
+      "layoutVariant": "void-room",
+      "highlightQuotes": [
+        "三十輻共一轂，当其无，有车之用。",
+        "故有之以为利，无之以为用。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "三十輻共一轂，当其无，有车之用。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "埏埴以为器，当其无，有器之用。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "凿户牖以为室，当其无，有室之用。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "故有之以为利，无之以为用。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "有无相资，器中空处为用"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "side",
+      "designReason": "有无相资，器中空处为用，虚室式，配宣纸白。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-12",
+      "chapterNumber": 12,
+      "themeId": "wuqing",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "是以圣人为腹不为目，故去彼取此。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "五色令人目盲，五音令人耳聋，五味令人口爽，驰骋畋猎令人心发狂，难得之货令人行妨。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "是以圣人为腹不为目，故去彼取此。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配雾青灰。"
+    },
+    {
+      "chapterId": "ddj-13",
+      "chapterNumber": 13,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "宠辱若惊，贵大患若身。",
+        "故贵以身为天下，若可寄天下；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "宠辱若惊，贵大患若身。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？故贵以身为天下，若可寄天下；爱以身为天下，若可托天下。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，静水式，配浅水青。"
+    },
+    {
+      "chapterId": "ddj-14",
+      "chapterNumber": 14,
+      "themeId": "chenwu",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "此三者，不可致诘，故混而为一。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "视之不见名曰夷，听之不闻名曰希，搏之不得名曰微。此三者，不可致诘，故混而为一。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "其上不皦，其下不昧。绳绳不可名，复归于无物。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是谓无状之状，无物之象，是谓惚恍。迎之不见其首，随之不见其后。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "执古之道，以御今之有。能知古始，是谓道纪。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "between",
+      "designReason": "复归与根本，取树干根部轮廓，行旅式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-15",
+      "chapterNumber": 15,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "古之善为士者，微妙玄通，深不可识。",
+        "夫唯不可识，故强为之容。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "古之善为士者，微妙玄通，深不可识。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "夫唯不可识，故强为之容。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "豫焉若冬涉川，犹兮若畏四邻，俨兮其若容，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，混兮其若浊。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "孰能浊以静之徐清？孰能安以久动之徐生？保此道者不欲盈，夫唯不盈，故能蔽不新成。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "prologue",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-16",
+      "chapterNumber": 16,
+      "themeId": "shihui",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "致虚极，守静笃。",
+        "夫物芸芸，各复归其根。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "致虚极，守静笃。万物并作，吾以观复。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "夫物芸芸，各复归其根。归根曰静，是谓复命。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "复命曰常，知常曰明。不知常，妄作凶。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "知常容，容乃公，公乃全，全乃天，天乃道，道乃久，没身不殆。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "致虚守静，各复归其根"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "致虚守静，各复归其根，疏密式，配石灰白。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "passage-seal",
+        "desktop": 170,
+        "mobile": 120,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-17",
+      "chapterNumber": 17,
+      "themeId": "qiantai",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "太上，下知有之，其次，亲而誉之，其次，畏之，其次，侮之。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "信不足焉，有不信焉。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "悠兮其贵言，功成事遂，百姓皆谓：我自然。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配浅苔绿。"
+    },
+    {
+      "chapterId": "ddj-18",
+      "chapterNumber": 18,
+      "themeId": "wuqing",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "大道废，有仁义；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "大道废，有仁义；智慧出，有大偽；六亲不和，有孝慈；国家昏乱，有忠臣。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "path",
+        "reason": "行进与实践，取逐渐变细的小径"
+      },
+      "motifId": "path",
+      "illustrationPlacement": "prologue",
+      "designReason": "行进与实践，取逐渐变细的小径，疏密式，配雾青灰。"
+    },
+    {
+      "chapterId": "ddj-19",
+      "chapterNumber": 19,
+      "themeId": "shihui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "绝圣弃智，民利百倍；",
+        "此三者以为文不足，故令有所属："
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "绝圣弃智，民利百倍；绝仁弃义，民复孝慈；绝巧弃利，盗贼无有。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "此三者以为文不足，故令有所属：见素抱朴，少私寡欲。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "wood",
+        "reason": "朴与自然，取未雕之木"
+      },
+      "motifId": "wood",
+      "illustrationPlacement": "prologue",
+      "designReason": "朴与自然，取未雕之木，静水式，配石灰白。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-20",
+      "chapterNumber": 20,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "绝学无忧，唯之与阿，相去几何？"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "绝学无忧，唯之与阿，相去几何？善之与恶，相去若何？人之所畏，不可不畏。荒兮其未央哉！众人熙熙，如享太牢，如春登台。我独泊兮其未兆，如婴兒之未孩；儽儽兮若无所归。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "众人皆有余，而我独若遗。我愚人之心也哉！沌沌兮，俗人昭昭，我独昏昏。俗人察察，我独闷闷。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "澹兮其若海，飂兮若无止。众人皆有以，而我独顽似鄙。我独异于人，而贵食母。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "复归与根本，取树干根部轮廓，静水式，配浅水青。",
+      "illustration": {
+        "asset": "sprout",
+        "layout": "passage-seal",
+        "desktop": 95,
+        "mobile": 75,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-21",
+      "chapterNumber": 21,
+      "themeId": "xuanzhi",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "孔德之容，惟道是从。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "孔德之容，惟道是从。道之为物，惟恍惟惚。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "惚兮恍兮，其中有象；恍兮惚兮，其中有物。窈兮冥兮，其中有精；其精甚真，其中有信。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "自今及古，其名不去，以阅众甫。吾何以知众甫之状哉？以此。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配宣纸白。"
+    },
+    {
+      "chapterId": "ddj-22",
+      "chapterNumber": 22,
+      "themeId": "wuqing",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [
+        "是以圣人抱一为天下式。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。是以圣人抱一为天下式。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "不自见故明，不自是故彰，不自伐故有功，不自矜故长。夫唯不争，故天下莫能与之争。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "古之所谓曲则全者，岂虚言哉！诚全而归之。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "曲则全，柔枝成对对照"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "曲则全，柔枝成对对照，对照式，配雾青灰。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-23",
+      "chapterNumber": 23,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "希言自然。",
+        "故飘风不终朝，骤雨不终日。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "希言自然。故飘风不终朝，骤雨不终日。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者，道者同于道，德者同于德，失者同于失。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "water",
+        "reason": "水意象，取不完全闭合的水纹细线"
+      },
+      "motifId": "water",
+      "illustrationPlacement": "prologue",
+      "designReason": "水意象，取不完全闭合的水纹细线，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-24",
+      "chapterNumber": 24,
+      "themeId": "chenwu",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "物或恶之，故有道者不处。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "企者不立，跨者不行，自见者不明，自是者不彰，自伐者无功，自矜者不长。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "其在道也，曰余食赘行。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "物或恶之，故有道者不处。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-25",
+      "chapterNumber": 25,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "有物混成，先天地生。",
+        "故道大，天大，地大，王亦大。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "有物混成，先天地生。寂兮寥兮，独立而不改，周行而不殆，可以为天下母。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "吾不知其名，字之曰道，强为之名曰大。大曰逝，逝曰远，远曰反。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "故道大，天大，地大，王亦大。域中有四大，而王居其一焉。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "人法地，地法天，天法道，道法自然。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "复归与根本，取树干根部轮廓，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "path",
+        "layout": "passage-seal",
+        "desktop": 120,
+        "mobile": 85,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-26",
+      "chapterNumber": 26,
+      "themeId": "qiantai",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [
+        "重为轻根，静为躁君。",
+        "是以圣人终日行不离辎重。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "重为轻根，静为躁君。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "是以圣人终日行不离辎重。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "虽有荣观，燕处超然。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "奈何万乘之主，而以身轻天下？轻则失本，躁则失君。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "复归与根本，取树干根部轮廓，对照式，配浅苔绿。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "passage-seal",
+        "desktop": 170,
+        "mobile": 120,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-27",
+      "chapterNumber": 27,
+      "themeId": "chenwu",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "善行无辙迹，善言无瑕谪；",
+        "善闭无关楗而不可开，善结无绳约而不可解。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "善行无辙迹，善言无瑕谪；善数不用筹策；善闭无关楗而不可开，善结无绳约而不可解。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "是以圣人常善救人，故无弃人；常善救物，故无弃物，是谓袭明。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "故善人者，不善人之师；不善人者，善人之资。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "不贵其师，不爱其资，虽智大迷，是谓要妙。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配晨雾蓝。",
+      "illustration": {
+        "asset": "path",
+        "layout": "passage-seal",
+        "desktop": 120,
+        "mobile": 85,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-28",
+      "chapterNumber": 28,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "知其雄，守其雌，为天下溪。",
+        "朴散则为器，圣人用之，则为官长，故大制不割。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "知其雄，守其雌，为天下溪。为天下溪，常德不离，复归于婴兒。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "知其白，守其黑，为天下式。为天下式，常德不忒，复归于无极。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "知其荣，守其辱，为天下谷，常德乃足，复归于朴。朴散则为器，圣人用之，则为官长，故大制不割。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配浅水青。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "passage-seal",
+        "desktop": 140,
+        "mobile": 100,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-29",
+      "chapterNumber": 29,
+      "themeId": "xuanzhi",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "将欲取天下而为之，吾见其不得已。",
+        "故物或行或随，或歔或吹。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "将欲取天下而为之，吾见其不得已。天下神器，不可为也，为者败之，执者失之。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故物或行或随，或歔或吹。或强或羸，或挫或堕。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以圣人去甚，去奢，去泰。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配宣纸白。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-30",
+      "chapterNumber": 30,
+      "themeId": "shenqing",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [
+        "以道佐人主者，不以兵强天下。",
+        "果而不得已，果而勿强。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "以道佐人主者，不以兵强天下。其事好还。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "师之所处，荆棘生焉。大军之后，必有凶年。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "善有果而已，不敢以取强。果而勿矜，果而勿伐，果而勿骄。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "果而不得已，果而勿强。物壮则老，是谓不道，不道早已。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，对照式，配深青。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-31",
+      "chapterNumber": 31,
+      "themeId": "yelan",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "夫佳兵者，不祥之器，物或恶之，故有道者不处。",
+        "胜而不美，而美之者，是乐杀人。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "夫佳兵者，不祥之器，物或恶之，故有道者不处。君子居则贵左，用兵则贵右。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "兵者不祥之器，非君子之器，不得已而用之，恬淡为上。胜而不美，而美之者，是乐杀人。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫乐杀人者，则不可以得志于天下矣。吉事尚左，凶事尚右。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "偏将军居左，上将军居右，言以丧礼处之。杀人之众，以哀悲泣之，战胜，以丧礼处之。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配夜蓝灰。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-32",
+      "chapterNumber": 32,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "道常无名，朴虽小，天下莫能臣也。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道常无名，朴虽小，天下莫能臣也。侯王若能守之，万物将自宾。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "天地相合，以降甘露，民莫之令而自均。始制有名，名亦既有，夫亦将知止，知止所以不殆。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "譬道之在天下，犹川谷之于江海。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "prologue",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，静水式，配浅水青。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-33",
+      "chapterNumber": 33,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "知人者智，自知者明。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "知人者智，自知者明。胜人者有力，自胜者强。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "知足者富。强行者有志。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "不失其所者久。死而不亡者寿。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-34",
+      "chapterNumber": 34,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "大道泛兮，其可左右。",
+        "以其终不自为大，故能成其大。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "大道泛兮，其可左右。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "万物恃之而生而不辞，功成不名有。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "以其终不自为大，故能成其大。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "path",
+        "reason": "行进与实践，取逐渐变细的小径"
+      },
+      "motifId": "path",
+      "illustrationPlacement": "prologue",
+      "designReason": "行进与实践，取逐渐变细的小径，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-35",
+      "chapterNumber": 35,
+      "themeId": "xuanzhi",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "执大象，天下往。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "执大象，天下往。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "往而不害，安平太。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "乐与饵，过客止。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "道之出口，淡乎其无味，视之不足见，听之不足闻，用之不足既。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "stone",
+        "reason": "朴素与安定，取圆石轮廓"
+      },
+      "motifId": "stone",
+      "illustrationPlacement": "prologue",
+      "designReason": "朴素与安定，取圆石轮廓，疏密式，配宣纸白。"
+    },
+    {
+      "chapterId": "ddj-36",
+      "chapterNumber": 36,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "将欲歙之，必固张之；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲夺之，必固与之。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "是谓微明。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "柔弱胜刚强。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "鱼不可脱于渊，国之利器不可以示人。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配浅水青。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-37",
+      "chapterNumber": 37,
+      "themeId": "shihui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "道常无为而无不为。",
+        "无名之朴，夫亦将无欲。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道常无为而无不为。侯王若能守之，万物将自化。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "化而欲作，吾将镇之以无名之朴。无名之朴，夫亦将无欲。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "不欲以静，天下将自定。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "wood",
+        "reason": "朴与自然，取未雕之木"
+      },
+      "motifId": "wood",
+      "illustrationPlacement": "prologue",
+      "designReason": "朴与自然，取未雕之木，静水式，配石灰白。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-38",
+      "chapterNumber": 38,
+      "themeId": "qianmai",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "上德不德，是以有德；",
+        "下德不失德，是以无德。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "上德不德，是以有德；下德不失德，是以无德。上德无为而无以为，下德为之而有以为。上仁为之而无以为，上义为之而有以为。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "上礼为之而莫之应，则攘臂而扔之。故失道而后德，失德而后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄，而乱之首。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "前识者，道之华，而愚之始。是以大丈夫处其厚，不居其薄；处其实，不居其华。故去彼取此。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "sprout",
+        "reason": "微小与起始，取小芽与短地线"
+      },
+      "motifId": "sprout",
+      "illustrationPlacement": "between",
+      "designReason": "微小与起始，取小芽与短地线，行旅式，配浅麦色。"
+    },
+    {
+      "chapterId": "ddj-39",
+      "chapterNumber": 39,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "故贵以贱为本，高以下为基。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "昔之得一者，天得一以清，地得一以宁，神得一以灵，谷得一以盈，万物得一以生，侯王得一以为天下贞。其致之，天无以清将恐裂，地无以宁将恐发，神无以灵将恐歇，谷无以盈将恐竭，万物无以生将恐灭，侯王无以贵高将恐蹶。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故贵以贱为本，高以下为基。是以侯王自称孤、寡、不谷。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "此非以贱为本邪？非乎？故致数舆无舆，不欲琭琭如玉，珞珞如石。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "prologue",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "passage-seal",
+        "desktop": 110,
+        "mobile": 80,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-40",
+      "chapterNumber": 40,
+      "themeId": "qianmai",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "反者道之动，弱者道之用。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "反者道之动，弱者道之用。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "天下万物生于有，有生于无。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "prologue",
+      "designReason": "复归与根本，取树干根部轮廓，疏密式，配浅麦色。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-41",
+      "chapterNumber": 41,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "上士闻道，勤而行之；",
+        "故建言有之："
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "不笑不足以为道。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "故建言有之：明道若昧，進道若退，夷道若纇，上德若谷，大白若辱，广德若不足，建德若偷，质真若渝，大方无隅，大器晚成，大音希声，大象无形，道隐无名。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "夫唯道，善贷且成。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配浅苔绿。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-42",
+      "chapterNumber": 42,
+      "themeId": "qiantai",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "道生一，一生二，二生三，三生万物。",
+        "人之所恶，唯孤、寡、不谷，而王公以为称。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道生一，一生二，二生三，三生万物。万物負阴而抱阳，冲气以为和。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "人之所恶，唯孤、寡、不谷，而王公以为称。故物或损之而益，或益之而损。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "人之所教，我亦教之。强梁者不得其死，吾将以为教父。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "between",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，行旅式，配浅苔绿。"
+    },
+    {
+      "chapterId": "ddj-43",
+      "chapterNumber": 43,
+      "themeId": "qiantao",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "天下之至柔，驰骋天下之至坚。",
+        "无有入无间，吾是以知无为之有益。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下之至柔，驰骋天下之至坚。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "无有入无间，吾是以知无为之有益。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "不言之教，无为之益，天下希及之。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，疏密式，配浅陶粉。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-44",
+      "chapterNumber": 44,
+      "themeId": "qianmai",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "名与身孰亲？"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "名与身孰亲？身与货孰多？得与亡孰病？是故甚爱必大费，多藏必厚亡，知足不辱，知止不殆，可以长久。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配浅麦色。"
+    },
+    {
+      "chapterId": "ddj-45",
+      "chapterNumber": 45,
+      "themeId": "shihui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "大成若缺，其用不弊。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "大成若缺，其用不弊。大盈若冲，其用不穷。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "大直若屈，其用不居。大巧若拙，其用不辍。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "大辩若讷，其用不差。躁胜寒，静胜热。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "清静为天下正。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "stone",
+        "reason": "朴素与安定，取圆石轮廓"
+      },
+      "motifId": "stone",
+      "illustrationPlacement": "prologue",
+      "designReason": "朴素与安定，取圆石轮廓，静水式，配石灰白。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-46",
+      "chapterNumber": 46,
+      "themeId": "shenqing",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "天下有道，却走马以粪。",
+        "故知足之足，常足矣。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下有道，却走马以粪。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "天下无道，戎马生于郊。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "祸莫大于不知足；咎莫大于欲得。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "故知足之足，常足矣。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，静水式，配深青。",
+      "illustration": {
+        "asset": "path",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-47",
+      "chapterNumber": 47,
+      "themeId": "qiantao",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "不出户，知天下；",
+        "是以圣人不行而知，不见而名，不为而成。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "不出户，知天下；不窥牖，见天道。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "其出弥远，其知弥少。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以圣人不行而知，不见而名，不为而成。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "window",
+        "reason": "门窗与出入，取开口线框"
+      },
+      "motifId": "window",
+      "illustrationPlacement": "prologue",
+      "designReason": "门窗与出入，取开口线框，疏密式，配浅陶粉。",
+      "illustration": {
+        "asset": "window",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-48",
+      "chapterNumber": 48,
+      "themeId": "xuanzhi",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "为学日益，为道日损。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "为学日益，为道日损。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "损之又损，以至于无为。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "无为而无不为。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "取天下常以无事，及其有事，不足以取天下。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "decrease",
+        "reason": "为道日损，以递减细线表达"
+      },
+      "motifId": "decrease",
+      "illustrationPlacement": "prologue",
+      "designReason": "为道日损，以递减细线表达，疏密式，配宣纸白。"
+    },
+    {
+      "chapterId": "ddj-49",
+      "chapterNumber": 49,
+      "themeId": "qiantao",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "圣人无常心，以百姓心为心。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "圣人无常心，以百姓心为心。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "善者，吾善之；不善者，吾亦善之，德善。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "信者，吾信之；不信者，吾亦信之，德信。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "圣人在天下歙歙，为天下浑其心，百姓皆注其耳目,圣人皆孩之。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配浅陶粉。",
+      "illustration": {
+        "asset": "sprout",
+        "layout": "passage-seal",
+        "desktop": 95,
+        "mobile": 75,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-50",
+      "chapterNumber": 50,
+      "themeId": "shenqing",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [
+        "出生入死。",
+        "夫何故？"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "出生入死。生之徒，十有三；死之徒，十有三；人之生，动之死地，亦十有三。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "夫何故？以其生生之厚。盖闻善摄生者，陆行不遇兕虎，入军不被甲兵；兕无所投其角，虎无所措其爪，兵无所容其刃。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫何故？以其无死地。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，对照式，配深青。",
+      "illustration": {
+        "asset": "path",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-51",
+      "chapterNumber": 51,
+      "themeId": "qiantai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "道生之，德畜之，物形之，勢成之。",
+        "是以万物莫不尊道而贵德。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道生之，德畜之，物形之，勢成之。是以万物莫不尊道而贵德。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "道之尊，德之贵，夫莫之命而常自然。故道生之，德畜之。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "长之育之，亭之毒之，盖之覆之。生而不有，为而不恃，长而不宰。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "是谓玄德。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，静水式，配浅苔绿。"
+    },
+    {
+      "chapterId": "ddj-52",
+      "chapterNumber": 52,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "天下有始，以为天下母。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下有始，以为天下母。既得其母，以知其子，既知其子，复守其母，没身不殆。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "塞其兑，闭其门，终身不勤。开其兑，济其事，终身不救。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "见小曰明，守柔曰强。用其光，复归其明，无遗身殃，是为习常。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "window",
+        "reason": "门窗与出入，取开口线框"
+      },
+      "motifId": "window",
+      "illustrationPlacement": "edge-right",
+      "designReason": "门窗与出入，取开口线框，远景式，配晨雾蓝。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "passage-seal",
+        "desktop": 170,
+        "mobile": 120,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-53",
+      "chapterNumber": 53,
+      "themeId": "qiantao",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "使我介然有知，行于大道，唯施是畏。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "使我介然有知，行于大道，唯施是畏。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "大道甚夷，而民好径。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "朝甚除，田甚芜，倉甚虚；服文彩，带利剑，厌饮食，财货有余；是为盗夸。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "非道也哉！",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "path",
+        "reason": "行进与实践，取逐渐变细的小径"
+      },
+      "motifId": "path",
+      "illustrationPlacement": "prologue",
+      "designReason": "行进与实践，取逐渐变细的小径，静水式，配浅陶粉。",
+      "illustration": {
+        "asset": "path",
+        "layout": "passage-seal",
+        "desktop": 120,
+        "mobile": 85,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-54",
+      "chapterNumber": 54,
+      "themeId": "qianmai",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "善建者不拔，善抱者不脱，子孙以祭祀不辍。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "善建者不拔，善抱者不脱，子孙以祭祀不辍。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "修之于身，其德乃真；修之于家，其德乃余；修之于乡，其德乃长；修之于国，其德乃丰；修之于天下，其德乃普。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "故以身观身，以家观家，以乡观乡，以国观国，以天下观天下。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "吾何以知天下然哉？以此。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配浅麦色。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "passage-seal",
+        "desktop": 170,
+        "mobile": 120,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-55",
+      "chapterNumber": 55,
+      "themeId": "qianmai",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "含德之厚，比于赤子。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "含德之厚，比于赤子。蜂虿虺蛇不螫，猛兽不据，攫鸟不搏。骨弱筋柔而握固。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "未知牝牡之合而全作，精之至也。终日号而不嗄，和之至也。知和曰常，知常曰明。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "益生曰祥。心使气曰强。物壮则老，谓之不道，不道早已。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "sprout",
+        "reason": "微小与起始，取小芽与短地线"
+      },
+      "motifId": "sprout",
+      "illustrationPlacement": "edge-right",
+      "designReason": "微小与起始，取小芽与短地线，远景式，配浅麦色。",
+      "illustration": {
+        "asset": "sprout",
+        "layout": "passage-seal",
+        "desktop": 95,
+        "mobile": 75,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-56",
+      "chapterNumber": 56,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "知者不言，言者不知。",
+        "故不可得而亲，不可得而疏；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "知者不言，言者不知。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "塞其兑，闭其门，挫其锐，解其分，和其光，同其尘，是谓玄同。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "故不可得而亲，不可得而疏；不可得而利，不可得而害；不可得而贵，不可得而贱。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "故为天下贵。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "window",
+        "reason": "门窗与出入，取开口线框"
+      },
+      "motifId": "window",
+      "illustrationPlacement": "edge-right",
+      "designReason": "门窗与出入，取开口线框，远景式，配晨雾蓝。",
+      "illustration": {
+        "asset": "window",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-57",
+      "chapterNumber": 57,
+      "themeId": "yelan",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "以正治国，以奇用兵，以无事取天下。",
+        "故圣人云："
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "以正治国，以奇用兵，以无事取天下。吾何以知其然哉？以此。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "天下多忌讳，而民弥贫；民多利器，国家滋昏；人多伎巧，奇物滋起；法令滋彰，盗贼多有。故圣人云：「我无为而民自化，我好静而民自正，我无事而民自富，我无欲而民自朴。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "」",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配夜蓝灰。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-58",
+      "chapterNumber": 58,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "其政闷闷，其民淳淳；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "其政闷闷，其民淳淳；其政察察，其民缺缺。祸兮福之所倚，福兮祸之所伏。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "孰知其极？其无正。正复为奇，善复为妖。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "人之迷，其日固久。是以圣人方而不割，廉而不刿，直而不肆，光而不耀。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-59",
+      "chapterNumber": 59,
+      "themeId": "qiantai",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "治人事天，莫若啬。",
+        "夫唯啬，是谓早服；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "治人事天，莫若啬。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "夫唯啬，是谓早服；早服谓之重积德；重积德则无不克，无不克则莫知其极；莫知其极，可以有国；有国之母，可以长久；是谓深根固柢，长生久视之道。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "root",
+        "reason": "复归与根本，取树干根部轮廓"
+      },
+      "motifId": "root",
+      "illustrationPlacement": "edge-right",
+      "designReason": "复归与根本，取树干根部轮廓，远景式，配浅苔绿。",
+      "illustration": {
+        "asset": "roots",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-60",
+      "chapterNumber": 60,
+      "themeId": "qianmai",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [
+        "治大国，若烹小鲜。",
+        "夫两不相伤，故德交归焉。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "治大国，若烹小鲜。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "以道莅天下，其鬼不神；非其鬼不神，其神不伤人；非其神不伤人，圣人亦不伤人。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫两不相伤，故德交归焉。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，对照式，配浅麦色。",
+      "illustration": {
+        "asset": "bowl",
+        "layout": "vessel-blank",
+        "desktop": 190,
+        "mobile": 130,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-61",
+      "chapterNumber": 61,
+      "themeId": "shihui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "大国者下流，天下之交。",
+        "故大国以下小国，则取小国；"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "大国者下流，天下之交。天下之牝，牝常以静胜牡，以静为下。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故大国以下小国，则取小国；小国以下大国，则取大国。故或下以取，或下而取。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "大国不过欲兼畜人，小国不过欲入事人。夫两者各得其所欲，大者宜为下。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "water",
+        "reason": "水意象，取不完全闭合的水纹细线"
+      },
+      "motifId": "water",
+      "illustrationPlacement": "prologue",
+      "designReason": "水意象，取不完全闭合的水纹细线，静水式，配石灰白。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "passage-seal",
+        "desktop": 110,
+        "mobile": 80,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-62",
+      "chapterNumber": 62,
+      "themeId": "qianmai",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "道者万物之奥。",
+        "故为天下贵。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "道者万物之奥。善人之宝，不善人之所保。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "美言可以市，尊行可以加人。人之不善，何弃之有？故立天子，置三公，虽有拱璧以先驷马，不如坐進此道。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "古之所以贵此道者何？不曰以求得，有罪以免邪？故为天下贵。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，静水式，配浅麦色。"
+    },
+    {
+      "chapterId": "ddj-63",
+      "chapterNumber": 63,
+      "themeId": "qianmai",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "为无为，事无事，味无味。",
+        "是以圣人终不为大，故能成其大。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "为无为，事无事，味无味。大小多少，报怨以德。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "图难于其易，为大于其细；天下难事必作于易，天下大事必作于细。是以圣人终不为大，故能成其大。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫轻诺必寡信，多易必多难。是以圣人犹难之，故终无难矣",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配浅麦色。",
+      "illustration": {
+        "asset": "path",
+        "layout": "passage-seal",
+        "desktop": 120,
+        "mobile": 85,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-64",
+      "chapterNumber": 64,
+      "themeId": "qiantai",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "其安易持，其未兆易谋。",
+        "是以圣人无为故无败，无执故无失。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "其安易持，其未兆易谋。其脆易泮，其微易散。为之于未有，治之于未乱。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。为者败之，执者失之。是以圣人无为故无败，无执故无失。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "民之从事，常于几成而败之。慎终如始，则无败事。是以圣人欲不欲，不贵难得之货；学不学，复众人之所过。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "以辅万物之自然，而不敢为。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "path",
+        "reason": "千里之行始于足下，取小径"
+      },
+      "motifId": "path",
+      "illustrationPlacement": "between",
+      "designReason": "千里之行始于足下，取小径，行旅式，配浅苔绿。",
+      "illustration": {
+        "asset": "sprout",
+        "layout": "passage-seal",
+        "desktop": 95,
+        "mobile": 75,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-65",
+      "chapterNumber": 65,
+      "themeId": "chenwu",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "古之善为道者，非以明民，将以愚之。",
+        "故以智治国，国之贼，不以智治国，国之福。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "古之善为道者，非以明民，将以愚之。民之难治，以其智多。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故以智治国，国之贼，不以智治国，国之福。知此两者亦稽式。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "常知稽式，是谓玄德。玄德深矣，远矣，与物反矣，然后乃至大顺。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配晨雾蓝。"
+    },
+    {
+      "chapterId": "ddj-66",
+      "chapterNumber": 66,
+      "themeId": "qianshui",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "是以欲上民，必以言下之。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "江海所以能为百谷王者，以其善下之，故能为百谷王。是以欲上民，必以言下之。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "欲先民，必以身后之。是以圣人处上而民不重，处前而民不害。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以天下乐推而不厌，以其不争，故天下莫能与之争。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "valley",
+        "reason": "谷与低处容纳，取两侧缓坡中空"
+      },
+      "motifId": "valley",
+      "illustrationPlacement": "between",
+      "designReason": "谷与低处容纳，取两侧缓坡中空，行旅式，配浅水青。",
+      "illustration": {
+        "asset": "valley",
+        "layout": "farview-side",
+        "desktop": 260,
+        "mobile": 170,
+        "placement": "original-side"
+      }
+    },
+    {
+      "chapterId": "ddj-67",
+      "chapterNumber": 67,
+      "themeId": "yelan",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "天下皆谓我道大，似不肖。",
+        "夫唯大，故似不肖。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下皆谓我道大，似不肖。夫唯大，故似不肖。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "若肖，久矣其细也夫！我有三宝，持而保之。一曰慈，二曰俭，三曰不敢为天下先。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "慈故能勇，俭故能广，不敢为天下先，故能成器长。今舍慈且勇，舍俭且广，舍后且先，死矣！夫慈以战则胜，以守则固。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "天将救之，以慈卫之。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "between",
+      "designReason": "器用与中空，取空器轮廓，行旅式，配夜蓝灰。"
+    },
+    {
+      "chapterId": "ddj-68",
+      "chapterNumber": 68,
+      "themeId": "shenqing",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "善为士者不武，善战者不怒，善胜敌者不与，善用人者为之下，是谓不争之德，是谓用人之力，是谓配天古之极。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配深青。"
+    },
+    {
+      "chapterId": "ddj-69",
+      "chapterNumber": 69,
+      "themeId": "yelan",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "用兵有言：",
+        "「吾不敢为主而为客，不敢進寸而退尺。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "用兵有言：「吾不敢为主而为客，不敢進寸而退尺。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "」是谓行无行，攘无臂，扔无敌，执无兵。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "祸莫大于轻敌，轻敌几丧吾宝。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "故抗兵相加，哀者胜矣。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，远景式，配夜蓝灰。"
+    },
+    {
+      "chapterId": "ddj-70",
+      "chapterNumber": 70,
+      "themeId": "qiantao",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "吾言甚易知，甚易行。",
+        "夫唯无知，是以不我知。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "吾言甚易知，甚易行。天下莫能知，莫能行。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "言有宗，事有君。夫唯无知，是以不我知。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "知我者希，则我者贵。是以圣人被褐怀玉。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配浅陶粉。",
+      "illustration": {
+        "asset": "stones",
+        "layout": "passage-seal",
+        "desktop": 140,
+        "mobile": 100,
+        "placement": "after-original"
+      }
+    },
+    {
+      "chapterId": "ddj-71",
+      "chapterNumber": 71,
+      "themeId": "qiantao",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "知不知上，不知知病。",
+        "夫唯病病，是以不病。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "知不知上，不知知病。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "夫唯病病，是以不病。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "圣人不病，以其病病，是以不病。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配浅陶粉。"
+    },
+    {
+      "chapterId": "ddj-72",
+      "chapterNumber": 72,
+      "themeId": "qiantao",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "民不畏威，则大威至。",
+        "夫唯不厌，是以不厌。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "民不畏威，则大威至。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "无狎其所居，无厌其所生。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "夫唯不厌，是以不厌。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "是以圣人自知不自见，自爱不自贵；故去彼取此。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "between",
+      "designReason": "柔与生长，取自然弯曲的细枝，行旅式，配浅陶粉。"
+    },
+    {
+      "chapterId": "ddj-73",
+      "chapterNumber": 73,
+      "themeId": "qiantao",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "勇于敢则杀，勇于不敢则活。",
+        "天之所恶，孰知其故？"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "勇于敢则杀，勇于不敢则活。此两者，或利或害。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "天之所恶，孰知其故？是以圣人犹难之。天之道，不争而善胜，不言而善应，不召而自来，繟然而善谋。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "天网恢恢，疏而不失。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，静水式，配浅陶粉。"
+    },
+    {
+      "chapterId": "ddj-74",
+      "chapterNumber": 74,
+      "themeId": "shenqing",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "民不畏死，奈何以死惧之？",
+        "常有司杀者杀，夫代司杀者杀，是谓代大匠斫。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "民不畏死，奈何以死惧之？若使民常畏死，而为奇者，吾得执而杀之，孰敢？常有司杀者杀，夫代司杀者杀，是谓代大匠斫。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "夫代大匠斫者，希有不伤其手矣。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，疏密式，配深青。"
+    },
+    {
+      "chapterId": "ddj-75",
+      "chapterNumber": 75,
+      "themeId": "yelan",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "民之饥，以其上食税之多，是以饥。",
+        "民之难治，以其上之有为，是以难治。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "民之饥，以其上食税之多，是以饥。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "民之难治，以其上之有为，是以难治。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "民之轻死，以其上求生之厚，是以轻死。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "夫唯无以生为者，是贤于贵生。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，疏密式，配夜蓝灰。"
+    },
+    {
+      "chapterId": "ddj-76",
+      "chapterNumber": 76,
+      "themeId": "shenqing",
+      "layoutVariant": "image-blend",
+      "highlightQuotes": [
+        "人之生也柔弱，其死也坚强。",
+        "故坚强者死之徒，柔弱者生之徒。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "人之生也柔弱，其死也坚强。万物草木之生也柔脆，其死也枯槁。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "故坚强者死之徒，柔弱者生之徒。是以兵强则不胜，木强则兵。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "强大处下，柔弱处上。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "wood",
+        "reason": "朴与自然，取未雕之木"
+      },
+      "motifId": "wood",
+      "illustrationPlacement": "edge-right",
+      "designReason": "朴与自然，取未雕之木，远景式，配深青。",
+      "illustration": {
+        "asset": "branch",
+        "layout": "branch-edge",
+        "desktop": 200,
+        "mobile": 120,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-77",
+      "chapterNumber": 77,
+      "themeId": "qiantao",
+      "layoutVariant": "progressive",
+      "highlightQuotes": [
+        "天之道，其犹张弓与？",
+        "是以圣人为而不恃，功成而不处，其不欲见贤。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天之道，其犹张弓与？高者抑之，下者举之；有余者损之，不足者补之。天之道，损有余而补不足。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "人之道则不然，损不足以奉有余。孰能有余以奉天下？唯有道者。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以圣人为而不恃，功成而不处，其不欲见贤。",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "mist",
+        "reason": "本章意象不集中，留白为主"
+      },
+      "motifId": "mist",
+      "illustrationPlacement": "none",
+      "designReason": "本章意象不集中，留白为主，行旅式，配浅陶粉。"
+    },
+    {
+      "chapterId": "ddj-78",
+      "chapterNumber": 78,
+      "themeId": "qianshui",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "是以圣人云："
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "天下莫柔弱于水，而攻坚强者，莫之能胜，其无以易之。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "弱之胜强，柔之胜刚，天下莫不知莫能行。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "是以圣人云：「受国之垢，是谓社稷主；受国不祥，是为天下王。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "」正言若反。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "branch",
+        "reason": "柔与生长，取自然弯曲的细枝"
+      },
+      "motifId": "branch",
+      "illustrationPlacement": "prologue",
+      "designReason": "柔与生长，取自然弯曲的细枝，静水式，配浅水青。",
+      "illustration": {
+        "asset": "ripple",
+        "layout": "ripple-carry",
+        "desktop": 170,
+        "mobile": 110,
+        "placement": "after-prologue"
+      }
+    },
+    {
+      "chapterId": "ddj-79",
+      "chapterNumber": 79,
+      "themeId": "qiantao",
+      "layoutVariant": "whitespace",
+      "highlightQuotes": [
+        "和大怨，必有余怨，安可以为善？",
+        "是以圣人执左契，而不责于人。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "和大怨，必有余怨，安可以为善？是以圣人执左契，而不责于人。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "有德司契，无德司彻。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "天道无亲，常与善人。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "stone",
+        "reason": "朴素与安定，取圆石轮廓"
+      },
+      "motifId": "stone",
+      "illustrationPlacement": "prologue",
+      "designReason": "朴素与安定，取圆石轮廓，疏密式，配浅陶粉。"
+    },
+    {
+      "chapterId": "ddj-80",
+      "chapterNumber": 80,
+      "themeId": "shenqing",
+      "layoutVariant": "contrast",
+      "highlightQuotes": [],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "小国寡民，使有什伯之器而不用，使民重死而不远徙。",
+          "role": "body"
+        },
+        {
+          "index": 1,
+          "text": "虽有舟舆，无所乘之；虽有甲兵，无所陈之。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "使人复结绳而用之，甘其食，美其服，安其居，乐其俗。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "邻国相望，鸡犬之声相闻，民至老死，不相往来。",
+          "role": "body"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，对照式，配深青。"
+    },
+    {
+      "chapterId": "ddj-81",
+      "chapterNumber": 81,
+      "themeId": "yelan",
+      "layoutVariant": "still-water",
+      "highlightQuotes": [
+        "信言不美，美言不信。",
+        "常善救物，故无弃物。"
+      ],
+      "paragraphGroups": [
+        {
+          "index": 0,
+          "text": "信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。",
+          "role": "open"
+        },
+        {
+          "index": 1,
+          "text": "圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。王弼老子道德经二卷，真得老子之学欤，盖严君平指归之流也。",
+          "role": "body"
+        },
+        {
+          "index": 2,
+          "text": "其言仁义与礼，不能自用，必待道以用之，天地万物各得于一，岂特有功于老子哉。凡百学者，盖不可不知乎此也。予于是知弼本深于老子，而易则末矣。",
+          "role": "body"
+        },
+        {
+          "index": 3,
+          "text": "其于易，多假诸老子之旨，而老子无资于易者，其有余不足之迹，断可见也。呜呼，学其难哉！弼知佳兵者不祥之器，至于战胜，以丧礼处之，非老子之言，乃不知常善救人，故无弃人；常善救物，故无弃物。独得诸河上公，而古本无有也。",
+          "role": "body"
+        },
+        {
+          "index": 4,
+          "text": "赖傅弈能辩之尔。然弼題是書曰道德经，不析乎道德，而上下之，犹近于古欤！其文字则多谬误，殆有不可读者，令人惜之。尝谓，弼之于老子，张湛之于列子，郭象之于庄子，杜预之于左氏，范甯之于谷梁，毛萇之于詩，郭璞之于尔雅，完然成一家之学，后世虽有作者，未易加也。",
+          "role": "body"
+        },
+        {
+          "index": 5,
+          "text": "予既缮写弼書，并以记之。政和乙未十月丁丑嵩山晁说之鄜畤记。克伏诵咸平圣语，有曰：「老子道德经治世之要，明皇解虽灿然可观，王弼所注，言简意深，真得老氏清净之旨。",
+          "role": "body"
+        },
+        {
+          "index": 6,
+          "text": "」克自此求弼所注甚力，而近世希有，盖久而后得之，往岁摄建宁学官，尝以刊行，既又得晁以道先生所題本，不分道德而上下之，亦无篇目，喜其近古，缮写藏之，乾道庚寅，分教京口，复镂板以傳，若其字之谬讹，前人已不能证，克焉敢輒易，姑俟夫知者。三月二十四日左从事郎充镇江府府学教授熊克谨记",
+          "role": "close"
+        }
+      ],
+      "visualMotif": {
+        "type": "vessel",
+        "reason": "器用与中空，取空器轮廓"
+      },
+      "motifId": "vessel",
+      "illustrationPlacement": "prologue",
+      "designReason": "器用与中空，取空器轮廓，静水式，配夜蓝灰。"
+    }
+  ]
+}
