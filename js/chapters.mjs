@@ -4,11 +4,11 @@
 import { el, frag } from './util.mjs';
 import { getChapter, themeLabel } from './data.mjs';
 import { findQuote } from './citations.mjs';
-import { mountainStrip } from './art.mjs';
 import { getChapterDesign, getTheme, applyTheme, resetTheme } from './chapter-themes.mjs';
 import { renderOriginalText } from './chapter-layouts.mjs';
 import { renderMotif } from './motifs.mjs';
 import { renderIllustration, hasIllustration } from './illustrations.mjs';
+import { sceneBanner } from './scenes.mjs';
 
 // 短章名（题签）判定：仅当现有章名为 2–6 个汉字时才作侧边题签，不使用编造章名。
 function isShortTitle(title) {
@@ -84,13 +84,12 @@ export function renderChapters(ctx, params) {
   if (params.id) return renderChapterDetail(ctx, params);
   const root = el('div', { class: 'stack' });
 
-  root.append(el('div', { class: 'torn-divider', 'aria-hidden': 'true' }, [mountainStrip()]));
-  root.append(el('h2', { class: 'section-title', text: '原典阅读' }));
-  root.append(el('p', { class: 'notice' }, [
-    el('span', {
-      text: `本站收录《道德经》全部 ${data.chapters.length} 章（王弼本），目录显示真实章号。释义为本站整理，非古代注家原话；不提供多家注解库，不做逐字校勘。`,
-    }),
-  ]));
+  root.append(sceneBanner('reading', {
+    kicker: '道德经全本 81 章',
+    title: '原典阅读',
+    desc: `本站收录《道德经》全部 ${data.chapters.length} 章（王弼本），目录显示真实章号。释义为本站整理，非古代注家原话；不提供多家注解库，不做逐字校勘。`,
+    eager: true,
+  }));
 
   root.append(chapterSideList(data, null, true));
   return frag([root]);

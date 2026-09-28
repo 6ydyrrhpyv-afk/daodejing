@@ -313,34 +313,66 @@ legend { padding: 0; }
 .hero__sub { color: var(--muted); margin-bottom: 1.25rem; max-width: 34em; }
 
 .hero-visual {
-  position: relative; min-width: 0;
+  position: relative; min-width: 0; align-self: stretch;
   border-radius: var(--radius-lg);
-  padding: clamp(.75rem, 1.5vw, 1.25rem);
   background: var(--paper-card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lift);
-  cursor: var(--brush-cursor);
+  overflow: hidden;
+  min-height: clamp(360px, 38vw, 520px);
 }
-.hero-visual .art-hole { display: block; width: 100%; height: auto; }
-.hero-visual__tag {
-  position: absolute; top: 1.1rem; right: 1rem;
-  writing-mode: vertical-rl; text-orientation: upright;
-  font-family: var(--font-serif); font-size: 1.0625rem; letter-spacing: .35em;
-  color: var(--ink); background: rgba(250, 248, 242, .92);
-  padding: .8rem .3rem; border: 1px solid var(--line);
-  border-radius: 2px; box-shadow: var(--shadow);
+.hero-visual .scene-picture,
+.hero-visual .scene-picture__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: block; object-fit: cover;
 }
-.hero-visual__quote {
-  margin: .875rem .25rem .25rem; font-size: .875rem; color: var(--muted);
+
+/* ---------- 场景顶部视觉横幅（阅读 / 练习 / 复盘） ---------- */
+.scene-banner {
+  display: flex; align-items: stretch; gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow);
 }
-.hero-visual__quote cite { font-style: normal; color: var(--ochre); }
-.hero-visual__note { margin: .25rem .25rem 0; font-size: .75rem; color: var(--muted); }
-.hero-visual__seal {
-  position: absolute; right: 1.25rem; bottom: 4.6rem;
-  width: 2.25rem; height: 2.25rem; display: flex; align-items: center; justify-content: center;
-  color: var(--cinnabar); font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700;
-  transform: rotate(3deg);
+.scene-banner__content {
+  flex: 1 1 54%;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: .55rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  /* 同色轻微遮罩，保证文字对比（≥4.5:1），不遮挡焦点 */
+  background: linear-gradient(95deg, rgba(243,239,229,.97) 58%, rgba(243,239,229,.8));
 }
+.scene-banner__kicker {
+  margin: 0; font-size: .8125rem; letter-spacing: .26em; font-weight: 600;
+  color: var(--teal);
+}
+.scene-banner__title {
+  margin: 0; font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem); line-height: 1.18; color: var(--ink);
+}
+.scene-banner__desc {
+  margin: 0; max-width: 46ch; color: var(--muted);
+  font-size: .98rem; line-height: 1.72;
+}
+.scene-banner__media {
+  flex: 1 1 46%; position: relative; min-height: clamp(300px, 30vw, 460px);
+  background: var(--paper-card);
+}
+.scene-banner__media .scene-picture,
+.scene-banner__media .scene-picture__img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: block; object-fit: cover;
+}
+/* 逐张调整焦点，避免主体被裁掉（无法在本环境目检，取保守中心偏上） */
+.scene-banner--reading   .scene-banner__media .scene-picture__img { object-position: center; }
+.scene-banner--practice  .scene-banner__media .scene-picture__img { object-position: 50% 38%; }
+.scene-banner--reflection .scene-banner__media .scene-picture__img { object-position: 50% 32%; }
+
+/* 装饰图加载失败 → 隐藏图，露出匹配底色面板，文字/按钮仍可点 */
+.scene-picture--missing { display: none; }
 
 .grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 48rem) { .grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -999,8 +1031,13 @@ body.chapter-picker-open { overflow: hidden; }
 }
 @media (max-width: 56rem) {
   .hero { grid-template-columns: 1fr; }
-  .hero-visual { order: 2; max-width: 26rem; }
-  .hero-visual .art-hole { max-height: 20rem; width: auto; margin: 0 auto; }
+  .hero-visual { order: 2; min-height: clamp(240px, 52vw, 360px); }
+}
+/* 手机版（≤768px）：场景横幅改为文字在上、场景在下，场景图用独立竖图 */
+@media (max-width: 48rem) {
+  .scene-banner { flex-direction: column; }
+  .scene-banner__content { background: var(--paper); }
+  .scene-banner__media { min-height: clamp(200px, 44vw, 280px); }
 }
 @media (max-width: 30rem) {
   .stepper { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .25rem; }
@@ -1008,7 +1045,6 @@ body.chapter-picker-open { overflow: hidden; }
   .stepper__item { min-height: 3rem; padding: .3rem .15rem; }
   .stepper__hint { display: none; }
   .stepper__label { font-size: .8125rem; letter-spacing: .05em; }
-  .hero-visual__tag { display: none; }
   .stack { gap: 1.5rem; }
 }
 

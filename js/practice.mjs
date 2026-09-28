@@ -2,7 +2,7 @@
 
 import { el, frag, toast, debounce, uid, formatDate, icon } from './util.mjs';
 import { getBranch, getChapter, getTheme, themeLabel } from './data.mjs';
-import { mountainStrip } from './art.mjs';
+import { sceneBanner } from './scenes.mjs';
 
 const STEPS = [
   { n: 1, label: '问事', hint: '问题与主题' },
@@ -18,7 +18,11 @@ export function renderPractice(ctx) {
   const root = el('div', { class: 'stack' });
 
   if (!draft) {
-    root.append(el('h2', { class: 'section-title', text: '分步练习' }));
+    root.append(sceneBanner('practice', {
+      kicker: '五步情境练习',
+      title: '分步练习',
+      desc: '把一句经典落到你明天能做的一件事：问事 → 明因 → 读典 → 辨意 → 践行。',
+    }));
     root.append(el('section', { class: 'card empty' }, [
       el('p', { class: 'card__text', text: '还没有进行中的练习。先提出一个真实问题，再进入分步练习。' }),
       el('div', { class: 'row' }, [
@@ -44,8 +48,11 @@ export function renderPractice(ctx) {
     ctx.rerender();
   };
 
-  root.append(el('h2', { class: 'section-title', text: '分步练习' }));
-  root.append(el('div', { class: 'path-strip', 'aria-hidden': 'true' }, [mountainStrip()]));
+  root.append(sceneBanner('practice', {
+    kicker: '五步情境练习',
+    title: '分步练习',
+    desc: '把一句经典落到你明天能做的一件事：问事 → 明因 → 读典 → 辨意 → 践行。',
+  }));
   root.append(stepper(draft.step, goto));
 
   if (draft.step === 1) root.append(stepOne(ctx, draft, saveDraft, goto));

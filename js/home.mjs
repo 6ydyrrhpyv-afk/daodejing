@@ -2,7 +2,7 @@
 
 import { el, frag, toast, formatDate } from './util.mjs';
 import { themeLabel } from './data.mjs';
-import { tornHoleScene } from './art.mjs';
+import { scenePicture } from './scenes.mjs';
 
 const STEP_LABEL = { 1: '步骤一 问题', 2: '步骤二 澄清', 3: '步骤三 原文与借鉴', 4: '步骤四 辨析', 5: '步骤五 行动' };
 
@@ -87,11 +87,6 @@ export function renderHome(ctx) {
     navigate('#/practice');
   }
 
-  const visualQuote = el('figure', { class: 'hero-visual__quote' }, [
-    el('blockquote', { text: '“上善若水。水善利万物而不争。”' }),
-    el('cite', { text: '—— 第八章 · 王弼本' }),
-  ]);
-
   const heroMain = el('div', { class: 'hero__main' }, [
     el('p', { class: 'hero__kicker', text: '处事练习室 · 道德经全本 81 章' }),
     el('h1', { class: 'hero__title', text: '读一段经典，想清一件事。' }),
@@ -107,12 +102,9 @@ export function renderHome(ctx) {
     form,
   ]);
 
-  const heroVisual = el('aside', { class: 'hero-visual', 'aria-label': '首页意境插画' }, [
-    tornHoleScene(),
-    el('span', { class: 'hero-visual__tag', 'aria-hidden': 'true', text: '上善若水' }),
-    el('span', { class: 'hero-visual__seal', 'aria-hidden': 'true', text: '水' }),
-    visualQuote,
-    el('p', { class: 'hero-visual__note', text: '※ 此为原创矢量插绘装饰，非摄影素材；生成图片服务不可用时以此保证布局。' }),
+  // 首页意境：右侧场景图（抽象哲思），文字在左干净区，不强行叠放。
+  const heroVisual = el('aside', { class: 'hero-visual', 'aria-label': '首页意境' }, [
+    scenePicture('reading', { eager: true, alt: '' }),
   ]);
 
   root.append(el('div', { class: 'hero' }, [heroMain, heroVisual]));

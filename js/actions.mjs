@@ -3,6 +3,7 @@
 import { el, frag, toast, formatDate } from './util.mjs';
 import { getChapter, themeLabel } from './data.mjs';
 import { kintsugiLine } from './art.mjs';
+import { sceneBanner } from './scenes.mjs';
 
 const STATUS = {
   todo: { label: '待实践', cls: 'badge--todo' },
@@ -16,13 +17,11 @@ export function renderActions(ctx) {
   const ui = ctx.ui;
   const filter = ui.actionFilter || 'all';
   const root = el('div', { class: 'stack' });
-  root.append(el('div', { class: 'letterhead' }, [
-    el('div', {}, [
-      el('h2', { class: 'section-title', text: '行动与复盘' }),
-      el('p', { class: 'field__hint', text: '这里只记录你实际要做、做过和复盘的事。本站不做能力评分，也不显示累计天数或成就。' }),
-    ]),
-    kintsugiLine(240, 56),
-  ]));
+  root.append(sceneBanner('reflection', {
+    kicker: '行动与复盘',
+    title: '行动与复盘',
+    desc: '这里只记录你实际要做、做过和复盘的事。本站不做能力评分，也不显示累计天数或成就。',
+  }));
 
   const filtered = state.actions.filter((a) => (filter === 'all' ? true : a.status === filter));
   const counts = state.actions.reduce((acc, a) => { acc[a.status] = (acc[a.status] || 0) + 1; return acc; }, {});
