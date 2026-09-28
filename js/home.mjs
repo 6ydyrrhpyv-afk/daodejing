@@ -3,6 +3,7 @@
 import { el, frag, toast, formatDate } from './util.mjs';
 import { themeLabel } from './data.mjs';
 import { scenePicture } from './scenes.mjs';
+import { renderUniverseEntry } from './universe.mjs';
 
 const STEP_LABEL = { 1: '步骤一 问题', 2: '步骤二 澄清', 3: '步骤三 原文与借鉴', 4: '步骤四 辨析', 5: '步骤五 行动' };
 
@@ -108,6 +109,9 @@ export function renderHome(ctx) {
   ]);
 
   root.append(el('div', { class: 'hero' }, [heroMain, heroVisual]));
+
+  // ---- 道家宇宙入口 ----
+  root.append(renderUniverseEntry(ctx));
 
   // ---- 继续未完成的练习 ----
   if (draft && draft.question) {

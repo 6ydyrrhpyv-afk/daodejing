@@ -202,9 +202,15 @@ function renderChapterDetail(ctx, params) {
   applyTheme(theme);
 
   const fromPractice = params.from === 'practice';
+  const fromUniverse = params.from === 'universe';
   if (fromPractice) {
     root.append(el('div', { class: 'return-bar' }, [
       el('a', { class: 'btn btn--primary', href: '#/practice' }, ['返回练习（已填内容不会丢失）']),
+    ]));
+  }
+  if (fromUniverse) {
+    root.append(el('div', { class: 'return-bar' }, [
+      el('a', { class: 'btn btn--primary', href: '#/universe' }, ['返回道家宇宙']),
     ]));
   }
 

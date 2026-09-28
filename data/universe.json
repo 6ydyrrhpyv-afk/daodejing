@@ -1,0 +1,4073 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "updated": "2026-09-28",
+    "note": "道家宇宙知识图谱：节点与关系基于《道德经》81章原文建立。八个主题为网站编辑整理的阅读视角，不等于经典原有分类。概念解释与关联理由均为本站整理。",
+    "chapterData": "chapters.json"
+  },
+  "themes": [
+    {
+      "id": "dao-nature",
+      "name": "道与自然",
+      "summary": "道作为本源、自然运行、不可名状的终极根据。"
+    },
+    {
+      "id": "being-nonbeing",
+      "name": "有无与器用",
+      "summary": "有与无的相生关系，以及「无」在器物、空间与行动中的实际功用。"
+    },
+    {
+      "id": "softness-noncontention",
+      "name": "柔弱与不争",
+      "summary": "柔弱胜刚强、不争而善胜的处世与领导姿态。"
+    },
+    {
+      "id": "nonaction-governance",
+      "name": "无为与治理",
+      "summary": "无为而治、不扰民、因循自然的治理方式。"
+    },
+    {
+      "id": "contentment-choice",
+      "name": "知足与取舍",
+      "summary": "知足不辱、知止不殆、去彼取此的取舍智慧。"
+    },
+    {
+      "id": "reversal-change",
+      "name": "反复与变化",
+      "summary": "反者道之动、物极必反、祸福相倚的变动观。"
+    },
+    {
+      "id": "cultivation-contemplation",
+      "name": "修身与观照",
+      "summary": "致虚守静、专气致柔、涤除玄览的内在修养与观照。"
+    },
+    {
+      "id": "simplicity-kindness",
+      "name": "朴素与慈俭",
+      "summary": "见素抱朴、少私寡欲、慈俭三宝的生活态度。"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "dao-concept",
+      "name": "道",
+      "explanation": "万物本源，不可名状而能生万有；语言与概念只能逼近，不能穷尽。",
+      "themes": [
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "道可道",
+        "道常",
+        "大道",
+        "天道",
+        "道者",
+        "道之",
+        "有道",
+        "无道",
+        "同谓之玄",
+        "众妙之门"
+      ]
+    },
+    {
+      "id": "ming",
+      "name": "名",
+      "explanation": "名称与界定；可名者非恒名，名言是抵达道的有限工具。",
+      "themes": [
+        "dao-nature",
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "名可名",
+        "非常名",
+        "无名",
+        "有名",
+        "同谓之玄",
+        "绳绳不可名"
+      ]
+    },
+    {
+      "id": "xuan",
+      "name": "玄",
+      "explanation": "幽微深远，道之不可把捉的向度。",
+      "themes": [
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "同谓之玄",
+        "玄之又玄",
+        "玄牝",
+        "微妙玄通"
+      ]
+    },
+    {
+      "id": "ziran",
+      "name": "自然",
+      "explanation": "自己如此，不受外力强使；道的运行方式也是任物自化。",
+      "themes": [
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "自然",
+        "道法自然",
+        "莫之命而常自然"
+      ]
+    },
+    {
+      "id": "tianxia",
+      "name": "天下",
+      "explanation": "天下作为整体政治与生命场域，是圣人之治的对象与尺度。",
+      "themes": [
+        "dao-nature",
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "天下"
+      ]
+    },
+    {
+      "id": "tiandi",
+      "name": "天地",
+      "explanation": "天地运行不息，以无为用，是道之显现的最大场域。",
+      "themes": [
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "天地"
+      ]
+    },
+    {
+      "id": "youwu",
+      "name": "有无",
+      "explanation": "有与无相生相济；无并非空无，而是使有得以运作的余地。",
+      "themes": [
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "有无相生",
+        "有之以为利",
+        "无之以为用",
+        "当其无",
+        "天下万物生于有",
+        "有生于无"
+      ]
+    },
+    {
+      "id": "wu",
+      "name": "无",
+      "explanation": "无：未形之空间、余地与可能性；车、器、室因其「无」而成用。",
+      "themes": [
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "无之以为用",
+        "当其无",
+        "有生于无",
+        "有无相生",
+        "无名"
+      ]
+    },
+    {
+      "id": "yong",
+      "name": "器用",
+      "explanation": "器物之用不只在于实有，更在于其中的虚空与可容纳性。",
+      "themes": [
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "器之用",
+        "室之用",
+        "车之用",
+        "有之以为利",
+        "无之以为用"
+      ]
+    },
+    {
+      "id": "kongjian",
+      "name": "空间",
+      "explanation": "三十辐共一毂、埏埴为器、凿户牖为室，皆以空无成用。",
+      "themes": [
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "三十辐",
+        "埏埴",
+        "凿户牖",
+        "当其无"
+      ]
+    },
+    {
+      "id": "rou",
+      "name": "柔弱",
+      "explanation": "柔弱胜刚强，水性近于道，以柔承载、以曲求全。",
+      "themes": [
+        "softness-noncontention"
+      ],
+      "searchTerms": [
+        "柔弱",
+        "专气致柔",
+        "柔之胜刚",
+        "天下莫柔弱于水"
+      ]
+    },
+    {
+      "id": "shui",
+      "name": "水",
+      "explanation": "上善若水，利万物而不争，处众人之所恶，故几于道。",
+      "themes": [
+        "softness-noncontention"
+      ],
+      "searchTerms": [
+        "上善若水",
+        "水善利万物",
+        "攻坚强者莫之能胜",
+        "天下莫柔弱于水"
+      ]
+    },
+    {
+      "id": "buzheng",
+      "name": "不争",
+      "explanation": "不争之争，不与人争名夺利，反而成就自身。",
+      "themes": [
+        "softness-noncontention"
+      ],
+      "searchTerms": [
+        "不争",
+        "夫唯不争",
+        "为而不争",
+        "善胜敌者不与"
+      ]
+    },
+    {
+      "id": "quanzhi",
+      "name": "曲全",
+      "explanation": "曲则全，枉则直，洼则盈，以退为进、以让为得。",
+      "themes": [
+        "softness-noncontention",
+        "reversal-change"
+      ],
+      "searchTerms": [
+        "曲则全",
+        "枉则直",
+        "少则得",
+        "多则惑",
+        "洼则盈",
+        "敝则新"
+      ]
+    },
+    {
+      "id": "yinger",
+      "name": "婴儿",
+      "explanation": "专气致柔如婴儿，含德之厚，精和之至。",
+      "themes": [
+        "softness-noncontention",
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "婴儿",
+        "能婴儿乎",
+        "含德之厚",
+        "精和之至"
+      ]
+    },
+    {
+      "id": "wuwei",
+      "name": "无为",
+      "explanation": "不妄为、不强为，顺应事物之势而有所作为。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "无为",
+        "处无为之事",
+        "为无为",
+        "无为而无不为",
+        "以无为事"
+      ]
+    },
+    {
+      "id": "shengren",
+      "name": "圣人",
+      "explanation": "理想中的治理者，处无为之事，行不言之教，以百姓心为心。",
+      "themes": [
+        "nonaction-governance",
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "圣人",
+        "是以圣人"
+      ]
+    },
+    {
+      "id": "buxiangjiaor",
+      "name": "不言而教",
+      "explanation": "身教胜于言教，少发号令，让事情自然成就。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "行不言之教",
+        "贵言",
+        "悠兮其贵言",
+        "希言自然"
+      ]
+    },
+    {
+      "id": "minzixin",
+      "name": "民心",
+      "explanation": "治理以百姓心为心，虚其心实其腹，不见可欲使民心不乱。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "百姓",
+        "民心",
+        "以百姓心为心",
+        "虚其心",
+        "实其腹"
+      ]
+    },
+    {
+      "id": "xiaoguo",
+      "name": "小国寡民",
+      "explanation": "理想政治规模：器物虽有而不用，民至老死不相往来。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "小国寡民",
+        "什伯之器",
+        "甘其食",
+        "美其服",
+        "安其居",
+        "乐其俗"
+      ]
+    },
+    {
+      "id": "zhiguoda",
+      "name": "治大国",
+      "explanation": "治大国若烹小鲜，不可频繁翻动，以静制动。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "治大国若烹小鲜"
+      ]
+    },
+    {
+      "id": "yongbing",
+      "name": "用兵",
+      "explanation": "兵者不祥之器，不得已而用之，哀者胜。",
+      "themes": [
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "用兵",
+        "兵者",
+        "善战者不怒",
+        "哀者胜矣"
+      ]
+    },
+    {
+      "id": "zhizu",
+      "name": "知足",
+      "explanation": "知足不辱，知止不殆，可以长久。",
+      "themes": [
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "知足",
+        "知足不辱",
+        "知止不殆"
+      ]
+    },
+    {
+      "id": "quzhi",
+      "name": "取舍",
+      "explanation": "去彼取此，舍弃浮华与危殆，取本真的生存方式。",
+      "themes": [
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "去彼取此",
+        "去甚",
+        "去奢",
+        "去泰"
+      ]
+    },
+    {
+      "id": "tanhua",
+      "name": "难得之货",
+      "explanation": "难得之货令人行妨；不贵难得之货，不见可欲。",
+      "themes": [
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "难得之货",
+        "不贵难得之货",
+        "不见可欲",
+        "令人行妨"
+      ]
+    },
+    {
+      "id": "caiwu",
+      "name": "富贵",
+      "explanation": "金玉满堂莫之能守，富贵而骄自遗其咎。",
+      "themes": [
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "金玉满堂",
+        "富贵而骄"
+      ]
+    },
+    {
+      "id": "shentui",
+      "name": "身退",
+      "explanation": "功成名遂身退，天之道；不居功故能不去。",
+      "themes": [
+        "contentment-choice",
+        "softness-noncontention"
+      ],
+      "searchTerms": [
+        "功成身退",
+        "功成名遂",
+        "功遂身退",
+        "功成不处"
+      ]
+    },
+    {
+      "id": "fan",
+      "name": "反",
+      "explanation": "反者道之动；事物发展到极端必返回其反面。",
+      "themes": [
+        "reversal-change"
+      ],
+      "searchTerms": [
+        "反者道之动",
+        "弱者道之用",
+        "相反相成"
+      ]
+    },
+    {
+      "id": "wuji",
+      "name": "物极必反",
+      "explanation": "物壮则老，盈满则亏；持而盈之不如其已。",
+      "themes": [
+        "reversal-change"
+      ],
+      "searchTerms": [
+        "物壮则老",
+        "持而盈之",
+        "揣而锐之",
+        "甚爱必大费",
+        "多藏必厚亡"
+      ]
+    },
+    {
+      "id": "huofu",
+      "name": "祸福",
+      "explanation": "祸兮福所倚，福兮祸所伏；祸福相互转化。",
+      "themes": [
+        "reversal-change"
+      ],
+      "searchTerms": [
+        "祸兮福所倚",
+        "福兮祸所伏",
+        "祸莫大于",
+        "福莫大于"
+      ]
+    },
+    {
+      "id": "zhijian",
+      "name": "知见",
+      "explanation": "知者不言，言者不知；知不知上，不知知病。",
+      "themes": [
+        "reversal-change",
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "知者不言",
+        "言者不知",
+        "知不知",
+        "不知知病",
+        "自知"
+      ]
+    },
+    {
+      "id": "youdao",
+      "name": "有道",
+      "explanation": "天下有道与无道之世相对；有道者见微知著，防患于未然。",
+      "themes": [
+        "reversal-change",
+        "nonaction-governance"
+      ],
+      "searchTerms": [
+        "天下有道",
+        "天下无道",
+        "为之于未有",
+        "治之于未乱"
+      ]
+    },
+    {
+      "id": "xujing",
+      "name": "虚静",
+      "explanation": "致虚极，守静笃；虚而不屈，动而愈出。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "致虚极",
+        "守静笃",
+        "虚静",
+        "虚而不屈",
+        "静为躁君"
+      ]
+    },
+    {
+      "id": "guanzhao",
+      "name": "观照",
+      "explanation": "涤除玄览，明白四达；以清明的觉察照见自身与万物。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "涤除玄览",
+        "明白四达",
+        "玄鉴",
+        "致虚极"
+      ]
+    },
+    {
+      "id": "yingqi",
+      "name": "专气",
+      "explanation": "专气致柔，能婴儿乎；修身的呼吸与精气凝聚。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "专气致柔"
+      ]
+    },
+    {
+      "id": "baoyi",
+      "name": "抱一",
+      "explanation": "载营魄抱一，能无离乎；守一不二，精神合一。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "抱一",
+        "载营魄",
+        "能无离乎"
+      ]
+    },
+    {
+      "id": "tianmen",
+      "name": "天门",
+      "explanation": "天门开阖，能无雌乎；感官与生命力的开合有度。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "天门开阖"
+      ]
+    },
+    {
+      "id": "zhiwo",
+      "name": "自知",
+      "explanation": "知人者智，自知者明；胜人者有力，自胜者强。",
+      "themes": [
+        "cultivation-contemplation"
+      ],
+      "searchTerms": [
+        "自知",
+        "自胜",
+        "自胜者强"
+      ]
+    },
+    {
+      "id": "pusu",
+      "name": "朴素",
+      "explanation": "见素抱朴，少私寡欲，绝学无忧。",
+      "themes": [
+        "simplicity-kindness"
+      ],
+      "searchTerms": [
+        "见素抱朴",
+        "少私寡欲",
+        "绝圣弃智",
+        "绝学无忧"
+      ]
+    },
+    {
+      "id": "siyu",
+      "name": "私欲",
+      "explanation": "少私寡欲，不欲以静；私欲少则天下自定。",
+      "themes": [
+        "simplicity-kindness",
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "少私寡欲",
+        "不欲以静",
+        "我无欲"
+      ]
+    },
+    {
+      "id": "ci",
+      "name": "慈",
+      "explanation": "我有三宝，持而保之：一曰慈，二曰俭，三曰不敢为天下先。",
+      "themes": [
+        "simplicity-kindness"
+      ],
+      "searchTerms": [
+        "三宝",
+        "一曰慈",
+        "慈故能勇"
+      ]
+    },
+    {
+      "id": "jian",
+      "name": "俭",
+      "explanation": "三宝之二；俭故能广，去甚去奢去泰。",
+      "themes": [
+        "simplicity-kindness",
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "二曰俭",
+        "俭故能广",
+        "去甚",
+        "去奢",
+        "去泰"
+      ]
+    },
+    {
+      "id": "buhou",
+      "name": "不敢为天下先",
+      "explanation": "三宝之三；不为先故能成器长。",
+      "themes": [
+        "simplicity-kindness"
+      ],
+      "searchTerms": [
+        "不敢为天下先",
+        "成器长"
+      ]
+    },
+    {
+      "id": "sheng",
+      "name": "生死",
+      "explanation": "出生入死，善摄生者无死地；生死一如，不避不祥。",
+      "themes": [
+        "simplicity-kindness",
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "出生入死",
+        "善摄生者",
+        "无死地"
+      ]
+    },
+    {
+      "id": "chongxu",
+      "name": "冲虚",
+      "explanation": "道冲而用之或不盈，渊兮似万物之宗；虚空而能容万有。",
+      "themes": [
+        "dao-nature",
+        "being-nonbeing"
+      ],
+      "searchTerms": [
+        "道冲",
+        "或不盈",
+        "渊兮",
+        "万物之宗"
+      ]
+    },
+    {
+      "id": "daosheng",
+      "name": "道生万物",
+      "explanation": "道生一，一生二，二生三，三生万物；道为生成之根源。",
+      "themes": [
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "道生一",
+        "三生万物",
+        "道生之"
+      ]
+    },
+    {
+      "id": "se",
+      "name": "啬",
+      "explanation": "治人事天莫若啬；啬乃早服，重积德，无不克。",
+      "themes": [
+        "cultivation-contemplation",
+        "simplicity-kindness"
+      ],
+      "searchTerms": [
+        "莫若啬",
+        "早服",
+        "重积德"
+      ]
+    },
+    {
+      "id": "buhuisi",
+      "name": "不畏死",
+      "explanation": "民不畏死，奈何以死惧之；以死惧民是无以生为。",
+      "themes": [
+        "nonaction-governance",
+        "dao-nature"
+      ],
+      "searchTerms": [
+        "不畏死",
+        "奈何以死惧之",
+        "无以生为"
+      ]
+    },
+    {
+      "id": "shuilian",
+      "name": "税敛",
+      "explanation": "民之饥，以其上食税之多；民之难治，以其上之有为。",
+      "themes": [
+        "nonaction-governance",
+        "contentment-choice"
+      ],
+      "searchTerms": [
+        "食税之多",
+        "税",
+        "难治",
+        "有为"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ddj-01",
+      "number": 1,
+      "titleHint": "道可道，非常道"
+    },
+    {
+      "id": "ddj-02",
+      "number": 2,
+      "titleHint": "天下皆知美之为美"
+    },
+    {
+      "id": "ddj-03",
+      "number": 3,
+      "titleHint": "不尚贤，使民不争"
+    },
+    {
+      "id": "ddj-04",
+      "number": 4,
+      "titleHint": "道冲而用之或不盈"
+    },
+    {
+      "id": "ddj-05",
+      "number": 5,
+      "titleHint": "天地不仁"
+    },
+    {
+      "id": "ddj-06",
+      "number": 6,
+      "titleHint": "谷神不死"
+    },
+    {
+      "id": "ddj-07",
+      "number": 7,
+      "titleHint": "天长地久"
+    },
+    {
+      "id": "ddj-08",
+      "number": 8,
+      "titleHint": "上善若水"
+    },
+    {
+      "id": "ddj-09",
+      "number": 9,
+      "titleHint": "持而盈之"
+    },
+    {
+      "id": "ddj-10",
+      "number": 10,
+      "titleHint": "载营魄抱一"
+    },
+    {
+      "id": "ddj-11",
+      "number": 11,
+      "titleHint": "三十辐共一毂"
+    },
+    {
+      "id": "ddj-12",
+      "number": 12,
+      "titleHint": "五色令人目盲"
+    },
+    {
+      "id": "ddj-13",
+      "number": 13,
+      "titleHint": "宠辱若惊"
+    },
+    {
+      "id": "ddj-14",
+      "number": 14,
+      "titleHint": "视之不见名曰夷"
+    },
+    {
+      "id": "ddj-15",
+      "number": 15,
+      "titleHint": "古之善为士者"
+    },
+    {
+      "id": "ddj-16",
+      "number": 16,
+      "titleHint": "致虚极，守静笃"
+    },
+    {
+      "id": "ddj-17",
+      "number": 17,
+      "titleHint": "太上，下知有之"
+    },
+    {
+      "id": "ddj-18",
+      "number": 18,
+      "titleHint": "大道废，有仁义"
+    },
+    {
+      "id": "ddj-19",
+      "number": 19,
+      "titleHint": "绝圣弃智"
+    },
+    {
+      "id": "ddj-20",
+      "number": 20,
+      "titleHint": "绝学无忧"
+    },
+    {
+      "id": "ddj-21",
+      "number": 21,
+      "titleHint": "孔德之容，惟道是从"
+    },
+    {
+      "id": "ddj-22",
+      "number": 22,
+      "titleHint": "曲则全"
+    },
+    {
+      "id": "ddj-23",
+      "number": 23,
+      "titleHint": "希言自然"
+    },
+    {
+      "id": "ddj-24",
+      "number": 24,
+      "titleHint": "企者不立"
+    },
+    {
+      "id": "ddj-25",
+      "number": 25,
+      "titleHint": "有物混成，先天地生"
+    },
+    {
+      "id": "ddj-26",
+      "number": 26,
+      "titleHint": "重为轻根"
+    },
+    {
+      "id": "ddj-27",
+      "number": 27,
+      "titleHint": "善行无辙迹"
+    },
+    {
+      "id": "ddj-28",
+      "number": 28,
+      "titleHint": "知其雄，守其雌"
+    },
+    {
+      "id": "ddj-29",
+      "number": 29,
+      "titleHint": "将欲取天下而为之"
+    },
+    {
+      "id": "ddj-30",
+      "number": 30,
+      "titleHint": "以道佐人主者"
+    },
+    {
+      "id": "ddj-31",
+      "number": 31,
+      "titleHint": "夫佳兵者，不祥之器"
+    },
+    {
+      "id": "ddj-32",
+      "number": 32,
+      "titleHint": "道常无名"
+    },
+    {
+      "id": "ddj-33",
+      "number": 33,
+      "titleHint": "知人者智，自知者明"
+    },
+    {
+      "id": "ddj-34",
+      "number": 34,
+      "titleHint": "大道氾兮"
+    },
+    {
+      "id": "ddj-35",
+      "number": 35,
+      "titleHint": "执大象，天下往"
+    },
+    {
+      "id": "ddj-36",
+      "number": 36,
+      "titleHint": "将欲歙之，必固张之"
+    },
+    {
+      "id": "ddj-37",
+      "number": 37,
+      "titleHint": "道常无为而无不为"
+    },
+    {
+      "id": "ddj-38",
+      "number": 38,
+      "titleHint": "上德不德"
+    },
+    {
+      "id": "ddj-39",
+      "number": 39,
+      "titleHint": "昔之得一者"
+    },
+    {
+      "id": "ddj-40",
+      "number": 40,
+      "titleHint": "反者道之动"
+    },
+    {
+      "id": "ddj-41",
+      "number": 41,
+      "titleHint": "上士闻道"
+    },
+    {
+      "id": "ddj-42",
+      "number": 42,
+      "titleHint": "道生一，一生二"
+    },
+    {
+      "id": "ddj-43",
+      "number": 43,
+      "titleHint": "天下之至柔"
+    },
+    {
+      "id": "ddj-44",
+      "number": 44,
+      "titleHint": "知足不辱，知止不殆"
+    },
+    {
+      "id": "ddj-45",
+      "number": 45,
+      "titleHint": "大成若缺"
+    },
+    {
+      "id": "ddj-46",
+      "number": 46,
+      "titleHint": "天下有道，却走马以粪"
+    },
+    {
+      "id": "ddj-47",
+      "number": 47,
+      "titleHint": "不出户，知天下"
+    },
+    {
+      "id": "ddj-48",
+      "number": 48,
+      "titleHint": "为学日益，为道日损"
+    },
+    {
+      "id": "ddj-49",
+      "number": 49,
+      "titleHint": "圣人无常心"
+    },
+    {
+      "id": "ddj-50",
+      "number": 50,
+      "titleHint": "出生入死"
+    },
+    {
+      "id": "ddj-51",
+      "number": 51,
+      "titleHint": "道生之，德畜之"
+    },
+    {
+      "id": "ddj-52",
+      "number": 52,
+      "titleHint": "天下有始，以为天下母"
+    },
+    {
+      "id": "ddj-53",
+      "number": 53,
+      "titleHint": "行于大道，唯施是畏"
+    },
+    {
+      "id": "ddj-54",
+      "number": 54,
+      "titleHint": "善建者不拔"
+    },
+    {
+      "id": "ddj-55",
+      "number": 55,
+      "titleHint": "含德之厚，比于赤子"
+    },
+    {
+      "id": "ddj-56",
+      "number": 56,
+      "titleHint": "知者不言，言者不知"
+    },
+    {
+      "id": "ddj-57",
+      "number": 57,
+      "titleHint": "以正治国，以奇用兵"
+    },
+    {
+      "id": "ddj-58",
+      "number": 58,
+      "titleHint": "其政闷闷，其民淳淳"
+    },
+    {
+      "id": "ddj-59",
+      "number": 59,
+      "titleHint": "治人事天，莫若啬"
+    },
+    {
+      "id": "ddj-60",
+      "number": 60,
+      "titleHint": "治大国，若烹小鲜"
+    },
+    {
+      "id": "ddj-61",
+      "number": 61,
+      "titleHint": "大国者下流"
+    },
+    {
+      "id": "ddj-62",
+      "number": 62,
+      "titleHint": "道者，万物之奥"
+    },
+    {
+      "id": "ddj-63",
+      "number": 63,
+      "titleHint": "图难于其易，为大于其细"
+    },
+    {
+      "id": "ddj-64",
+      "number": 64,
+      "titleHint": "千里之行，始于足下"
+    },
+    {
+      "id": "ddj-65",
+      "number": 65,
+      "titleHint": "古之善为道者"
+    },
+    {
+      "id": "ddj-66",
+      "number": 66,
+      "titleHint": "江海所以能为百谷王"
+    },
+    {
+      "id": "ddj-67",
+      "number": 67,
+      "titleHint": "我有三宝：慈、俭、不敢为天下先"
+    },
+    {
+      "id": "ddj-68",
+      "number": 68,
+      "titleHint": "善为士者不武"
+    },
+    {
+      "id": "ddj-69",
+      "number": 69,
+      "titleHint": "用兵有言：不敢为主而为客"
+    },
+    {
+      "id": "ddj-70",
+      "number": 70,
+      "titleHint": "吾言甚易知，甚易行"
+    },
+    {
+      "id": "ddj-71",
+      "number": 71,
+      "titleHint": "知不知，上"
+    },
+    {
+      "id": "ddj-72",
+      "number": 72,
+      "titleHint": "民不畏威，则大威至"
+    },
+    {
+      "id": "ddj-73",
+      "number": 73,
+      "titleHint": "勇于敢则杀"
+    },
+    {
+      "id": "ddj-74",
+      "number": 74,
+      "titleHint": "民不畏死，奈何以死惧之"
+    },
+    {
+      "id": "ddj-75",
+      "number": 75,
+      "titleHint": "民之饥，以其上食税之多"
+    },
+    {
+      "id": "ddj-76",
+      "number": 76,
+      "titleHint": "人之生也柔弱"
+    },
+    {
+      "id": "ddj-77",
+      "number": 77,
+      "titleHint": "天之道，其犹张弓与"
+    },
+    {
+      "id": "ddj-78",
+      "number": 78,
+      "titleHint": "天下莫柔弱于水"
+    },
+    {
+      "id": "ddj-79",
+      "number": 79,
+      "titleHint": "和大怨，必有余怨"
+    },
+    {
+      "id": "ddj-80",
+      "number": 80,
+      "titleHint": "小国寡民"
+    },
+    {
+      "id": "ddj-81",
+      "number": 81,
+      "titleHint": "信言不美，美言不信"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "dao-concept",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "ming",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "ming",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "xuan",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "ziran",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "tianxia",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "tianxia",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "tiandi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "youwu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "wu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "yong",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "kongjian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "rou",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "shui",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "buzheng",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "quanzhi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "quanzhi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "yinger",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "yinger",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "wuwei",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "shengren",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "shengren",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "buxiangjiaor",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "minzixin",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "xiaoguo",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "zhiguoda",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "yongbing",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "zhizu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "quzhi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "tanhua",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "caiwu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "shentui",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "softness-noncontention",
+      "targetType": "concept",
+      "targetId": "shentui",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "fan",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "wuji",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "huofu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "zhijian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "zhijian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "reversal-change",
+      "targetType": "concept",
+      "targetId": "youdao",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "youdao",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "xujing",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "guanzhao",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "yingqi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "baoyi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "tianmen",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "zhiwo",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "pusu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "siyu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "siyu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "ci",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "jian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "jian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "buhou",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "sheng",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "sheng",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "chongxu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "being-nonbeing",
+      "targetType": "concept",
+      "targetId": "chongxu",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "daosheng",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "cultivation-contemplation",
+      "targetType": "concept",
+      "targetId": "se",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "simplicity-kindness",
+      "targetType": "concept",
+      "targetId": "se",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "buhuisi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "dao-nature",
+      "targetType": "concept",
+      "targetId": "buhuisi",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "nonaction-governance",
+      "targetType": "concept",
+      "targetId": "shuilian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "theme_contains_concept",
+      "sourceType": "theme",
+      "sourceId": "contentment-choice",
+      "targetType": "concept",
+      "targetId": "shuilian",
+      "reason": "编辑整理关系：该概念归入此阅读主题。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "道可道，非常道，名可名，非常名；",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-15",
+      "chapterNumber": 15,
+      "quote": "保此道者不欲盈，夫唯不盈，故能蔽不新成。",
+      "offset": 94,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-18",
+      "chapterNumber": 18,
+      "quote": "大道废，有仁义；",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-21",
+      "chapterNumber": 21,
+      "quote": "道之为物，惟恍惟惚。",
+      "offset": 10,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-23",
+      "chapterNumber": 23,
+      "quote": "故从事于道者，道者同于道，德者同于德，失者同于失。",
+      "offset": 39,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-24",
+      "chapterNumber": 24,
+      "quote": "物或恶之，故有道者不处。",
+      "offset": 45,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-31",
+      "chapterNumber": 31,
+      "quote": "夫佳兵者，不祥之器，物或恶之，故有道者不处。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "道常无名，朴虽小，天下莫能臣也。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-34",
+      "chapterNumber": 34,
+      "quote": "大道泛兮，其可左右。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-35",
+      "chapterNumber": 35,
+      "quote": "道之出口，淡乎其无味，视之不足见，听之不足闻，用之不足既。",
+      "offset": 25,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "道常无为而无不为。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-38",
+      "chapterNumber": 38,
+      "quote": "前识者，道之华，而愚之始。",
+      "offset": 112,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-40",
+      "chapterNumber": 40,
+      "quote": "反者道之动，弱者道之用。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-46",
+      "chapterNumber": 46,
+      "quote": "天下有道，却走马以粪。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-47",
+      "chapterNumber": 47,
+      "quote": "不窥牖，见天道。",
+      "offset": 8,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-51",
+      "chapterNumber": 51,
+      "quote": "道之尊，德之贵，夫莫之命而常自然。",
+      "offset": 28,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-53",
+      "chapterNumber": 53,
+      "quote": "使我介然有知，行于大道，唯施是畏。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-62",
+      "chapterNumber": 62,
+      "quote": "道者万物之奥。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-65",
+      "chapterNumber": 65,
+      "quote": "古之善为道者，非以明民，将以愚之。",
+      "offset": 0,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-77",
+      "chapterNumber": 77,
+      "quote": "唯有道者。",
+      "offset": 68,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-79",
+      "chapterNumber": 79,
+      "quote": "天道无亲，常与善人。",
+      "offset": 39,
+      "reason": "原文出现「道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ming",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "道可道，非常道，名可名，非常名；",
+      "offset": 0,
+      "reason": "原文出现「名」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ming",
+      "targetType": "chapter",
+      "targetId": "ddj-14",
+      "chapterNumber": 14,
+      "quote": "绳绳不可名，复归于无物。",
+      "offset": 49,
+      "reason": "原文出现「名」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ming",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "道常无名，朴虽小，天下莫能臣也。",
+      "offset": 0,
+      "reason": "原文出现「名」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ming",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "化而欲作，吾将镇之以无名之朴。",
+      "offset": 22,
+      "reason": "原文出现「名」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ming",
+      "targetType": "chapter",
+      "targetId": "ddj-41",
+      "chapterNumber": 41,
+      "quote": "故建言有之：明道若昧，進道若退，夷道若纇，上德若谷，大白若辱，广德若不足，建德若偷，质真若渝，大方无隅，大器晚成，大音希声，大象无形，道隐无名。",
+      "offset": 37,
+      "reason": "原文出现「名」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xuan",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "此两者，同出而异名，同谓之玄。",
+      "offset": 51,
+      "reason": "原文出现「玄」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xuan",
+      "targetType": "chapter",
+      "targetId": "ddj-06",
+      "chapterNumber": 6,
+      "quote": "谷神不死，是谓玄牝。",
+      "offset": 0,
+      "reason": "原文出现「玄」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xuan",
+      "targetType": "chapter",
+      "targetId": "ddj-15",
+      "chapterNumber": 15,
+      "quote": "古之善为士者，微妙玄通，深不可识。",
+      "offset": 0,
+      "reason": "原文出现「玄」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ziran",
+      "targetType": "chapter",
+      "targetId": "ddj-17",
+      "chapterNumber": 17,
+      "quote": "悠兮其贵言，功成事遂，百姓皆谓：我自然。",
+      "offset": 38,
+      "reason": "原文出现「自然」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ziran",
+      "targetType": "chapter",
+      "targetId": "ddj-23",
+      "chapterNumber": 23,
+      "quote": "希言自然。",
+      "offset": 0,
+      "reason": "原文出现「自然」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ziran",
+      "targetType": "chapter",
+      "targetId": "ddj-25",
+      "chapterNumber": 25,
+      "quote": "人法地，地法天，天法道，道法自然。",
+      "offset": 91,
+      "reason": "原文出现「自然」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ziran",
+      "targetType": "chapter",
+      "targetId": "ddj-51",
+      "chapterNumber": 51,
+      "quote": "道之尊，德之贵，夫莫之命而常自然。",
+      "offset": 28,
+      "reason": "原文出现「自然」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ziran",
+      "targetType": "chapter",
+      "targetId": "ddj-64",
+      "chapterNumber": 64,
+      "quote": "以辅万物之自然，而不敢为。",
+      "offset": 138,
+      "reason": "原文出现「自然」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "天下皆知美之为美，斯恶已。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-13",
+      "chapterNumber": 13,
+      "quote": "故贵以身为天下，若可寄天下；",
+      "offset": 70,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-22",
+      "chapterNumber": 22,
+      "quote": "是以圣人抱一为天下式。",
+      "offset": 24,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-25",
+      "chapterNumber": 25,
+      "quote": "寂兮寥兮，独立而不改，周行而不殆，可以为天下母。",
+      "offset": 10,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-26",
+      "chapterNumber": 26,
+      "quote": "奈何万乘之主，而以身轻天下？",
+      "offset": 32,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-28",
+      "chapterNumber": 28,
+      "quote": "知其雄，守其雌，为天下溪。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-29",
+      "chapterNumber": 29,
+      "quote": "将欲取天下而为之，吾见其不得已。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-30",
+      "chapterNumber": 30,
+      "quote": "以道佐人主者，不以兵强天下。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-31",
+      "chapterNumber": 31,
+      "quote": "夫乐杀人者，则不可以得志于天下矣。",
+      "offset": 75,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "道常无名，朴虽小，天下莫能臣也。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-35",
+      "chapterNumber": 35,
+      "quote": "执大象，天下往。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "不欲以静，天下将自定。",
+      "offset": 48,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-39",
+      "chapterNumber": 39,
+      "quote": "昔之得一者，天得一以清，地得一以宁，神得一以灵，谷得一以盈，万物得一以生，侯王得一以为天下贞。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-40",
+      "chapterNumber": 40,
+      "quote": "天下万物生于有，有生于无。",
+      "offset": 12,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-43",
+      "chapterNumber": 43,
+      "quote": "天下之至柔，驰骋天下之至坚。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-45",
+      "chapterNumber": 45,
+      "quote": "清静为天下正。",
+      "offset": 58,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-46",
+      "chapterNumber": 46,
+      "quote": "天下有道，却走马以粪。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-47",
+      "chapterNumber": 47,
+      "quote": "不出户，知天下；",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-48",
+      "chapterNumber": 48,
+      "quote": "取天下常以无事，及其有事，不足以取天下。",
+      "offset": 28,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-49",
+      "chapterNumber": 49,
+      "quote": "圣人在天下歙歙，为天下浑其心，百姓皆注其耳目,圣人皆孩之。",
+      "offset": 51,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-52",
+      "chapterNumber": 52,
+      "quote": "天下有始，以为天下母。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-54",
+      "chapterNumber": 54,
+      "quote": "修之于天下，其德乃普。",
+      "offset": 60,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-56",
+      "chapterNumber": 56,
+      "quote": "故为天下贵。",
+      "offset": 76,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-57",
+      "chapterNumber": 57,
+      "quote": "以正治国，以奇用兵，以无事取天下。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-60",
+      "chapterNumber": 60,
+      "quote": "以道莅天下，其鬼不神；",
+      "offset": 9,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-61",
+      "chapterNumber": 61,
+      "quote": "大国者下流，天下之交。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-62",
+      "chapterNumber": 62,
+      "quote": "故为天下贵。",
+      "offset": 89,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-63",
+      "chapterNumber": 63,
+      "quote": "天下难事必作于易，天下大事必作于细。",
+      "offset": 34,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-66",
+      "chapterNumber": 66,
+      "quote": "是以天下乐推而不厌，以其不争，故天下莫能与之争。",
+      "offset": 64,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-67",
+      "chapterNumber": 67,
+      "quote": "天下皆谓我道大，似不肖。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-70",
+      "chapterNumber": 70,
+      "quote": "天下莫能知，莫能行。",
+      "offset": 10,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-77",
+      "chapterNumber": 77,
+      "quote": "孰能有余以奉天下？",
+      "offset": 59,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianxia",
+      "targetType": "chapter",
+      "targetId": "ddj-78",
+      "chapterNumber": 78,
+      "quote": "天下莫柔弱于水，而攻坚强者，莫之能胜，其无以易之。",
+      "offset": 0,
+      "reason": "原文出现「天下」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "无名，天地之始，有名，万物之母。",
+      "offset": 16,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-05",
+      "chapterNumber": 5,
+      "quote": "天地不仁，以万物为刍狗；",
+      "offset": 0,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-06",
+      "chapterNumber": 6,
+      "quote": "玄牝之门，是谓天地根。",
+      "offset": 10,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-07",
+      "chapterNumber": 7,
+      "quote": "天地所以能长且久者，以其不自生，故能长生。",
+      "offset": 5,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-23",
+      "chapterNumber": 23,
+      "quote": "天地。",
+      "offset": 23,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-25",
+      "chapterNumber": 25,
+      "quote": "有物混成，先天地生。",
+      "offset": 0,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "天地相合，以降甘露，民莫之令而自均。",
+      "offset": 29,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tiandi",
+      "targetType": "chapter",
+      "targetId": "ddj-81",
+      "chapterNumber": 81,
+      "quote": "其言仁义与礼，不能自用，必待道以用之，天地万物各得于一，岂特有功于老子哉。",
+      "offset": 98,
+      "reason": "原文出现「天地」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "youwu",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "故有无相生，难易相成，长短相较，高下相倾，音声相和，前后相随。",
+      "offset": 25,
+      "reason": "原文出现「有无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "youwu",
+      "targetType": "chapter",
+      "targetId": "ddj-11",
+      "chapterNumber": 11,
+      "quote": "三十輻共一轂，当其无，有车之用。",
+      "offset": 0,
+      "reason": "原文出现「有无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "youwu",
+      "targetType": "chapter",
+      "targetId": "ddj-40",
+      "chapterNumber": 40,
+      "quote": "天下万物生于有，有生于无。",
+      "offset": 12,
+      "reason": "原文出现「有无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "无名，天地之始，有名，万物之母。",
+      "offset": 16,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "故有无相生，难易相成，长短相较，高下相倾，音声相和，前后相随。",
+      "offset": 25,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-11",
+      "chapterNumber": 11,
+      "quote": "三十輻共一轂，当其无，有车之用。",
+      "offset": 0,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "道常无名，朴虽小，天下莫能臣也。",
+      "offset": 0,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "化而欲作，吾将镇之以无名之朴。",
+      "offset": 22,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-40",
+      "chapterNumber": 40,
+      "quote": "天下万物生于有，有生于无。",
+      "offset": 12,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wu",
+      "targetType": "chapter",
+      "targetId": "ddj-41",
+      "chapterNumber": 41,
+      "quote": "故建言有之：明道若昧，進道若退，夷道若纇，上德若谷，大白若辱，广德若不足，建德若偷，质真若渝，大方无隅，大器晚成，大音希声，大象无形，道隐无名。",
+      "offset": 37,
+      "reason": "原文出现「无」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yong",
+      "targetType": "chapter",
+      "targetId": "ddj-11",
+      "chapterNumber": 11,
+      "quote": "三十輻共一轂，当其无，有车之用。",
+      "offset": 0,
+      "reason": "原文出现「器用」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "kongjian",
+      "targetType": "chapter",
+      "targetId": "ddj-11",
+      "chapterNumber": 11,
+      "quote": "三十輻共一轂，当其无，有车之用。",
+      "offset": 0,
+      "reason": "原文出现「空间」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "专气致柔，能婴兒乎？",
+      "offset": 11,
+      "reason": "原文出现「柔弱」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-36",
+      "chapterNumber": 36,
+      "quote": "柔弱胜刚强。",
+      "offset": 45,
+      "reason": "原文出现「柔弱」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-76",
+      "chapterNumber": 76,
+      "quote": "人之生也柔弱，其死也坚强。",
+      "offset": 0,
+      "reason": "原文出现「柔弱」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-78",
+      "chapterNumber": 78,
+      "quote": "天下莫柔弱于水，而攻坚强者，莫之能胜，其无以易之。",
+      "offset": 0,
+      "reason": "原文出现「柔弱」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shui",
+      "targetType": "chapter",
+      "targetId": "ddj-08",
+      "chapterNumber": 8,
+      "quote": "上善若水。",
+      "offset": 0,
+      "reason": "原文出现「水」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shui",
+      "targetType": "chapter",
+      "targetId": "ddj-78",
+      "chapterNumber": 78,
+      "quote": "天下莫柔弱于水，而攻坚强者，莫之能胜，其无以易之。",
+      "offset": 0,
+      "reason": "原文出现「水」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-03",
+      "chapterNumber": 3,
+      "quote": "不尚贤，使民不争；",
+      "offset": 0,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-08",
+      "chapterNumber": 8,
+      "quote": "水善利万物而不争，处众人之所恶，故几于道。",
+      "offset": 5,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-22",
+      "chapterNumber": 22,
+      "quote": "夫唯不争，故天下莫能与之争。",
+      "offset": 60,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-66",
+      "chapterNumber": 66,
+      "quote": "是以天下乐推而不厌，以其不争，故天下莫能与之争。",
+      "offset": 64,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-68",
+      "chapterNumber": 68,
+      "quote": "善为士者不武，善战者不怒，善胜敌者不与，善用人者为之下，是谓不争之德，是谓用人之力，是谓配天古之极。",
+      "offset": 0,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-73",
+      "chapterNumber": 73,
+      "quote": "天之道，不争而善胜，不言而善应，不召而自来，繟然而善谋。",
+      "offset": 40,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buzheng",
+      "targetType": "chapter",
+      "targetId": "ddj-81",
+      "chapterNumber": 81,
+      "quote": "圣人之道，为而不争。",
+      "offset": 60,
+      "reason": "原文出现「不争」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "quanzhi",
+      "targetType": "chapter",
+      "targetId": "ddj-22",
+      "chapterNumber": 22,
+      "quote": "曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。",
+      "offset": 0,
+      "reason": "原文出现「曲全」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yinger",
+      "targetType": "chapter",
+      "targetId": "ddj-55",
+      "chapterNumber": 55,
+      "quote": "含德之厚，比于赤子。",
+      "offset": 0,
+      "reason": "原文出现「婴儿」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "是以圣人处无为之事，行不言之教；",
+      "offset": 56,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-03",
+      "chapterNumber": 3,
+      "quote": "为无为，则无不治。",
+      "offset": 73,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "明白四达，能无为乎？",
+      "offset": 51,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "道常无为而无不为。",
+      "offset": 0,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-38",
+      "chapterNumber": 38,
+      "quote": "上德无为而无以为，下德为之而有以为。",
+      "offset": 21,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-43",
+      "chapterNumber": 43,
+      "quote": "无有入无间，吾是以知无为之有益。",
+      "offset": 14,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-48",
+      "chapterNumber": 48,
+      "quote": "损之又损，以至于无为。",
+      "offset": 10,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-57",
+      "chapterNumber": 57,
+      "quote": "故圣人云：「我无为而民自化，我好静而民自正，我无事而民自富，我无欲而民自朴。",
+      "offset": 69,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-63",
+      "chapterNumber": 63,
+      "quote": "为无为，事无事，味无味。",
+      "offset": 0,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-64",
+      "chapterNumber": 64,
+      "quote": "是以圣人无为故无败，无执故无失。",
+      "offset": 73,
+      "reason": "原文出现「无为」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "是以圣人处无为之事，行不言之教；",
+      "offset": 56,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-03",
+      "chapterNumber": 3,
+      "quote": "是以圣人之治，虚其心，实其腹，弱其志，强其骨。",
+      "offset": 33,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-05",
+      "chapterNumber": 5,
+      "quote": "圣人不仁，以百姓为刍狗。",
+      "offset": 12,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-07",
+      "chapterNumber": 7,
+      "quote": "是以圣人后其身而身先；",
+      "offset": 26,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-12",
+      "chapterNumber": 12,
+      "quote": "是以圣人为腹不为目，故去彼取此。",
+      "offset": 40,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-22",
+      "chapterNumber": 22,
+      "quote": "是以圣人抱一为天下式。",
+      "offset": 24,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-26",
+      "chapterNumber": 26,
+      "quote": "是以圣人终日行不离辎重。",
+      "offset": 10,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-27",
+      "chapterNumber": 27,
+      "quote": "是以圣人常善救人，故无弃人；",
+      "offset": 39,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-28",
+      "chapterNumber": 28,
+      "quote": "朴散则为器，圣人用之，则为官长，故大制不割。",
+      "offset": 81,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-29",
+      "chapterNumber": 29,
+      "quote": "是以圣人去甚，去奢，去泰。",
+      "offset": 58,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-47",
+      "chapterNumber": 47,
+      "quote": "是以圣人不行而知，不见而名，不为而成。",
+      "offset": 26,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-49",
+      "chapterNumber": 49,
+      "quote": "圣人无常心，以百姓心为心。",
+      "offset": 0,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-57",
+      "chapterNumber": 57,
+      "quote": "故圣人云：「我无为而民自化，我好静而民自正，我无事而民自富，我无欲而民自朴。",
+      "offset": 69,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-58",
+      "chapterNumber": 58,
+      "quote": "是以圣人方而不割，廉而不刿，直而不肆，光而不耀。",
+      "offset": 62,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-60",
+      "chapterNumber": 60,
+      "quote": "非其神不伤人，圣人亦不伤人。",
+      "offset": 32,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-63",
+      "chapterNumber": 63,
+      "quote": "是以圣人终不为大，故能成其大。",
+      "offset": 52,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-64",
+      "chapterNumber": 64,
+      "quote": "是以圣人无为故无败，无执故无失。",
+      "offset": 73,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-66",
+      "chapterNumber": 66,
+      "quote": "是以圣人处上而民不重，处前而民不害。",
+      "offset": 46,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-70",
+      "chapterNumber": 70,
+      "quote": "是以圣人被褐怀玉。",
+      "offset": 49,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-71",
+      "chapterNumber": 71,
+      "quote": "圣人不病，以其病病，是以不病。",
+      "offset": 20,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-72",
+      "chapterNumber": 72,
+      "quote": "是以圣人自知不自见，自爱不自贵；",
+      "offset": 32,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-73",
+      "chapterNumber": 73,
+      "quote": "是以圣人犹难之。",
+      "offset": 32,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-77",
+      "chapterNumber": 77,
+      "quote": "是以圣人为而不恃，功成而不处，其不欲见贤。",
+      "offset": 73,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-78",
+      "chapterNumber": 78,
+      "quote": "是以圣人云：「受国之垢，是谓社稷主；",
+      "offset": 44,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-79",
+      "chapterNumber": 79,
+      "quote": "是以圣人执左契，而不责于人。",
+      "offset": 15,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shengren",
+      "targetType": "chapter",
+      "targetId": "ddj-81",
+      "chapterNumber": 81,
+      "quote": "圣人不积，既以为人己愈有，既以与人己愈多。",
+      "offset": 30,
+      "reason": "原文出现「圣人」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buxiangjiaor",
+      "targetType": "chapter",
+      "targetId": "ddj-02",
+      "chapterNumber": 2,
+      "quote": "是以圣人处无为之事，行不言之教；",
+      "offset": 56,
+      "reason": "原文出现「不言而教」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buxiangjiaor",
+      "targetType": "chapter",
+      "targetId": "ddj-17",
+      "chapterNumber": 17,
+      "quote": "悠兮其贵言，功成事遂，百姓皆谓：我自然。",
+      "offset": 38,
+      "reason": "原文出现「不言而教」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buxiangjiaor",
+      "targetType": "chapter",
+      "targetId": "ddj-23",
+      "chapterNumber": 23,
+      "quote": "希言自然。",
+      "offset": 0,
+      "reason": "原文出现「不言而教」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "minzixin",
+      "targetType": "chapter",
+      "targetId": "ddj-03",
+      "chapterNumber": 3,
+      "quote": "不见可欲，使民心不乱。",
+      "offset": 22,
+      "reason": "原文出现「民心」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "minzixin",
+      "targetType": "chapter",
+      "targetId": "ddj-05",
+      "chapterNumber": 5,
+      "quote": "圣人不仁，以百姓为刍狗。",
+      "offset": 12,
+      "reason": "原文出现「民心」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "minzixin",
+      "targetType": "chapter",
+      "targetId": "ddj-17",
+      "chapterNumber": 17,
+      "quote": "悠兮其贵言，功成事遂，百姓皆谓：我自然。",
+      "offset": 38,
+      "reason": "原文出现「民心」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "minzixin",
+      "targetType": "chapter",
+      "targetId": "ddj-49",
+      "chapterNumber": 49,
+      "quote": "圣人无常心，以百姓心为心。",
+      "offset": 0,
+      "reason": "原文出现「民心」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xiaoguo",
+      "targetType": "chapter",
+      "targetId": "ddj-80",
+      "chapterNumber": 80,
+      "quote": "小国寡民，使有什伯之器而不用，使民重死而不远徙。",
+      "offset": 0,
+      "reason": "原文出现「小国寡民」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yongbing",
+      "targetType": "chapter",
+      "targetId": "ddj-31",
+      "chapterNumber": 31,
+      "quote": "夫佳兵者，不祥之器，物或恶之，故有道者不处。",
+      "offset": 0,
+      "reason": "原文出现「用兵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yongbing",
+      "targetType": "chapter",
+      "targetId": "ddj-57",
+      "chapterNumber": 57,
+      "quote": "以正治国，以奇用兵，以无事取天下。",
+      "offset": 0,
+      "reason": "原文出现「用兵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yongbing",
+      "targetType": "chapter",
+      "targetId": "ddj-68",
+      "chapterNumber": 68,
+      "quote": "善为士者不武，善战者不怒，善胜敌者不与，善用人者为之下，是谓不争之德，是谓用人之力，是谓配天古之极。",
+      "offset": 0,
+      "reason": "原文出现「用兵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yongbing",
+      "targetType": "chapter",
+      "targetId": "ddj-69",
+      "chapterNumber": 69,
+      "quote": "用兵有言：「吾不敢为主而为客，不敢進寸而退尺。",
+      "offset": 0,
+      "reason": "原文出现「用兵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yongbing",
+      "targetType": "chapter",
+      "targetId": "ddj-81",
+      "chapterNumber": 81,
+      "quote": "弼知佳兵者不祥之器，至于战胜，以丧礼处之，非老子之言，乃不知常善救人，故无弃人；",
+      "offset": 208,
+      "reason": "原文出现「用兵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhizu",
+      "targetType": "chapter",
+      "targetId": "ddj-33",
+      "chapterNumber": 33,
+      "quote": "知足者富。",
+      "offset": 21,
+      "reason": "原文出现「知足」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhizu",
+      "targetType": "chapter",
+      "targetId": "ddj-44",
+      "chapterNumber": 44,
+      "quote": "是故甚爱必大费，多藏必厚亡，知足不辱，知止不殆，可以长久。",
+      "offset": 18,
+      "reason": "原文出现「知足」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhizu",
+      "targetType": "chapter",
+      "targetId": "ddj-46",
+      "chapterNumber": 46,
+      "quote": "祸莫大于不知足；",
+      "offset": 22,
+      "reason": "原文出现「知足」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "quzhi",
+      "targetType": "chapter",
+      "targetId": "ddj-12",
+      "chapterNumber": 12,
+      "quote": "是以圣人为腹不为目，故去彼取此。",
+      "offset": 40,
+      "reason": "原文出现「取舍」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "quzhi",
+      "targetType": "chapter",
+      "targetId": "ddj-29",
+      "chapterNumber": 29,
+      "quote": "是以圣人去甚，去奢，去泰。",
+      "offset": 58,
+      "reason": "原文出现「取舍」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "quzhi",
+      "targetType": "chapter",
+      "targetId": "ddj-38",
+      "chapterNumber": 38,
+      "quote": "故去彼取此。",
+      "offset": 148,
+      "reason": "原文出现「取舍」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "quzhi",
+      "targetType": "chapter",
+      "targetId": "ddj-72",
+      "chapterNumber": 72,
+      "quote": "故去彼取此。",
+      "offset": 48,
+      "reason": "原文出现「取舍」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tanhua",
+      "targetType": "chapter",
+      "targetId": "ddj-03",
+      "chapterNumber": 3,
+      "quote": "不贵难得之货，使民不为盗；",
+      "offset": 9,
+      "reason": "原文出现「难得之货」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tanhua",
+      "targetType": "chapter",
+      "targetId": "ddj-12",
+      "chapterNumber": 12,
+      "quote": "五色令人目盲，五音令人耳聋，五味令人口爽，驰骋畋猎令人心发狂，难得之货令人行妨。",
+      "offset": 0,
+      "reason": "原文出现「难得之货」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tanhua",
+      "targetType": "chapter",
+      "targetId": "ddj-64",
+      "chapterNumber": 64,
+      "quote": "是以圣人欲不欲，不贵难得之货；",
+      "offset": 112,
+      "reason": "原文出现「难得之货」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "caiwu",
+      "targetType": "chapter",
+      "targetId": "ddj-09",
+      "chapterNumber": 9,
+      "quote": "金玉满堂，莫之能守；",
+      "offset": 20,
+      "reason": "原文出现「富贵」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shentui",
+      "targetType": "chapter",
+      "targetId": "ddj-09",
+      "chapterNumber": 9,
+      "quote": "功遂身退，天之道。",
+      "offset": 40,
+      "reason": "原文出现「身退」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "fan",
+      "targetType": "chapter",
+      "targetId": "ddj-40",
+      "chapterNumber": 40,
+      "quote": "反者道之动，弱者道之用。",
+      "offset": 0,
+      "reason": "原文出现「反」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuji",
+      "targetType": "chapter",
+      "targetId": "ddj-09",
+      "chapterNumber": 9,
+      "quote": "持而盈之，不如其已；",
+      "offset": 0,
+      "reason": "原文出现「物极必反」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuji",
+      "targetType": "chapter",
+      "targetId": "ddj-30",
+      "chapterNumber": 30,
+      "quote": "物壮则老，是谓不道，不道早已。",
+      "offset": 77,
+      "reason": "原文出现「物极必反」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuji",
+      "targetType": "chapter",
+      "targetId": "ddj-44",
+      "chapterNumber": 44,
+      "quote": "是故甚爱必大费，多藏必厚亡，知足不辱，知止不殆，可以长久。",
+      "offset": 18,
+      "reason": "原文出现「物极必反」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuji",
+      "targetType": "chapter",
+      "targetId": "ddj-55",
+      "chapterNumber": 55,
+      "quote": "物壮则老，谓之不道，不道早已。",
+      "offset": 83,
+      "reason": "原文出现「物极必反」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "huofu",
+      "targetType": "chapter",
+      "targetId": "ddj-46",
+      "chapterNumber": 46,
+      "quote": "祸莫大于不知足；",
+      "offset": 22,
+      "reason": "原文出现「祸福」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "huofu",
+      "targetType": "chapter",
+      "targetId": "ddj-69",
+      "chapterNumber": 69,
+      "quote": "祸莫大于轻敌，轻敌几丧吾宝。",
+      "offset": 42,
+      "reason": "原文出现「祸福」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhijian",
+      "targetType": "chapter",
+      "targetId": "ddj-33",
+      "chapterNumber": 33,
+      "quote": "知人者智，自知者明。",
+      "offset": 0,
+      "reason": "原文出现「知见」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhijian",
+      "targetType": "chapter",
+      "targetId": "ddj-56",
+      "chapterNumber": 56,
+      "quote": "知者不言，言者不知。",
+      "offset": 0,
+      "reason": "原文出现「知见」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhijian",
+      "targetType": "chapter",
+      "targetId": "ddj-71",
+      "chapterNumber": 71,
+      "quote": "知不知上，不知知病。",
+      "offset": 0,
+      "reason": "原文出现「知见」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhijian",
+      "targetType": "chapter",
+      "targetId": "ddj-72",
+      "chapterNumber": 72,
+      "quote": "是以圣人自知不自见，自爱不自贵；",
+      "offset": 32,
+      "reason": "原文出现「知见」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "youdao",
+      "targetType": "chapter",
+      "targetId": "ddj-46",
+      "chapterNumber": 46,
+      "quote": "天下有道，却走马以粪。",
+      "offset": 0,
+      "reason": "原文出现「有道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "youdao",
+      "targetType": "chapter",
+      "targetId": "ddj-64",
+      "chapterNumber": 64,
+      "quote": "为之于未有，治之于未乱。",
+      "offset": 21,
+      "reason": "原文出现「有道」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xujing",
+      "targetType": "chapter",
+      "targetId": "ddj-05",
+      "chapterNumber": 5,
+      "quote": "虚而不屈，动而愈出。",
+      "offset": 35,
+      "reason": "原文出现「虚静」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xujing",
+      "targetType": "chapter",
+      "targetId": "ddj-16",
+      "chapterNumber": 16,
+      "quote": "致虚极，守静笃。",
+      "offset": 0,
+      "reason": "原文出现「虚静」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "xujing",
+      "targetType": "chapter",
+      "targetId": "ddj-26",
+      "chapterNumber": 26,
+      "quote": "重为轻根，静为躁君。",
+      "offset": 0,
+      "reason": "原文出现「虚静」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "guanzhao",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "涤除玄览，能无疵乎？",
+      "offset": 21,
+      "reason": "原文出现「观照」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "guanzhao",
+      "targetType": "chapter",
+      "targetId": "ddj-16",
+      "chapterNumber": 16,
+      "quote": "致虚极，守静笃。",
+      "offset": 0,
+      "reason": "原文出现「观照」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "yingqi",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "专气致柔，能婴兒乎？",
+      "offset": 11,
+      "reason": "原文出现「专气」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "baoyi",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "载营魄抱一，能无离乎？",
+      "offset": 0,
+      "reason": "原文出现「抱一」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "baoyi",
+      "targetType": "chapter",
+      "targetId": "ddj-22",
+      "chapterNumber": 22,
+      "quote": "是以圣人抱一为天下式。",
+      "offset": 24,
+      "reason": "原文出现「抱一」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "tianmen",
+      "targetType": "chapter",
+      "targetId": "ddj-10",
+      "chapterNumber": 10,
+      "quote": "天门开阖，能为雌乎？",
+      "offset": 41,
+      "reason": "原文出现「天门」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhiwo",
+      "targetType": "chapter",
+      "targetId": "ddj-33",
+      "chapterNumber": 33,
+      "quote": "知人者智，自知者明。",
+      "offset": 0,
+      "reason": "原文出现「自知」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhiwo",
+      "targetType": "chapter",
+      "targetId": "ddj-72",
+      "chapterNumber": 72,
+      "quote": "是以圣人自知不自见，自爱不自贵；",
+      "offset": 32,
+      "reason": "原文出现「自知」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "pusu",
+      "targetType": "chapter",
+      "targetId": "ddj-19",
+      "chapterNumber": 19,
+      "quote": "绝圣弃智，民利百倍；",
+      "offset": 0,
+      "reason": "原文出现「朴素」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "pusu",
+      "targetType": "chapter",
+      "targetId": "ddj-20",
+      "chapterNumber": 20,
+      "quote": "绝学无忧，唯之与阿，相去几何？",
+      "offset": 0,
+      "reason": "原文出现「朴素」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "siyu",
+      "targetType": "chapter",
+      "targetId": "ddj-19",
+      "chapterNumber": 19,
+      "quote": "此三者以为文不足，故令有所属：见素抱朴，少私寡欲。",
+      "offset": 30,
+      "reason": "原文出现「私欲」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "siyu",
+      "targetType": "chapter",
+      "targetId": "ddj-37",
+      "chapterNumber": 37,
+      "quote": "不欲以静，天下将自定。",
+      "offset": 48,
+      "reason": "原文出现「私欲」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "siyu",
+      "targetType": "chapter",
+      "targetId": "ddj-57",
+      "chapterNumber": 57,
+      "quote": "故圣人云：「我无为而民自化，我好静而民自正，我无事而民自富，我无欲而民自朴。",
+      "offset": 69,
+      "reason": "原文出现「私欲」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "ci",
+      "targetType": "chapter",
+      "targetId": "ddj-67",
+      "chapterNumber": 67,
+      "quote": "我有三宝，持而保之。",
+      "offset": 31,
+      "reason": "原文出现「慈」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "jian",
+      "targetType": "chapter",
+      "targetId": "ddj-29",
+      "chapterNumber": 29,
+      "quote": "是以圣人去甚，去奢，去泰。",
+      "offset": 58,
+      "reason": "原文出现「俭」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "jian",
+      "targetType": "chapter",
+      "targetId": "ddj-67",
+      "chapterNumber": 67,
+      "quote": "一曰慈，二曰俭，三曰不敢为天下先。",
+      "offset": 41,
+      "reason": "原文出现「俭」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buhou",
+      "targetType": "chapter",
+      "targetId": "ddj-67",
+      "chapterNumber": 67,
+      "quote": "一曰慈，二曰俭，三曰不敢为天下先。",
+      "offset": 41,
+      "reason": "原文出现「不敢为天下先」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "sheng",
+      "targetType": "chapter",
+      "targetId": "ddj-50",
+      "chapterNumber": 50,
+      "quote": "出生入死。",
+      "offset": 0,
+      "reason": "原文出现「生死」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "chongxu",
+      "targetType": "chapter",
+      "targetId": "ddj-04",
+      "chapterNumber": 4,
+      "quote": "道冲而用之或不盈，渊兮似万物之宗；",
+      "offset": 0,
+      "reason": "原文出现「冲虚」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "daosheng",
+      "targetType": "chapter",
+      "targetId": "ddj-42",
+      "chapterNumber": 42,
+      "quote": "道生一，一生二，二生三，三生万物。",
+      "offset": 0,
+      "reason": "原文出现「道生万物」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "daosheng",
+      "targetType": "chapter",
+      "targetId": "ddj-51",
+      "chapterNumber": 51,
+      "quote": "道生之，德畜之，物形之，勢成之。",
+      "offset": 0,
+      "reason": "原文出现「道生万物」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "se",
+      "targetType": "chapter",
+      "targetId": "ddj-59",
+      "chapterNumber": 59,
+      "quote": "治人事天，莫若啬。",
+      "offset": 0,
+      "reason": "原文出现「啬」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buhuisi",
+      "targetType": "chapter",
+      "targetId": "ddj-74",
+      "chapterNumber": 74,
+      "quote": "民不畏死，奈何以死惧之？",
+      "offset": 0,
+      "reason": "原文出现「不畏死」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "buhuisi",
+      "targetType": "chapter",
+      "targetId": "ddj-75",
+      "chapterNumber": 75,
+      "quote": "夫唯无以生为者，是贤于贵生。",
+      "offset": 51,
+      "reason": "原文出现「不畏死」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shuilian",
+      "targetType": "chapter",
+      "targetId": "ddj-65",
+      "chapterNumber": 65,
+      "quote": "民之难治，以其智多。",
+      "offset": 17,
+      "reason": "原文出现「税敛」相关用词。"
+    },
+    {
+      "type": "concept_appears_in_chapter",
+      "sourceType": "concept",
+      "sourceId": "shuilian",
+      "targetType": "chapter",
+      "targetId": "ddj-75",
+      "chapterNumber": 75,
+      "quote": "民之饥，以其上食税之多，是以饥。",
+      "offset": 0,
+      "reason": "原文出现「税敛」相关用词。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "fan",
+      "targetType": "chapter",
+      "targetId": "ddj-09",
+      "chapterNumber": 9,
+      "quote": "持而盈之，不如其已；",
+      "offset": 0,
+      "reason": "物壮则老、大曰逝逝曰远等语境支持「反者道之动」的变易观。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "fan",
+      "targetType": "chapter",
+      "targetId": "ddj-58",
+      "chapterNumber": 58,
+      "quote": "其政闷闷，其民淳淳；",
+      "offset": 0,
+      "reason": "物壮则老、大曰逝逝曰远等语境支持「反者道之动」的变易观。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "wuwei",
+      "targetType": "chapter",
+      "targetId": "ddj-17",
+      "chapterNumber": 17,
+      "quote": "太上，下知有之，其次，亲而誉之，其次，畏之，其次，侮之。",
+      "offset": 0,
+      "reason": "圣人以无为事主，民自化、自正、自富、自朴。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-43",
+      "chapterNumber": 43,
+      "quote": "天下之至柔，驰骋天下之至坚。",
+      "offset": 0,
+      "reason": "天下之至柔驰骋天下之至坚；受国之垢、受国不祥以柔承负。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "rou",
+      "targetType": "chapter",
+      "targetId": "ddj-55",
+      "chapterNumber": 55,
+      "quote": "含德之厚，比于赤子。",
+      "offset": 0,
+      "reason": "天下之至柔驰骋天下之至坚；受国之垢、受国不祥以柔承负。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "pusu",
+      "targetType": "chapter",
+      "targetId": "ddj-28",
+      "chapterNumber": 28,
+      "quote": "知其雄，守其雌，为天下溪。",
+      "offset": 0,
+      "reason": "绝圣弃智、见素抱朴、朴散则为器等语境支持朴素主题。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "pusu",
+      "targetType": "chapter",
+      "targetId": "ddj-32",
+      "chapterNumber": 32,
+      "quote": "道常无名，朴虽小，天下莫能臣也。",
+      "offset": 0,
+      "reason": "绝圣弃智、见素抱朴、朴散则为器等语境支持朴素主题。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "xujing",
+      "targetType": "chapter",
+      "targetId": "ddj-15",
+      "chapterNumber": 15,
+      "quote": "古之善为士者，微妙玄通，深不可识。",
+      "offset": 0,
+      "reason": "致虚极守静笃、归根曰静、静为躁君的语境支持虚静修养。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-14",
+      "chapterNumber": 14,
+      "quote": "视之不见名曰夷，听之不闻名曰希，搏之不得名曰微。",
+      "offset": 0,
+      "reason": "视之不见、大象无形、道法自然等语境直接论道。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "dao-concept",
+      "targetType": "chapter",
+      "targetId": "ddj-25",
+      "chapterNumber": 25,
+      "quote": "有物混成，先天地生。",
+      "offset": 0,
+      "reason": "视之不见、大象无形、道法自然等语境直接论道。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "youwu",
+      "targetType": "chapter",
+      "targetId": "ddj-01",
+      "chapterNumber": 1,
+      "quote": "道可道，非常道，名可名，非常名；",
+      "offset": 0,
+      "reason": "无名有名、有无相生、有之以为利的语境支持有无主题。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhiwo",
+      "targetType": "chapter",
+      "targetId": "ddj-24",
+      "chapterNumber": 24,
+      "quote": "企者不立，跨者不行，自见者不明，自是者不彰，自伐者无功，自矜者不长。",
+      "offset": 0,
+      "reason": "自胜者强、自知者明的语境支持修身观照。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhiwo",
+      "targetType": "chapter",
+      "targetId": "ddj-30",
+      "chapterNumber": 30,
+      "quote": "以道佐人主者，不以兵强天下。",
+      "offset": 0,
+      "reason": "自胜者强、自知者明的语境支持修身观照。"
+    },
+    {
+      "type": "concept_related_to_chapter",
+      "sourceType": "concept",
+      "sourceId": "zhiwo",
+      "targetType": "chapter",
+      "targetId": "ddj-71",
+      "chapterNumber": 71,
+      "quote": "知不知上，不知知病。",
+      "offset": 0,
+      "reason": "自胜者强、自知者明的语境支持修身观照。"
+    }
+  ]
+}

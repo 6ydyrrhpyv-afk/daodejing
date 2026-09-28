@@ -5,6 +5,7 @@ import { Store } from './store.mjs';
 import { loadData } from './data.mjs';
 import { mountainStrip } from './art.mjs';
 import { renderHome } from './home.mjs';
+import { renderUniverse } from './universe.mjs';
 import { renderChapters } from './chapters.mjs';
 import { resetTheme } from './chapter-themes.mjs';
 import { initSync } from './sync.mjs';
@@ -41,7 +42,7 @@ function parseHash() {
 }
 
 function setActiveNav(name) {
-  const map = { '': 'nav-home', chapters: 'nav-chapters', practice: 'nav-practice', actions: 'nav-actions', settings: 'nav-settings' };
+  const map = { '': 'nav-home', chapters: 'nav-chapters', universe: 'nav-universe', practice: 'nav-practice', actions: 'nav-actions', settings: 'nav-settings' };
   document.querySelectorAll('[data-nav]').forEach((node) => {
     const active = node.id === map[name];
     if (active) node.setAttribute('aria-current', 'page');
@@ -85,6 +86,7 @@ function render() {
   let view;
   try {
     if (route.name === 'chapters') view = renderChapters(ctx, { id: route.id, from: route.params.from, q: route.params.q });
+    else if (route.name === 'universe') view = renderUniverse(ctx);
     else if (route.name === 'practice') view = renderPractice(ctx);
     else if (route.name === 'actions') view = renderActions(ctx);
     else if (route.name === 'settings') view = renderSettings(ctx);
@@ -95,7 +97,13 @@ function render() {
       el('p', { class: 'card__text', text: String(error && error.message ? error.message : error) }),
     ]);
   }
-  main.replaceChildren(el('div', { class: 'page-enter' }, [view]));
+  if (route.name === 'universe') {
+    // 不包裹 page-enter：其 transform 会使 position:fixed 退化为相对定位，
+    // 导致「道家宇宙」被限制在内容栏宽度（~1040px）而非铺满视口。
+    main.replaceChildren(view);
+  } else {
+    main.replaceChildren(el('div', { class: 'page-enter' }, [view]));
+  }
   // 章节间切换保留滚动位置，跨功能切换回到顶部
   if (!isChapterSwitch) window.scrollTo({ top: 0 });
 }
