@@ -459,9 +459,30 @@ export function renderUniverse(ctx) {
     const fh = focalWorld ? focalWorld.y : (minY + bh / 2);
     const targetCx = rect.x + rect.w / 2, targetCy = rect.y + rect.h / 2;
     const offX = (Wc - WORLD * s) / 2, offY = (Hc - WORLD * s) / 2;
+
+    // 保证焦点节点不被顶部工具栏 / 底部面板遮挡：
+    // 先按包围盒取景，再把焦点节点夹在安全区内；若节点本身比安全区还大，则缩至整体可见。
+    const focalR = (focalWorld && Number.isFinite(focalWorld.r)) ? focalWorld.r : 8;
+    const gap = 6;
+    const fsr = focalR * zoom;
+    let cx = targetCx, cy = targetCy;
+    const minCx = rect.x + fsr + gap, maxCx = rect.x + rect.w - fsr - gap;
+    const minCy = rect.y + fsr + gap, maxCy = rect.y + rect.h - fsr - gap;
+    if (minCx > maxCx || minCy > maxCy) {
+      // 焦点节点比安全区还大（如横屏矮视口下的大中央节点）：缩小取景至整体装下
+      const fitByH = (rect.h - 2 * gap) / (2 * focalR);
+      const fitByW = (rect.w - 2 * gap) / (2 * focalR);
+      zoom = clamp(Math.min(zoom, fitByH, fitByW), 0.3, 3.2);
+      const fsr2 = focalR * zoom;
+      cx = rect.x + Math.min(rect.w / 2, fsr2 + gap);
+      cy = rect.y + Math.min(rect.h / 2, fsr2 + gap);
+    } else {
+      cx = Math.min(Math.max(targetCx, minCx), maxCx);
+      cy = Math.min(Math.max(targetCy, minCy), maxCy);
+    }
     // viewBox 为 -900..900，世界原点在视口中心，故聚焦节点居中需补 viewBox 半幅偏移
-    const viewX = (targetCx - offX) / s - fw * zoom - WORLD / 2;
-    const viewY = (targetCy - offY) / s - fh * zoom - WORLD / 2;
+    const viewX = (cx - offX) / s - fw * zoom - WORLD / 2;
+    const viewY = (cy - offY) / s - fh * zoom - WORLD / 2;
     return { zoom, x: viewX, y: viewY };
   }
 
@@ -485,8 +506,8 @@ export function renderUniverse(ctx) {
     const list = currentFocusList();
     const rect = getSafeRect();
     let focal = null;
-    if (selectedId) { const n = byId.get(selectedId); if (n) focal = { x: n.x, y: n.y }; }
-    else if (focusTheme) { const n = byId.get(focusTheme); if (n) focal = { x: n.x, y: n.y }; }
+    if (selectedId) { const n = byId.get(selectedId); if (n) focal = { x: n.x, y: n.y, r: n.r }; }
+    else if (focusTheme) { const n = byId.get(focusTheme); if (n) focal = { x: n.x, y: n.y, r: n.r }; }
     const target = (selectedId || focusTheme) ? fitIntoRect(list, rect, focal) : fitIntoRect(nodes, rect, { x: 0, y: 0 });
     if (!target) return;
     if (!Number.isFinite(target.x) || !Number.isFinite(target.y) || !Number.isFinite(target.zoom)) return;
@@ -924,7 +945,7 @@ export function renderUniverse(ctx) {
   /* ============================================================
      交互状态切换
      ============================================================ */
-  function selectTheme(themeId) {
+  function selectTheme(themeId, opts = {}) {
     selectedId = null;
     focusTheme = themeId;
     mode = 'theme';
@@ -938,11 +959,11 @@ export function renderUniverse(ctx) {
       renderPanel(node, 'full');
       openPanel();
     } else {
-      setPanelState('preview');               // 内部渲染 + 高度 + 取景重算
+      setPanelState('preview', { reframe: opts.reframe !== false });  // 内部渲染 + 高度 + 取景重算
     }
   }
 
-  function selectNode(id) {
+  function selectNode(id, opts = {}) {
     const n = byId.get(id);
     if (!n) return;
     if (n.kind === 'chapter') { activateChapter(n); return; }
@@ -965,7 +986,7 @@ export function renderUniverse(ctx) {
       renderPanel(n, 'full');
       openPanel();
     } else {
-      setPanelState('preview');               // 内部渲染 + 高度 + 取景重算
+      setPanelState('preview', { reframe: opts.reframe !== false });  // 内部渲染 + 高度 + 取景重算
     }
   }
 
@@ -1333,11 +1354,22 @@ export function renderUniverse(ctx) {
   const focusParam = new URLSearchParams(location.hash.split('?')[1] || '').get('focus');
   if (focusParam && byId.has(focusParam)) {
     const n = byId.get(focusParam);
-    if (n.kind === 'theme') selectTheme(n.id); else selectNode(n.id);
+    // reframe:false —— 仅开面板，取景留给下方延迟到布局完成后的 frameCurrent，避免竖→横时用旧尺寸取景
+    if (n.kind === 'theme') selectTheme(n.id, { reframe: false }); else selectNode(n.id, { reframe: false });
   }
 
-  // 移动端初始取景：扣安全区，避免顶栏/底栏遮挡
-  if (isMobile) { applyPanelHeight(); frameCurrent(false); }
+  // 移动端初始取景：扣安全区，避免顶栏/底栏遮挡。
+  // 延迟到布局完成后再取景——模块初始化时 canvas 尚未插入 DOM，直接取景会回退到
+  // window.innerHeight（竖→横切换时可能是旧肖像尺寸），导致横屏沿用肖像取景把节点顶到工具栏下。
+  // 双 rAF 不够稳：经 hash 导航进入的新文档，视口尺寸有时在初始布局后才生效、且不触发 resize 事件，
+  // 故再追加一个 setTimeout 兜底，确保最终取景与真实横/竖屏一致（frameCurrent(false) 幂等、无动画）。
+  if (isMobile) {
+    const initFrame = () => { if (isMobile && panelState !== 'full') { applyPanelHeight(); frameCurrent(false); } };
+    requestAnimationFrame(() => requestAnimationFrame(initFrame));
+    // 兜底：极少数情况下（如经 hash 导航进入、视口尺寸在初始布局后才生效且不触发 resize）
+    // 首帧可能用了旧尺寸，补一帧确保最终取景与真实横/竖屏一致。frameCurrent(false) 幂等、无动画。
+    setTimeout(initFrame, 450);
+  }
 
   return root;
 }
