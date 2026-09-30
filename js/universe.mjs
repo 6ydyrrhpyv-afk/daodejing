@@ -5,6 +5,7 @@
 
 import { el, svg, icon, clear } from './util.mjs';
 import { getChapter } from './data.mjs';
+import { Listen } from './listen-player.mjs';
 
 const WORLD = 1800;              // viewBox 尺寸（用户坐标）
 const R_THEME = 400;             // 主题锚点环半径
@@ -414,14 +415,17 @@ export function renderUniverse(ctx) {
     };
   }
 
-  // 实际图谱可视区（canvas 局部像素坐标）：扣除顶部工具栏、底部面板、安全边距
+  // 听书播放器占用高度（由 listen-player 通过 CSS 变量 + 事件同步），用于收缩图谱安全区
+  let listenHeightPx = 0;
+
+  // 实际图谱可视区（canvas 局部像素坐标）：扣除顶部工具栏、底部面板、听书播放器、安全边距
   function getSafeRect() {
     const w = canvasWrap.clientWidth || window.innerWidth || 1;
     const h = canvasWrap.clientHeight || window.innerHeight || 1;
     const sa = readSafeArea();
     const headerH = header.offsetHeight || 56;
     const margin = 18;
-    let bottom = sa.bottom;
+    let bottom = sa.bottom + listenHeightPx;
     if (panelState !== 'closed') {
       const ph = parseFloat(panel.style.height) || (panelState === 'collapsed' ? 72 : Math.round(h * 0.34));
       bottom += ph;
@@ -1069,14 +1073,20 @@ export function renderUniverse(ctx) {
       body.append(el('ul', { class: 'universe__panel-list' }, shown.map((r) => el('li', {}, [
         el('blockquote', { class: 'universe__panel-quote', text: r.quote }),
         el('p', { class: 'universe__panel-reason', text: r.reason }),
-        el('a', { class: 'btn btn--sm btn--ghost', href: `#/chapters/${r.targetId}?from=universe&q=${encodeURIComponent(r.quote)}`, text: `第 ${r.chapterNumber} 章` }),
+        el('div', { class: 'universe__panel-cta' }, [
+          el('a', { class: 'btn btn--sm btn--ghost', href: `#/chapters/${r.targetId}?from=universe&q=${encodeURIComponent(r.quote)}`, text: `第 ${r.chapterNumber} 章` }),
+          el('button', { type: 'button', class: 'btn btn--sm btn--ghost', onclick: () => Listen.playOriginal(r.targetId) }, ['听原文']),
+        ]),
       ]))));
       return;
     }
     // chapter
     const chapter = getChapter(data, node.id);
     body.append(el('h2', { class: 'universe__panel-title', text: `第 ${node.data.number} 章 ${node.data.titleHint}` }));
-    body.append(el('a', { class: 'btn btn--primary', href: `#/chapters/${node.id}?from=universe`, text: '阅读本章正文' }));
+    body.append(el('div', { class: 'universe__panel-cta' }, [
+      el('a', { class: 'btn btn--primary', href: `#/chapters/${node.id}?from=universe`, text: '阅读本章正文' }),
+      el('button', { type: 'button', class: 'btn btn--sm btn--ghost', onclick: () => Listen.playOriginal(node.id) }, ['听原文']),
+    ]));
     const rels = (node.rels || []).slice(0, mode === 'preview' ? 2 : 8);
     body.append(el('h3', { text: '相关概念' }));
     body.append(el('ul', { class: 'universe__panel-list' }, rels.map((r) => {
@@ -1329,6 +1339,14 @@ export function renderUniverse(ctx) {
     new ResizeObserver(() => reframeIfMobile()).observe(canvasWrap);
   }
   window.addEventListener('orientationchange', () => { setTimeout(reframeIfMobile, 200); });
+
+  // 听书播放器出现/收起/尺寸变化时，收缩图谱安全区并重算取景（保留已有坐标与遮挡修复）
+  window.addEventListener('listen:playerchange', (e) => {
+    const h = (e && e.detail && Number.isFinite(e.detail.height)) ? e.detail.height : 0;
+    if (h === listenHeightPx) return;
+    listenHeightPx = h;
+    if (isMobile) { applyPanelHeight(); frameCurrent(); }
+  });
 
   /* ---------- 初始化 ---------- */
   if (needsFit) { const t0 = computeFitCircle(nodes); if (t0) Object.assign(view, t0); }

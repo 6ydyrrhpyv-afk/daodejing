@@ -9,6 +9,7 @@ import { renderOriginalText } from './chapter-layouts.mjs';
 import { renderMotif } from './motifs.mjs';
 import { renderIllustration, hasIllustration } from './illustrations.mjs';
 import { sceneBanner } from './scenes.mjs';
+import { Listen, splitLineSentences } from './listen-player.mjs';
 
 // 短章名（题签）判定：仅当现有章名为 2–6 个汉字时才作侧边题签，不使用编造章名。
 function isShortTitle(title) {
@@ -108,7 +109,11 @@ function chapterSideList(data, activeId, showMeta = false) {
       showMeta ? el('span', { class: 'chapter-list__meta', text: chapter.themes.map(themeLabel).join(' · ') }) : null,
     ]);
     if (chapter.chapter_id === activeId) link.setAttribute('aria-current', 'page');
-    list.append(el('li', {}, [link]));
+    const listenBtn = el('button', {
+      type: 'button', class: 'chapter-list__listen', 'aria-label': `听第 ${chapter.chapter_number} 章`,
+      onclick: (e) => { e.preventDefault(); e.stopPropagation(); Listen.playOriginal(chapter.chapter_id); },
+    }, ['听']);
+    list.append(el('li', { class: 'chapter-list__item' }, [link, listenBtn]));
   }
   return list;
 }
@@ -236,6 +241,8 @@ function renderChapterDetail(ctx, params) {
   // ---- 原文（原文全文在两种模式下均只渲染一次，避免重复内容）----
   const hit = params.q ? findQuote(chapter, params.q) : { found: false, lineIndex: -1 };
   const textBlock = renderOriginalText(chapter, design, readingMode, hit);
+  // 为原句段添加听书高亮与「从此句听」
+  wrapListenSentences(textBlock, chapter.chapter_id, 'original');
   // 标准模式：变体排版 + 辅助折叠信息。
   // 意境模式：只保留两块核心内容——上面的“意境排版”和下面的“全文”。
   const standardExtras = readingMode === 'standard' ? [
@@ -264,6 +271,8 @@ function renderChapterDetail(ctx, params) {
     const enLines = chapter.english_text.split('\n').map((l) => l.trim()).filter(Boolean);
     const enBlock = el('div', { class: 'original original--en' });
     enLines.forEach((line) => enBlock.append(el('p', { class: 'original__line', text: line })));
+    // 为英译句段添加听书高亮与「从此句听」
+    wrapListenSentences(enBlock, chapter.chapter_id, 'english');
     const src = chapter.english_source || {};
     englishCard = el('section', { class: 'card card--inset' }, [
       tabLabel('英 译'),
@@ -324,10 +333,20 @@ function renderChapterDetail(ctx, params) {
   // ⑤ 段落落款：原文结束后、译文前的轻落款
   const sealEl = (hasIllustration(illus) && illus.layout === 'passage-seal') ? renderIllustration(illus) : null;
 
+  // 标题附近「听本章」入口（不自动出声，点击后从本章原文第 1 句开始）
+  const listenRow = el('div', { class: 'chapter-listen-row' }, [
+    el('button', {
+      type: 'button', class: 'btn btn--sm btn--primary', 'data-listen-chapter': chapter.chapter_id,
+      onclick: () => Listen.playOriginal(chapter.chapter_id),
+    }, ['听本章']),
+    el('span', { class: 'chapter-listen-hint', text: '使用设备语音朗读，可调速、连续播放' }),
+  ]);
+
   // ---- 布局：桌面侧栏 + 阅读区；手机端使用右侧滑出抽屉选章 ----
   const readingChildren = [
     chapterPickerMobile(data, chapter.chapter_id),
     pro,
+    listenRow,
   ];
   if (edgeEl) readingChildren.push(edgeEl);
   readingChildren.push(originalSlot);
@@ -361,4 +380,46 @@ function switchReadingMode(ctx, mode) {
   ctx.rerender();
   // 切换后尽量保持阅读位置，避免跳回顶部造成中断
   requestAnimationFrame(() => window.scrollTo({ top: y }));
+}
+
+// ---------- 听书：句段高亮 + 逐句播放入口 ----------
+function makeSegPlay(chapterId, mode, idx) {
+  return el('button', {
+    type: 'button', class: 'listen-seg-play', 'aria-label': '从此句开始听',
+    onclick: () => Listen.playFromSegment(chapterId, mode, idx),
+  }, ['▶']);
+}
+
+// 将正文块内的每个 .original__line 拆成可高亮的句段 span，并附「从此句听」按钮。
+// 切分规则与 listen-player.mjs 的 splitLineSentences 完全一致，保证高亮下标与朗读下标对齐。
+function wrapListenSentences(block, chapterId, mode) {
+  if (!block) return;
+  const lang = mode === 'english' ? 'en' : 'zh';
+  const lines = block.querySelectorAll('.original__line');
+  let idx = 0;
+  lines.forEach((p) => {
+    if (p.querySelector('*')) return; // 含嵌套结构（如关键词高亮）则不拆，避免破坏
+    const text = p.textContent;
+    const segs = splitLineSentences(text, lang);
+    if (!segs.length) return;
+    if (segs.length === 1) {
+      p.classList.add('listen-seg');
+      p.setAttribute('data-listen-chapter', chapterId);
+      p.setAttribute('data-listen-mode', mode);
+      p.setAttribute('data-listen-idx', String(idx));
+      p.prepend(makeSegPlay(chapterId, mode, idx));
+      idx++;
+      return;
+    }
+    p.textContent = '';
+    const fragNode = document.createDocumentFragment();
+    segs.forEach((s) => {
+      const span = el('span', {
+        class: 'listen-seg', 'data-listen-chapter': chapterId, 'data-listen-mode': mode, 'data-listen-idx': String(idx),
+      }, [makeSegPlay(chapterId, mode, idx), s]);
+      fragNode.append(span);
+      idx++;
+    });
+    p.append(fragNode);
+  });
 }

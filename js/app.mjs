@@ -12,6 +12,7 @@ import { initSync } from './sync.mjs';
 import { renderPractice } from './practice.mjs';
 import { renderActions } from './actions.mjs';
 import { renderSettings } from './settings.mjs';
+import { Listen } from './listen-player.mjs';
 import { confirmDialog } from './util.mjs';
 
 const main = document.getElementById('main');
@@ -131,6 +132,9 @@ async function boot() {
   if (footerArt) footerArt.append(mountainStrip());
   initInkRipple();
   render();
+  // 听书播放器（全站单例）：数据就绪后初始化，跨页面保持收听
+  try { Listen.init({ store, data, navigate: (h) => { location.hash = h; } }); }
+  catch (error) { console.warn('[听书] 初始化失败：', error); }
   window.addEventListener('hashchange', render);
 }
 

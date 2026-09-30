@@ -1319,3 +1319,134 @@ body.chapter-picker-open { overflow: hidden; }
   .unv-label--theme { font-size: 14px; padding: .06rem .26rem; }
   .unv-label--concept { font-size: 13px; }
 }
+
+/* ============================================================
+   听书播放器（全站单例，固定底部；不影响已确认的桌面/手机版布局）
+   ============================================================ */
+:root { --listen-player-h: 0px; }
+
+.listen-player {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: var(--paper-card);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 22px rgba(36, 39, 34, .12);
+  padding: 0.5rem clamp(0.75rem, 3vw, 1.25rem) calc(0.5rem + var(--sat-bottom));
+  font-family: var(--font-sans, system-ui, sans-serif);
+  color: var(--ink);
+  transform: translateY(0);
+  transition: transform .25s ease;
+  max-height: 70vh; overflow-y: auto; overscroll-behavior: contain;
+}
+.listen-player.is-hidden { display: none; }
+
+.listen-player__resume {
+  display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+  padding: .15rem 0 .4rem;
+}
+.listen-player__resume-text { font-size: .9rem; color: var(--muted); flex: 1 1 auto; min-width: 0; }
+
+.listen-player__main { display: flex; flex-direction: column; gap: .4rem; }
+.listen-player__row {
+  display: flex; align-items: center; gap: .4rem; flex-wrap: nowrap;
+}
+.listen-player__btn {
+  flex: none; width: 2.6rem; height: 2.6rem; min-width: 2.6rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--paper);
+  color: var(--teal-deep); cursor: pointer; font-size: 1rem; line-height: 1;
+  transition: background .15s ease, border-color .15s ease;
+}
+.listen-player__btn:hover { background: var(--teal-soft); border-color: var(--teal); }
+.listen-player__btn:active { transform: translateY(1px); }
+.listen-player__btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.lp-ico { display: inline-block; line-height: 1; }
+.lp-ico--play, .lp-ico--next, .lp-ico--prev, .lp-ico--book, .lp-ico--gear, .lp-ico--chevron { font-size: 1.05rem; }
+.lp-ico--pause, .lp-ico--stop { font-size: .95rem; }
+
+.listen-player__meta { flex: 1 1 auto; min-width: 0; margin: 0 .3rem; }
+.listen-player__chapter {
+  font-family: var(--font-serif); font-size: .98rem; font-weight: 600;
+  color: var(--teal-deep); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.listen-player__sub { display: flex; gap: .5rem; font-size: .76rem; color: var(--muted); margin-top: .1rem; }
+.listen-player__modebadge {
+  background: var(--teal-soft); color: var(--teal-deep);
+  border-radius: 999px; padding: 0 .5rem; font-size: .72rem;
+}
+.listen-player__status { font-size: .8rem; color: var(--muted); min-height: 1.1em; }
+.listen-player__status:empty { display: none; }
+
+.listen-player__followback {
+  align-self: flex-start; border: 1px solid var(--teal); background: var(--teal-soft);
+  color: var(--teal-deep); border-radius: 999px; padding: .35rem .9rem; font-size: .82rem; cursor: pointer;
+}
+.listen-player__followback[hidden] { display: none; }
+
+.listen-player__settings {
+  border-top: 1px dashed var(--line-soft); padding-top: .5rem;
+  display: flex; flex-direction: column; gap: .55rem;
+}
+.listen-player__settings[hidden] { display: none; }
+.listen-player__group { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.listen-player__glabel { font-size: .8rem; color: var(--muted); min-width: 4.5rem; }
+.seg { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.seg__btn {
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+  border-radius: 999px; padding: .3rem .8rem; font-size: .82rem; cursor: pointer;
+}
+.seg__btn:hover { border-color: var(--teal); }
+.seg__btn--active { background: var(--teal); color: #fff; border-color: var(--teal); }
+.listen-player__voices { display: flex; flex-direction: column; gap: .35rem; flex: 1 1 100%; }
+.listen-player__voicelabel { font-size: .76rem; color: var(--muted); margin: .2rem 0 0; }
+.listen-player__voice { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.listen-player__voicename { font-size: .8rem; flex: 1 1 auto; min-width: 0; }
+.listen-player__voicenote { font-size: .78rem; color: var(--muted); }
+.listen-player__note { font-size: .74rem; color: var(--muted); margin: .1rem 0 0; }
+.listen-player__followtoggle { align-self: flex-start; }
+
+/* 正文逐句高亮（由真实播放事件驱动） */
+.listen-seg.is-speaking {
+  background: var(--teal-soft);
+  box-shadow: inset 0 -2px 0 var(--teal);
+  border-radius: 3px;
+  transition: background .12s ease;
+}
+.listen-seg-play {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.25rem; height: 1.25rem; margin-right: .25rem; vertical-align: -2px;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--paper);
+  color: var(--teal-deep); font-size: .7rem; line-height: 1; cursor: pointer;
+  opacity: 0; transition: opacity .12s ease;
+}
+.listen-seg:hover .listen-seg-play, .listen-seg-play:focus-visible { opacity: 1; }
+.listen-seg-play:hover { background: var(--teal-soft); border-color: var(--teal); }
+
+/* 播放器出现时，正文底部预留空间，避免遮挡（手机与桌面统一处理） */
+body.has-listen-player #main { padding-bottom: calc(var(--listen-player-h, 0px) + 0.75rem); }
+body.has-listen-player .site-footer .wrap { padding-bottom: calc(var(--listen-player-h, 0px) + 0.5rem); }
+
+/* 道家宇宙：面板与完整详情抬升到播放器之上，且图谱安全区在 JS 中已扣除播放器高度 */
+.universe__panel { bottom: var(--listen-player-h, 0px); }
+.universe__panel--full { bottom: var(--listen-player-h, 0px); }
+@media (max-width: 56rem) {
+  .universe__panel { bottom: var(--listen-player-h, 0px); }
+  .universe__panel--full { bottom: var(--listen-player-h, 0px); }
+}
+
+/* 章节列表项：标题链接 + 听书按钮（点击听书不跳转阅读页） */
+.chapter-list__item { display: flex; align-items: stretch; gap: .35rem; }
+.chapter-list__item .chapter-list__link { flex: 1 1 auto; }
+.chapter-list__listen {
+  flex: none; align-self: center;
+  border: 1px solid var(--line); background: var(--paper); color: var(--teal-deep);
+  border-radius: 999px; padding: .2rem .6rem; font-size: .78rem; cursor: pointer; white-space: nowrap;
+}
+.chapter-list__listen:hover { background: var(--teal-soft); border-color: var(--teal); }
+.chapter-list__listen:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; }
+
+/* 章节详情「听本章」入口行 */
+.chapter-listen-row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin: .25rem 0 .35rem; }
+.chapter-listen-hint { font-size: .78rem; color: var(--muted); }
+
+/* 道家宇宙面板：正文/概念引用处的「阅读/听原文」操作行 */
+.universe__panel-cta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-top: .25rem; }
