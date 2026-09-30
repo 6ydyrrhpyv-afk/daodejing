@@ -405,7 +405,7 @@ function buildUI() {
       el('button', { type: 'button', class: 'listen-player__btn', 'data-act': 'next', 'aria-label': '下一章' }, [iconNext()]),
       el('button', { type: 'button', class: 'listen-player__btn', 'data-act': 'view', 'aria-label': '查看本章' }, [iconBook()]),
       el('button', { type: 'button', class: 'listen-player__btn', 'data-act': 'settings', 'aria-label': '设置' }, [iconGear()]),
-      el('button', { type: 'button', class: 'listen-player__btn', 'data-act': 'collapse', 'aria-label': '收起' }, [iconChevron()]),
+      el('button', { type: 'button', class: 'listen-player__btn', 'data-act': 'close', 'aria-label': '关闭' }, [iconClose()]),
     ]),
     el('div', { class: 'listen-player__status', role: 'status', 'aria-live': 'polite' }),
     el('button', { type: 'button', class: 'listen-player__followback', hidden: true, 'data-act': 'followback' }, ['回到朗读位置']),
@@ -477,7 +477,7 @@ function onRootClick(e) {
     case 'next': changeChapter(1); break;
     case 'view': if (player.session) player.navigate?.(`#/chapters/${player.session.chapterId}`); break;
     case 'settings': toggleSettings(); break;
-    case 'collapse': showPlayer(false); break;
+    case 'close': stop(); showPlayer(false); break;
     case 'resume': Listen.resumeSaved(); break;
     case 'dismiss-resume': hideResumeBar(); break;
     case 'toggle-continuous': toggleContinuous(); break;
@@ -537,7 +537,7 @@ function showResumeBar() {
 }
 function hideResumeBar() {
   if (player.els.resume) player.els.resume.hidden = true;
-  if (player.playState === 'idle' && !player.saved) showPlayer(false);
+  if (player.playState === 'idle') showPlayer(false);
 }
 
 function syncSettingsUI() {
@@ -641,3 +641,4 @@ function iconNext() { return icon('next', '⏭'); }
 function iconBook() { return icon('book', '📖'); }
 function iconGear() { return icon('gear', '⚙'); }
 function iconChevron() { return icon('chevron', '▾'); }
+function iconClose() { return icon('close', '×'); }
