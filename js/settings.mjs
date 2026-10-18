@@ -3,6 +3,7 @@
 import { el, frag, toast, formatDate } from './util.mjs';
 import { buildBackup, validateBackup, mergeStates } from './validate.mjs';
 import { getSyncMeta, genSyncId, enableSync, disableSync, onSyncStatus } from './sync.mjs';
+import { loadSettings, PROVIDERS } from './ai.mjs';
 
 export function renderSettings(ctx) {
   const { store } = ctx;
@@ -12,7 +13,7 @@ export function renderSettings(ctx) {
   // 模式
   const modeBox = el('section', { class: 'card' }, [
     el('h3', { class: 'card__title', text: '练习模式' }),
-    el('p', { class: 'card__text', text: '引导练习：按你选择的情境分支给出固定材料。AI 辅助：把你的问题与情境发给服务端配置的模型，并按已收录的全部 81 章校验引用。' }),
+    el('p', { class: 'card__text', text: '引导练习：按你选择的情境分支给出固定材料。AI 辅助：在「问道 AI」页用你自己配置的模型（纯前端直连，不经服务端）解读与问答。' }),
   ]);
   const modeRow = el('div', { class: 'radio-row' });
   const modes = [
@@ -32,24 +33,24 @@ export function renderSettings(ctx) {
   modeBox.append(modeRow);
   root.append(modeBox);
 
-  // AI 状态
+  // AI 状态（纯前端：用户自填 Key，不经任何服务端）
   const aiBox = el('section', { class: 'card' }, [
-    el('h3', { class: 'card__title', text: 'AI 服务状态' }),
-    el('p', { class: 'card__text', id: 'ai-status', text: '正在检查服务端配置……' }),
+    el('h3', { class: 'card__title', text: 'AI 解读（纯前端）' }),
+    el('p', { class: 'card__text', text: '本站的 AI 解读已改为纯前端直连：你在「问道 AI」页填入自己的模型 Key（默认硅基流动免费模型），问题只发往你选择的模型平台，不经过本站服务器，也不需要任何后端配置。' }),
+    el('p', { class: 'card__text', id: 'ai-status', text: '正在读取本机配置……' }),
   ]);
   root.append(aiBox);
-  fetch('/api/config').then((r) => r.json()).then((cfg) => {
-    const node = aiBox.querySelector('#ai-status');
-    if (!node) return;
-    if (cfg.aiConfigured) {
-      node.textContent = `已配置：模型 ${cfg.model || '未标注'}（服务端环境变量）。每日调用上限 ${cfg.limits?.dailyCalls ?? '未设置'}，每分钟 ${cfg.limits?.perMinute ?? '未设置'} 次，输入上限 ${cfg.limits?.maxInputChars ?? '未设置'} 字。`;
+  const aiStatusNode = aiBox.querySelector('#ai-status');
+  try {
+    const s = loadSettings();
+    if (s.apiKey) {
+      aiStatusNode.textContent = `已配置：平台「${PROVIDERS[s.provider].name}」，模型 ${s.model}。Key 仅存于本浏览器。`;
     } else {
-      node.textContent = '未配置（缺少 AI_BASE_URL 或 AI_API_KEY）。AI 辅助不可用；原文阅读、分步练习、行动保存与手动复盘不依赖 AI。配置方法见项目根目录 README.md 与 .env.example。';
+      aiStatusNode.textContent = '尚未配置 Key。前往「问道 AI」页填入即可免费使用（默认硅基流动免费模型）。';
     }
-  }).catch(() => {
-    const node = aiBox.querySelector('#ai-status');
-    if (node) node.textContent = '无法连接服务端接口，AI 状态未知。本地引导练习仍可正常使用。';
-  });
+  } catch {
+    aiStatusNode.textContent = '无法读取本机 AI 配置（可能是隐私模式）。本地引导练习仍可正常使用。';
+  }
 
   // 跨设备同步
   const syncBox = el('section', { class: 'card' }, [

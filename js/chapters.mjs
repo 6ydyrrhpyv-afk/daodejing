@@ -339,6 +339,9 @@ function renderChapterDetail(ctx, params) {
       type: 'button', class: 'btn btn--sm btn--primary', 'data-listen-chapter': chapter.chapter_id,
       onclick: () => Listen.playOriginal(chapter.chapter_id),
     }, ['听本章']),
+    el('a', {
+      class: 'btn btn--sm btn--ghost', href: `#/ai/${chapter.chapter_id}`,
+    }, ['AI 解读本章']),
     el('span', { class: 'chapter-listen-hint', text: '使用设备语音朗读，可调速、连续播放' }),
   ]);
 

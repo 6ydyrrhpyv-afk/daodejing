@@ -6,6 +6,39 @@
   <title>道德经·处事练习室</title>
   <meta name="description" content="读一段经典，想清一件事。从一个真实问题出发，读有来源的原文，写下可执行的行动并复盘。收录《道德经》全部 81 章（王弼本）。">
   <link rel="stylesheet" href="./styles.css">
+  <script>
+  /* 加载兜底：让「打不开」变成「看得到原因」，而不是永远停在「正在加载」 */
+  (function () {
+    function showFatal(msg, hint) {
+      var m = document.getElementById('main');
+      if (!m || m.dataset.fatal) return;
+      m.dataset.fatal = '1';
+      m.innerHTML = '<section class="card"><h2 class="card__title">页面初始化失败</h2>'
+        + '<p class="card__text">' + msg + '</p>'
+        + (hint ? '<p class="card__text">' + hint + '</p>' : '') + '</section>';
+    }
+    window.addEventListener('error', function (e) {
+      if (e && e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
+        showFatal('资源加载失败：' + (e.target.src || e.target.href || '未知资源')
+          + '。多半是网络无法访问 GitHub Pages。', '若您在中国大陆用手机流量（未开 VPN）打开，本站默认托管在 GitHub Pages，常因网络限制打不开。请改用国内镜像：https://yy-1015yy-d0gulehrrf00e186c-1480960352.tcloudbaseapp.com/');
+      } else if (e && e.message) {
+        showFatal('脚本错误：' + e.message);
+      }
+    }, true);
+    window.addEventListener('unhandledrejection', function (e) {
+      var r = e && e.reason;
+      showFatal('未处理的异步错误：' + ((r && r.message) || r || '未知'));
+    });
+    window.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        var m = document.getElementById('main');
+        if (m && !m.dataset.fatal && /正在加载/.test(m.textContent || '')) {
+          showFatal('加载超时（已超过 10 秒仍在「正在加载」）。', '若您在中国大陆用手机流量（未开 VPN）打开，多半是网络无法访问 GitHub Pages。请改用国内镜像：https://yy-1015yy-d0gulehrrf00e186c-1480960352.tcloudbaseapp.com/');
+        }
+      }, 10000);
+    });
+  })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -27,6 +60,7 @@
         <li><a href="#/universe" id="nav-universe" data-nav>道家宇宙</a></li>
         <li><a href="#/practice" id="nav-practice" data-nav>分步练习</a></li>
         <li><a href="#/actions" id="nav-actions" data-nav>行动与复盘</a></li>
+        <li><a href="#/ai" id="nav-ai" data-nav>问道 AI</a></li>
         <li><a href="#/settings" id="nav-settings" data-nav>设置</a></li>
       </ul>
     </nav>

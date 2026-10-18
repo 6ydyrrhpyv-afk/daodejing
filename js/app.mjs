@@ -12,6 +12,7 @@ import { initSync } from './sync.mjs';
 import { renderPractice } from './practice.mjs';
 import { renderActions } from './actions.mjs';
 import { renderSettings } from './settings.mjs';
+import { renderAI } from './ai-chat.mjs';
 import { Listen } from './listen-player.mjs';
 import { confirmDialog } from './util.mjs';
 
@@ -43,7 +44,7 @@ function parseHash() {
 }
 
 function setActiveNav(name) {
-  const map = { '': 'nav-home', chapters: 'nav-chapters', universe: 'nav-universe', practice: 'nav-practice', actions: 'nav-actions', settings: 'nav-settings' };
+  const map = { '': 'nav-home', chapters: 'nav-chapters', universe: 'nav-universe', practice: 'nav-practice', actions: 'nav-actions', ai: 'nav-ai', settings: 'nav-settings' };
   document.querySelectorAll('[data-nav]').forEach((node) => {
     const active = node.id === map[name];
     if (active) node.setAttribute('aria-current', 'page');
@@ -91,6 +92,7 @@ function render() {
     else if (route.name === 'practice') view = renderPractice(ctx);
     else if (route.name === 'actions') view = renderActions(ctx);
     else if (route.name === 'settings') view = renderSettings(ctx);
+    else if (route.name === 'ai') view = renderAI(ctx, { id: route.id });
     else view = renderHome(ctx);
   } catch (error) {
     view = el('section', { class: 'card' }, [
