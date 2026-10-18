@@ -9,6 +9,19 @@
 
 const STORAGE_KEY = 'ddj-ai/v1';
 
+// —— 游客免 Key 试聊（Cloudflare Worker 代理）——
+// 部署方式见仓库 cloudflare/worker.js 与 wrangler.toml。本站把模型 Key 放在 Cloudflare 服务端，
+// 游客无需填 Key 即可调用硅基流动免费模型；前端仅持有「公开但不保密」的 GUEST_SECRET 作为滥用防护。
+// 部署 Worker 后，把下面 GUEST_WORKER_URL 改成你的 https://<子域>.workers.dev 地址（不含路径）。
+const GUEST_WORKER_URL = 'https://ddj-guest.<你的workers子域>.workers.dev';
+const GUEST_SECRET = 'ddj_trial_8f3a2c1b';
+// 游客可选项（须与 Worker 端 GUEST_MODELS 白名单保持一致）
+const GUEST_MODELS = [
+  { id: 'THUDM/glm-4-9b-chat', label: 'GLM-4-9B（中文对话，推荐）' },
+  { id: 'deepseek-ai/DeepSeek-R1-Distill-Qwen-7B', label: 'DeepSeek-R1-Distill-Qwen-7B（推理）' },
+  { id: 'Qwen/Qwen3-8B', label: 'Qwen3-8B（日常）' },
+];
+
 export const PROVIDERS = {
   siliconflow: {
     id: 'siliconflow',
@@ -35,6 +48,16 @@ export const PROVIDERS = {
       { id: 'deepseek-reasoner', label: 'DeepSeek-R1（deepseek-reasoner，推理）' },
     ],
     defaultModel: 'deepseek-chat',
+  },
+  guest: {
+    id: 'guest',
+    name: '游客免 Key 试聊（站点代付·限免费模型）',
+    baseUrl: GUEST_WORKER_URL,
+    guest: true,
+    needsKey: false,
+    models: GUEST_MODELS,
+    defaultModel: 'THUDM/glm-4-9b-chat',
+    note: '由本站 Cloudflare Worker 代付少量免费额度，仅开放硅基流动免费模型，有速率限制，请勿滥用。',
   },
 };
 
@@ -81,6 +104,13 @@ export function hasKey() {
   return !!loadSettings().apiKey;
 }
 
+// 是否可发起对话：已填 Key，或处于游客（guest）模式。
+export function canChat() {
+  const s = loadSettings();
+  if (s.provider === 'guest') return true;
+  return !!s.apiKey;
+}
+
 // 组装系统提示词（含可选章节上下文，做"有据可依"的接地解读，降低编造）。
 export function buildSystemPrompt(chapter) {
   const base = [
@@ -107,18 +137,31 @@ export function buildSystemPrompt(chapter) {
 // onDelta(text)、onDone({aborted?})、onError(Error)。
 export function streamChat({ messages, onDelta, onDone, onError, signal }) {
   const settings = loadSettings();
-  if (!settings.apiKey) {
-    onError && onError(new Error('尚未配置 API Key。请在页面上方「设置」里填入你自己的 Key。'));
+  const provider = PROVIDERS[settings.provider];
+  const isGuest = !!(provider && provider.guest);
+
+  if (!settings.apiKey && !isGuest) {
+    onError && onError(new Error('尚未配置 API Key。请在页面上方「设置」里填入你自己的 Key，或点「游客免 Key 试聊」。'));
     return { abort() {} };
   }
-  const provider = PROVIDERS[settings.provider];
+  if (isGuest) {
+    if (!/^https:\/\//.test(GUEST_WORKER_URL) || GUEST_WORKER_URL.includes('你的workers子域')) {
+      onError && onError(new Error('游客通道尚未在后台部署（站点管理员需配置 Cloudflare Worker）。你现在可以填入自己的 Key 免费使用。'));
+      return { abort() {} };
+    }
+  }
+
   const url = provider.baseUrl + '/chat/completions';
+  const headers = { 'Content-Type': 'application/json' };
+  if (isGuest) headers['x-ddj-guest'] = GUEST_SECRET;
+  else headers['Authorization'] = 'Bearer ' + settings.apiKey;
+
   const body = JSON.stringify({
     model: settings.model,
     messages,
     stream: true,
     temperature: 0.7,
-    max_tokens: 1200,
+    max_tokens: isGuest ? 800 : 1200,
   });
 
   const controller = new AbortController();
@@ -128,10 +171,7 @@ export function streamChat({ messages, onDelta, onDone, onError, signal }) {
     try {
       const res = await fetch(url, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer ' + settings.apiKey,
-        },
+        headers,
         body,
         signal: acSignal,
         mode: 'cors',
@@ -144,9 +184,13 @@ export function streamChat({ messages, onDelta, onDone, onError, signal }) {
           detail = (j.error && j.error.message) || j.message || '';
         } catch { /* 忽略解析失败 */ }
         if (res.status === 401) {
-          onError && onError(new Error('API Key 无效或未授权（HTTP 401）。请到对应平台核对后重试。'));
+          onError && onError(new Error(isGuest
+            ? '游客通道鉴权失败（站点管理员配置不一致）。请稍后重试，或填入你自己的 Key。'
+            : 'API Key 无效或未授权（HTTP 401）。请到对应平台核对后重试。'));
         } else if (res.status === 429) {
-          onError && onError(new Error('触发限流（HTTP 429）。免费模型约 1000 次/分钟、5 万 token/分钟，请稍后再试。'));
+          onError && onError(new Error(isGuest
+            ? '游客试用过于频繁（HTTP 429）。请稍后再试，或填入你自己的 Key 免受限流。'
+            : '触发限流（HTTP 429）。免费模型约 1000 次/分钟、5 万 token/分钟，请稍后再试。'));
         } else if (res.status === 402 || res.status === 403) {
           onError && onError(new Error(`账户额度/权限不足（HTTP ${res.status}）。${detail}`));
         } else {

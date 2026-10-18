@@ -2,7 +2,7 @@
 // 纯前端：Key 存用户浏览器；默认硅基流动免费模型，可一键切 DeepSeek。
 
 import { el, frag, toast, clear } from './util.mjs';
-import { loadSettings, saveSettings, hasKey, PROVIDERS, streamChat, buildSystemPrompt } from './ai.mjs';
+import { loadSettings, saveSettings, hasKey, canChat, PROVIDERS, streamChat, buildSystemPrompt } from './ai.mjs';
 import { getChapter } from './data.mjs';
 
 // 对话历史在模块级保留，路由再进入时不清空（单轮会话）。
@@ -26,14 +26,19 @@ export function renderAI(ctx, params) {
     if (ch) { activeChapterId = params.id; contextEnabled = true; }
   }
 
+  const s = loadSettings();
+  const isGuest = s.provider === 'guest';
+
   const root = el('div', { class: 'stack ai-page' });
   root.append(el('h2', { class: 'section-title', text: '问道 · AI 解读' }));
   root.append(el('p', {
     class: 'card__text',
-    text: '用你自己的模型 Key 解读《道德经》、联系现实处事。不发任何数据到本站服务器——问题只发往你选择的模型平台。',
+    text: isGuest
+      ? '游客免 Key 试聊：由本站代付少量免费额度，无需配置即可体验。仅开放免费模型、有速率限制。'
+      : '用你自己的模型 Key 解读《道德经》、联系现实处事，问题只发往你选择的模型平台。也可点「游客免 Key 试聊」零配置先体验。',
   }));
 
-  if (!hasKey()) {
+  if (!canChat()) {
     root.append(renderSetup(ctx, () => { ctx.rerender(); }));
     return frag([root]);
   }
@@ -204,7 +209,9 @@ export function renderAI(ctx, params) {
 
   const foot = el('p', {
     class: 'field__hint ai-foot',
-    text: '回答由你自己的模型生成，非本站观点；本站不扮演老子给出决策。免费模型质量有限、有速率限制，重要判断请回到原文与你的思考。',
+    text: isGuest
+      ? '游客模式由本站代付少量免费额度，仅限免费模型、有速率限制；重要判断请回到原文与你的思考，或填入你自己的 Key 获得更高质量。'
+      : '回答由你自己的模型生成，非本站观点；本站不扮演老子给出决策。免费模型质量有限、有速率限制，重要判断请回到原文与你的思考。',
   });
 
   root.append(
@@ -299,7 +306,22 @@ function renderSetup(ctx, onChange) {
   providerSelect.addEventListener('change', () => { docsLink.href = PROVIDERS[providerSelect.value].docsUrl; });
   box.append(el('p', { class: 'field__hint' }, [docsLink]));
 
-  return box;
+  // —— 游客免 Key 试聊入口（无需任何配置）——
+  const guestBtn = el('button', { type: 'button', class: 'btn btn--primary', text: '🆓 游客免 Key 试聊（无需配置）' });
+  guestBtn.addEventListener('click', () => {
+    try {
+      saveSettings({ provider: 'guest', apiKey: '', model: PROVIDERS.guest.defaultModel });
+      toast('已进入游客试聊模式', 'success');
+      onChange();
+    } catch (e) { toast(e.message, 'error'); }
+  });
+  const guestBox = el('section', { class: 'card ai-setup ai-setup--guest' }, [
+    el('h3', { class: 'card__title', text: '或者：游客免 Key 试聊' }),
+    el('p', { class: 'card__text', text: '不想填 Key？点下面按钮，用本站代付的少量免费额度直接体验《道德经》解读。仅开放免费模型、有速率限制，请勿滥用。' }),
+    el('div', { class: 'row row--wrap' }, [guestBtn]),
+  ]);
+
+  return frag([box, guestBox]);
 }
 
 function renderSettingsPanel(ctx, onChange) {
@@ -321,16 +343,26 @@ function renderSettingsPanel(ctx, onChange) {
     }
   };
   fillModels(settings.provider);
-  providerSelect.addEventListener('change', () => fillModels(providerSelect.value));
+  providerSelect.addEventListener('change', () => { fillModels(providerSelect.value); syncProviderUI(); });
 
   const keyInput = el('input', {
     type: 'password', class: 'field__input', id: 'ai-key-2',
     placeholder: '留空则不修改', autocomplete: 'off', spellcheck: 'false',
   });
+  const keyFieldWrap = el('div', { class: 'field' }, [
+    el('label', { class: 'field__label', for: 'ai-key-2', text: '更换 API Key（留空=不改）' }),
+    keyInput,
+  ]);
+  const guestNote = el('p', {
+    class: 'field__hint', hidden: true,
+    text: '游客模式：无需 Key，由站点代付少量免费额度。切换到其他平台时再填入你自己的 Key。',
+  });
+
   const saveBtn = el('button', { type: 'button', class: 'btn btn--primary', text: '保存更改' });
   saveBtn.addEventListener('click', () => {
     const patch = { provider: providerSelect.value, model: modelSelect.value };
-    if (keyInput.value.trim()) patch.apiKey = keyInput.value.trim();
+    if (providerSelect.value === 'guest') patch.apiKey = '';
+    else if (keyInput.value.trim()) patch.apiKey = keyInput.value.trim();
     try {
       saveSettings(patch);
       toast('已更新 AI 设置', 'success');
@@ -348,14 +380,20 @@ function renderSettingsPanel(ctx, onChange) {
     },
   });
 
+  const syncProviderUI = () => {
+    const guest = providerSelect.value === 'guest';
+    keyFieldWrap.hidden = guest;
+    guestNote.hidden = !guest;
+    clearBtn.hidden = guest;
+  };
+  syncProviderUI();
+
   return el('section', { class: 'card ai-settings', id: 'ai-settings', hidden: true }, [
     el('h3', { class: 'card__title', text: 'AI 设置' }),
     el('div', { class: 'field' }, [el('label', { class: 'field__label', for: 'ai-provider-2', text: '模型平台' }), providerSelect]),
     el('div', { class: 'field' }, [el('label', { class: 'field__label', for: 'ai-model-2', text: '模型' }), modelSelect]),
-    el('div', { class: 'field' }, [
-      el('label', { class: 'field__label', for: 'ai-key-2', text: '更换 API Key（留空=不改）' }),
-      keyInput,
-    ]),
+    keyFieldWrap,
+    guestNote,
     el('p', { class: 'field__hint', text: '当前平台：' + PROVIDERS[settings.provider].name + ' · 模型：' + settings.model }),
     el('div', { class: 'row row--wrap' }, [saveBtn, clearBtn]),
   ]);
