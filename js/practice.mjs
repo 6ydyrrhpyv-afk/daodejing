@@ -44,13 +44,24 @@ const STEPS = [
 // —— 服务端 /api/config 缓存（仅用于决定默认模式与提示，不暴露密钥）——
 let _practiceConfig = null;
 let _practiceConfigPromise = null;
+// 配置拉取失败的原因：'network'=根本连不上（含后端域名在当前网络被墙/超时）；
+// 'server'=连上了但服务端返回异常；null=成功。用于给出准确提示，不要一律说成"未配置模型"。
+let _practiceConfigError = null;
 function getPracticeConfig() {
   if (_practiceConfig) return Promise.resolve(_practiceConfig);
   if (_practiceConfigPromise) return _practiceConfigPromise;
-  _practiceConfigPromise = apiUrl('/api/config').then((u) => fetch(u)).then((r) => r.json()).then((c) => {
+  _practiceConfigPromise = apiUrl('/api/config').then((u) => fetch(u)).then((r) => {
+    if (!r.ok) { _practiceConfigError = 'server'; throw new Error('HTTP_' + r.status); }
+    return r.json();
+  }).then((c) => {
     _practiceConfig = c || {};
+    _practiceConfigError = null;
     return _practiceConfig;
-  }).catch(() => { _practiceConfig = {}; return _practiceConfig; });
+  }).catch(() => {
+    _practiceConfig = {};
+    if (!_practiceConfigError) _practiceConfigError = 'network';
+    return _practiceConfig;
+  });
   return _practiceConfigPromise;
 }
 
@@ -72,7 +83,15 @@ async function callPractice({ draft, step, extra = {}, signal, generation, onSta
   const token = await loadPracticeToken();
   if (token) headers['x-practice-token'] = token;
   const apiEndpoint = await apiUrl('/api/practice/next');
-  const res = await fetch(apiEndpoint, { method: 'POST', headers, body: JSON.stringify(body), signal });
+  let res;
+  try {
+    res = await fetch(apiEndpoint, { method: 'POST', headers, body: JSON.stringify(body), signal });
+  } catch (err) {
+    if (err && err.name === 'AbortError') throw err; // 用户主动取消，不报网络错
+    const ne = new Error('无法连接练习服务');
+    ne.code = 'NETWORK_ERROR';
+    throw ne;
+  }
   if (generation !== undefined && onStale && generation.stale()) { const e = new Error('STALE'); e.code = 'STALE'; throw e; }
   if (res.status === 200) {
     const json = await res.json();
@@ -107,6 +126,7 @@ function humanError(code, message) {
     case 'UNAUTHORIZED': return '练习访问凭证无效或未填写。请在「设置」中填入与服务器一致的测试凭证，或改用通用练习。';
     case 'RATE_LIMITED': return '请求过于频繁，已被限流（每用户每分钟最多 6 次、每日最多 30 次）。请稍后重试。';
     case 'UPSTREAM_TIMEOUT': return '模型服务超时（30 秒）。可能是网络或模型繁忙，可重试一次。';
+    case 'NETWORK_ERROR': return '连不上练习服务。后端部署在 Cloudflare，国内部分网络可能访问超时——可切换网络或开启 VPN 后重试，也可改用「通用练习（未使用 AI 分析）」。';
     case 'BAD_MODEL_OUTPUT':
     case 'PAYLOAD_INVALID': return '模型返回内容无法解析，本次未产生结果。可重试一次。';
     case 'INVALID_INPUT': return message || '输入不合法，请检查场景描述（至少 4 字、不超过 1000 字）。';
@@ -139,6 +159,9 @@ export function renderPractice(ctx) {
     getPracticeConfig().then((cfg) => {
       if (cfg && cfg.practiceConfigured) {
         note.textContent = 'AI 情境练习已可用：模型会按你的真实场景动态生成每一步的问题与选项。';
+      } else if (_practiceConfigError === 'network') {
+        // 连不上后端（含后端域名在当前网络被墙/超时）——不要误导成"服务端没配好"
+        note.textContent = '暂时连不上练习服务：后端部署在 Cloudflare，国内部分网络可能访问超时。可切换网络或开启 VPN 后重试，也可先用「通用练习」。';
       } else {
         note.textContent = '当前服务端未配置练习模型（真实模型联调尚未完成）。AI 练习暂不可用，可先用「通用练习」。';
         aiBtn.disabled = true;
