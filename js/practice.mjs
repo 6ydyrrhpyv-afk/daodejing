@@ -76,6 +76,8 @@ async function callPractice({ draft, step, extra = {}, signal, generation, onSta
     revision: draft.revision,
     theme: draft.theme || '',
     scene: draft.scene || '',
+    // 步骤 1 确认的场景理解：带上它，第 2 步及之后才能针对这次的具体情境提问。
+    scene_summary: draft.sceneSummary || '',
     selections: draft.selections || [],
     ...extra,
   };
@@ -112,6 +114,22 @@ function invalidateFrom(draft, fromStep) {
   draft.revision = (draft.revision || 0) + 1;
   if (!draft.results) draft.results = {};
   for (let s = fromStep; s <= 5; s += 1) delete draft.results[s];
+}
+
+// 上游输入（场景/场景理解）被改动后，清空该步之后的结果与选择并落盘。
+// 不做这一步的话，用户换了情境仍会看到上一次缓存的步骤内容（表现为「怎么问都一样」）。
+function resetDownstream(ctx, draft, fromStep) {
+  invalidateFrom(draft, fromStep);
+  const keep = (draft.selections || []).filter((s) => s.step < fromStep);
+  draft.selections = keep;
+  draft.sceneSummary = fromStep <= 2 ? '' : draft.sceneSummary;
+  draft._lastError = null;
+  saveDraftPatch(ctx, draft, {
+    results: draft.results,
+    selections: keep,
+    sceneSummary: draft.sceneSummary,
+    _lastError: null,
+  });
 }
 
 // 把服务端返回写入某步缓存（用于「返回查看不重新调用」）。
@@ -291,7 +309,7 @@ function renderAiStep1(ctx, draft) {
     ]);
     wrap.append(sum);
     wrap.append(el('div', { class: 'row' }, [
-      el('button', { class: 'btn btn--primary', type: 'button', onclick: () => { draft.sceneSummary = ''; saveDraftPatch(ctx, draft, { sceneSummary: '' }); ctx.rerender(); } }, ['纠正 / 重新描述']),
+      el('button', { class: 'btn btn--primary', type: 'button', onclick: () => { resetDownstream(ctx, draft, 2); ctx.rerender(); } }, ['纠正 / 重新描述']),
       el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => practiceGoto(ctx, draft, 2) }, ['继续 →']),
     ]));
     return wrap;
@@ -302,7 +320,11 @@ function renderAiStep1(ctx, draft) {
   const counter = el('span', { class: 'field__hint', text: `${scene.value.length}/1000` });
   scene.addEventListener('input', () => {
     counter.textContent = `${scene.value.length}/1000`;
-    if (scene.value.length <= 1000) saveDraftPatch(ctx, draft, { scene: scene.value });
+    if (scene.value.length <= 1000) {
+      saveDraftPatch(ctx, draft, { scene: scene.value });
+      // 场景一改，第 2 步及之后都是按旧场景生成的，必须失效，否则会看到上一题的旧内容。
+      resetDownstream(ctx, draft, 2);
+    }
   });
   wrap.append(el('div', { class: 'field' }, [el('label', { class: 'field__label', for: 'p-scene', text: '你的真实情境（≤1000 字）' }), scene, counter]));
 
@@ -312,7 +334,7 @@ function renderAiStep1(ctx, draft) {
   for (const t of themes) {
     const input = el('input', { type: 'radio', name: 'p-theme', value: t.id, id: `p-theme-${t.id}` });
     if (draft.theme === t.id) input.checked = true;
-    input.addEventListener('change', () => { saveDraftPatch(ctx, draft, { theme: t.id }); });
+    input.addEventListener('change', () => { saveDraftPatch(ctx, draft, { theme: t.id }); resetDownstream(ctx, draft, 2); });
     radios.append(el('div', { class: 'radio-item' }, [input, el('label', { for: input.id, text: t.name })]));
   }
   if (themes.length) wrap.append(el('fieldset', { class: 'field' }, [el('legend', { class: 'field__label', text: '主题倾向（可选）' }), radios]));
@@ -346,8 +368,9 @@ function renderAiStep1(ctx, draft) {
           ctx.rerender();
           return;
         }
-        // ready
-        saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || '' });
+        // ready：场景理解可能已变，先让第 2 步及之后的结果失效再写入新的理解
+        invalidateFrom(draft, 2);
+        saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || '', results: draft.results });
         ctx.rerender();
       })
       .catch((err) => {
@@ -384,7 +407,8 @@ function renderAiStep1(ctx, draft) {
           _practiceAbort = null; _practiceBusyStep = 0; again.disabled = false;
           const d = json && json.data;
           if (d && (d.status === 'ready' || d.status === 'need_clarification')) {
-            saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || draft.sceneSummary, _clarify: d.status === 'need_clarification' ? (d.clarification_questions || []) : [] });
+            invalidateFrom(draft, 2); // 补充回答改变了情境理解，后续步骤需重新生成
+            saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || draft.sceneSummary, results: draft.results, _clarify: d.status === 'need_clarification' ? (d.clarification_questions || []) : [] });
             ctx.rerender();
           } else if (d && d.status === 'unsupported') {
             status.textContent = '这个请求不太适合用情境练习处理，建议改用通用练习。';
