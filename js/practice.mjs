@@ -6,32 +6,7 @@
 import { el, frag, toast, debounce, uid, formatDate, icon } from './util.mjs';
 import { getBranch, getChapter, getTheme, themeLabel } from './data.mjs';
 import { sceneBanner } from './scenes.mjs';
-// 练习访问凭证（仅用于"无登录测试入口"的限流鉴权，不是模型密钥）与 API 基址不在仓库中，
-// 缺失时前端优雅降级为"AI 不可用 → 通用练习"，不会因加载失败整体崩溃。
-let _practiceTokenPromise = null;
-function loadPracticeToken() {
-  if (_practiceTokenPromise) return _practiceTokenPromise;
-  _practiceTokenPromise = import('./practice-config.mjs')
-    .then((m) => (m && m.PRACTICE_ACCESS_TOKEN) || '')
-    .catch(() => '');
-  return _practiceTokenPromise;
-}
-
-// API 基址：留空走同源；静态前端跨域部署时（如 GitHub Pages → 自有 Node 后端）需配置。
-let _practiceApiBasePromise = null;
-function loadApiBase() {
-  if (_practiceApiBasePromise) return _practiceApiBasePromise;
-  _practiceApiBasePromise = import('./practice-config.mjs')
-    .then((m) => (m && m.PRACTICE_API_BASE) || '')
-    .catch(() => '');
-  return _practiceApiBasePromise;
-}
-async function apiUrl(path) {
-  const base = await loadApiBase();
-  if (!base) return path;
-  const cleanBase = base.replace(/\/+$/, '');
-  return cleanBase + (path.startsWith('/') ? path : '/' + path);
-}
+import { practiceUrl as apiUrl, practiceToken as loadPracticeToken } from './practice-client.mjs';
 
 const STEPS = [
   { n: 1, label: '问事', hint: '问题与主题' },
@@ -50,7 +25,7 @@ let _practiceConfigError = null;
 function getPracticeConfig() {
   if (_practiceConfig) return Promise.resolve(_practiceConfig);
   if (_practiceConfigPromise) return _practiceConfigPromise;
-  _practiceConfigPromise = apiUrl('/api/config').then((u) => fetch(u)).then((r) => {
+  _practiceConfigPromise = apiUrl('/api/config').then((u) => fetch(u, { signal: AbortSignal.timeout(10000) })).then((r) => {
     if (!r.ok) { _practiceConfigError = 'server'; throw new Error('HTTP_' + r.status); }
     return r.json();
   }).then((c) => {
@@ -58,9 +33,10 @@ function getPracticeConfig() {
     _practiceConfigError = null;
     return _practiceConfig;
   }).catch(() => {
-    _practiceConfig = {};
+    _practiceConfig = null;
+    _practiceConfigPromise = null;
     if (!_practiceConfigError) _practiceConfigError = 'network';
-    return _practiceConfig;
+    return {};
   });
   return _practiceConfigPromise;
 }
@@ -78,7 +54,8 @@ async function callPractice({ draft, step, extra = {}, signal, generation, onSta
     scene: draft.scene || '',
     // 步骤 1 确认的场景理解：带上它，第 2 步及之后才能针对这次的具体情境提问。
     scene_summary: draft.sceneSummary || '',
-    selections: draft.selections || [],
+    clarification_answers: draft.clarificationAnswers || '',
+    selections: (draft.selections || []).filter(s => s.step < step),
     ...extra,
   };
   const headers = { 'Content-Type': 'application/json' };
@@ -88,16 +65,20 @@ async function callPractice({ draft, step, extra = {}, signal, generation, onSta
   let res;
   try {
     res = await fetch(apiEndpoint, { method: 'POST', headers, body: JSON.stringify(body), signal });
+    if (res.status === 401 && !signal?.aborted) {
+      headers['x-practice-token'] = await loadPracticeToken(true);
+      res = await fetch(apiEndpoint, { method: 'POST', headers, body: JSON.stringify(body), signal });
+    }
   } catch (err) {
     if (err && err.name === 'AbortError') throw err; // 用户主动取消，不报网络错
     const ne = new Error('无法连接练习服务');
     ne.code = 'NETWORK_ERROR';
     throw ne;
   }
-  if (generation !== undefined && onStale && generation.stale()) { const e = new Error('STALE'); e.code = 'STALE'; throw e; }
+  if (generation !== undefined && onStale && onStale.stale()) { const e = new Error('STALE'); e.code = 'STALE'; throw e; }
   if (res.status === 200) {
     const json = await res.json();
-    if (generation !== undefined && onStale && generation.stale()) { const e = new Error('STALE'); e.code = 'STALE'; throw e; }
+    if (generation !== undefined && onStale && onStale.stale()) { const e = new Error('STALE'); e.code = 'STALE'; throw e; }
     return json;
   }
   let payload = null;
@@ -119,6 +100,7 @@ function invalidateFrom(draft, fromStep) {
 // 上游输入（场景/场景理解）被改动后，清空该步之后的结果与选择并落盘。
 // 不做这一步的话，用户换了情境仍会看到上一次缓存的步骤内容（表现为「怎么问都一样」）。
 function resetDownstream(ctx, draft, fromStep) {
+  cancelPractice();
   invalidateFrom(draft, fromStep);
   const keep = (draft.selections || []).filter((s) => s.step < fromStep);
   draft.selections = keep;
@@ -129,6 +111,8 @@ function resetDownstream(ctx, draft, fromStep) {
     selections: keep,
     sceneSummary: draft.sceneSummary,
     _lastError: null,
+    _clarify: fromStep <= 2 ? [] : draft._clarify,
+    revision: draft.revision,
   });
 }
 
@@ -141,7 +125,7 @@ function cacheResult(draft, step, data) {
 function humanError(code, message) {
   switch (code) {
     case 'PRACTICE_NOT_CONFIGURED': return '练习服务尚未配置模型（真实模型联调未完成）。你可以改用下方「通用练习（未使用 AI 分析）」。';
-    case 'UNAUTHORIZED': return '练习访问凭证无效或未填写。请在「设置」中填入与服务器一致的测试凭证，或改用通用练习。';
+    case 'UNAUTHORIZED': return '练习服务验证失败，请刷新后重试；无需自行填写 API。若仍失败，请联系网站维护者。';
     case 'RATE_LIMITED': return '请求过于频繁，已被限流（每用户每分钟最多 6 次、每日最多 30 次）。请稍后重试。';
     case 'UPSTREAM_TIMEOUT': return '模型服务超时（30 秒）。可能是网络或模型繁忙，可重试一次。';
     case 'NETWORK_ERROR': return '连不上练习服务。后端部署在 Cloudflare，国内部分网络可能访问超时——可切换网络或开启 VPN 后重试，也可改用「通用练习（未使用 AI 分析）」。';
@@ -176,7 +160,7 @@ export function renderPractice(ctx) {
     root.append(card);
     getPracticeConfig().then((cfg) => {
       if (cfg && cfg.practiceConfigured) {
-        note.textContent = 'AI 情境练习已可用：模型会按你的真实场景动态生成每一步的问题与选项。';
+        note.textContent = '练习服务已连接。输入具体场景后，AI 将尝试生成对应的问题与选项，无需配置 API。';
       } else if (_practiceConfigError === 'network') {
         // 连不上后端（含后端域名在当前网络被墙/超时）——不要误导成"服务端没配好"
         note.textContent = '暂时连不上练习服务：后端部署在 Cloudflare，国内部分网络可能访问超时。可切换网络或开启 VPN 后重试，也可先用「通用练习」。';
@@ -243,6 +227,11 @@ function renderGenericPractice(ctx, draft) {
   if (draft.step === 4) root.append(stepFour(ctx, draft, saveDraft, goto));
   if (draft.step === 5) root.append(stepFive(ctx, draft, saveDraft, goto));
   root.append(el('p', { class: 'field__hint', text: '每一步都会自动保存草稿；切换页面、刷新或去读原文都不会丢失已填内容。数据仅保存在当前浏览器。' }));
+  root.append(el('button', { class: 'btn btn--primary', type: 'button', text: '用此场景开始 AI 练习', onclick: () => {
+    const scene = draft.question || draft.scene || ''; const theme = draft.theme || '';
+    startPractice(ctx, 'ai');
+    saveDraftPatch(ctx, ctx.store.state.draft, { scene, theme }); ctx.rerender();
+  }}));
   root.append(el('p', { class: 'notice', text: '当前为通用练习：以上为按固定分支给出的材料，未使用 AI 分析。' }));
   return frag([root]);
 }
@@ -254,12 +243,17 @@ let _practiceBusyStep = 0;   // 正在加载的步骤（防止重复提交/自�
 
 function practiceGoto(ctx, draft, step) {
   if (draft.step === step) return;
+  if (step > 1 && (!draft.sceneSummary || draft._clarify?.length)) return;
+  if (step > 2 && !(draft.selections || []).some(s => s.step === step - 1)) return;
+  cancelPractice();
   const result = ctx.store.update((s) => ({ ...s, draft: { ...s.draft, step, updatedAt: new Date().toISOString() } }));
   if (!result.ok) { toast(result.error, 'error'); return; }
   ctx.rerender();
 }
 
 function saveDraftPatch(ctx, draft, patch) {
+  // Keep event-handler closures in sync with the canonical state.
+  Object.assign(draft, patch);
   const result = ctx.store.update((s) => ({ ...s, draft: { ...s.draft, ...patch, updatedAt: new Date().toISOString() } }));
   if (!result.ok) toast(result.error, 'error');
   return result.ok;
@@ -267,6 +261,8 @@ function saveDraftPatch(ctx, draft, patch) {
 
 // 发起某步的请求；成功写入缓存并重渲染；过期/取消的响应被忽略。
 function runPracticeStep(ctx, draft, step) {
+  draft = ctx.store.state.draft;
+  if (!draft || draft.mode !== 'ai') return;
   if (_practiceBusyStep === step && _practiceAbort) return; // 已在加载
   _practiceBusyStep = step;
   _practiceGen += 1;
@@ -275,13 +271,15 @@ function runPracticeStep(ctx, draft, step) {
   _practiceAbort = controller;
   callPractice({ draft, step, signal: controller.signal, generation: myGen, onStale: { stale: () => myGen !== _practiceGen } })
     .then((json) => {
-      if (myGen !== _practiceGen) return; // 过期
-      if (json && json.data) cacheResult(draft, step, json.data);
+      if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return; // 过期
+      if (!json?.ok || !json.data) throw new Error('未得到有效结果，请重试');
+      cacheResult(draft, step, json.data);
+      saveDraftPatch(ctx, draft, { results: draft.results, _lastError: null });
       _practiceBusyStep = 0; _practiceAbort = null;
       ctx.rerender();
     })
     .catch((err) => {
-      if (myGen !== _practiceGen) return; // 过期或已取消
+      if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return; // 过期或已取消
       _practiceBusyStep = 0; _practiceAbort = null;
       if (err && err.code === 'STALE') return;
       draft._lastError = { step, code: err && err.code, message: humanError(err && err.code, err && err.message) };
@@ -303,7 +301,7 @@ function renderAiStep1(ctx, draft) {
     el('p', { class: 'card__text', text: '用你自己的话描述正在发生的事。点击「分析并继续」后才会发送；这里输入时不会调用任何模型。' }),
   ]);
 
-  if (draft.sceneSummary) {
+  if (draft.sceneSummary && !draft._clarify?.length) {
     const sum = el('div', { class: 'ref' }, [
       el('p', { class: 'ref__why', text: '场景理解：' + draft.sceneSummary }),
     ]);
@@ -353,7 +351,7 @@ function renderAiStep1(ctx, draft) {
     const controller = new AbortController(); _practiceAbort = controller; _practiceBusyStep = 1;
     callPractice({ draft, step: 1, signal: controller.signal, generation: myGen, onStale: { stale: () => myGen !== _practiceGen } })
       .then((json) => {
-        if (myGen !== _practiceGen) return;
+        if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return;
         _practiceAbort = null; _practiceBusyStep = 0; analyzeBtn.disabled = false; cancelBtn.disabled = true;
         const d = json && json.data;
         if (!d) { status.textContent = '未得到有效结果，请重试。'; return; }
@@ -370,11 +368,11 @@ function renderAiStep1(ctx, draft) {
         }
         // ready：场景理解可能已变，先让第 2 步及之后的结果失效再写入新的理解
         invalidateFrom(draft, 2);
-        saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || '', results: draft.results });
+        saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || '', results: draft.results, revision: draft.revision, _clarify: [], selections: [], _lastError: null });
         ctx.rerender();
       })
       .catch((err) => {
-        if (myGen !== _practiceGen) return;
+        if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return;
         _practiceAbort = null; _practiceBusyStep = 0; analyzeBtn.disabled = false; cancelBtn.disabled = true;
         if (err && err.code === 'STALE') return;
         status.textContent = humanError(err && err.code, err && err.message) || '请求失败，请重试。';
@@ -403,19 +401,19 @@ function renderAiStep1(ctx, draft) {
       const controller = new AbortController(); _practiceAbort = controller; _practiceBusyStep = 1;
       callPractice({ draft, step: 1, extra: { clarification_answers: ans.value.trim() }, signal: controller.signal, generation: myGen, onStale: { stale: () => myGen !== _practiceGen } })
         .then((json) => {
-          if (myGen !== _practiceGen) return;
+          if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return;
           _practiceAbort = null; _practiceBusyStep = 0; again.disabled = false;
           const d = json && json.data;
           if (d && (d.status === 'ready' || d.status === 'need_clarification')) {
             invalidateFrom(draft, 2); // 补充回答改变了情境理解，后续步骤需重新生成
-            saveDraftPatch(ctx, draft, { sceneSummary: d.scene_summary || draft.sceneSummary, results: draft.results, _clarify: d.status === 'need_clarification' ? (d.clarification_questions || []) : [] });
+            saveDraftPatch(ctx, draft, { revision: draft.revision, selections: [], _lastError: null, sceneSummary: d.scene_summary || draft.sceneSummary, results: draft.results, _clarify: d.status === 'need_clarification' ? (d.clarification_questions || []) : [] });
             ctx.rerender();
           } else if (d && d.status === 'unsupported') {
             status.textContent = '这个请求不太适合用情境练习处理，建议改用通用练习。';
           } else { status.textContent = '未得到有效结果，请重试。'; }
         })
         .catch((err) => {
-          if (myGen !== _practiceGen) return;
+          if (myGen !== _practiceGen || ctx.store.state.draft?.sessionId !== draft.sessionId || ctx.store.state.draft?.revision !== draft.revision) return;
           _practiceAbort = null; _practiceBusyStep = 0; again.disabled = false;
           if (err && err.code === 'STALE') return;
           status.textContent = humanError(err && err.code, err && err.message) || '请求失败，请重试。';
@@ -431,17 +429,24 @@ function renderAiStep1(ctx, draft) {
 function renderAiStepK(ctx, draft, step) {
   const cached = draft.results && draft.results[step];
   const wrap = el('section', { class: 'card' }, [el('h3', { class: 'card__title', text: `步骤 ${step} · ${STEPS[step - 1].label}` })]);
-  if (!cached) {
-    wrap.append(el('p', { class: 'notice', role: 'status', text: '正在理解你的情境并生成这一步的内容…' }));
-    runPracticeStep(ctx, draft, step);
-    return wrap;
-  }
   const err = draft._lastError && draft._lastError.step === step ? draft._lastError : null;
   if (err) {
     wrap.append(el('p', { class: 'notice notice--error', text: err.message }));
-    const retry = el('button', { class: 'btn btn--primary', type: 'button', text: '重试' });
-    retry.addEventListener('click', () => { draft._lastError = null; ctx.rerender(); });
-    wrap.append(el('div', { class: 'row' }, [retry]));
+    wrap.append(el('button', { class: 'btn btn--primary', type: 'button', text: '重试', onclick: () => {
+      saveDraftPatch(ctx, draft, { _lastError: null }); ctx.rerender();
+    }}));
+    wrap.append(el('button', { class: 'btn btn--ghost', type: 'button', text: '返回上一步', onclick: () => practiceGoto(ctx, draft, step - 1) }));
+    return wrap;
+  }
+  if (!cached) {
+    wrap.append(el('p', { class: 'notice', role: 'status', text: '正在理解你的情境并生成这一步的内容…' }));
+    wrap.append(el('button', { class: 'btn btn--ghost', type: 'button', text: '取消并返回', onclick: () => practiceGoto(ctx, draft, step - 1) }));
+    runPracticeStep(ctx, draft, step);
+    return wrap;
+  }
+  if (cached.status !== 'ready') {
+    wrap.append(el('p', { class: 'notice', text: (cached.clarification_questions || []).join('；') || '请返回补充场景描述后再试。' }));
+    wrap.append(el('button', { class: 'btn btn--ghost', type: 'button', text: '补充场景', onclick: () => { resetDownstream(ctx, draft, 2); practiceGoto(ctx, draft, 1); } }));
     return wrap;
   }
 
@@ -478,7 +483,8 @@ function renderAiStepK(ctx, draft, step) {
   }
   // 其他
   const customRadio = el('input', { type: 'radio', name, value: 'custom', id: `${name}-custom` });
-  if (sel && sel.option_id === 'custom') { customRadio.checked = true; customArea.style.display = 'block'; }
+  customArea.style.display = 'none';
+  if (sel && sel.option_id === 'custom') { chosen = { id: 'custom', title: '其他' }; customRadio.checked = true; customArea.style.display = 'block'; }
   customRadio.addEventListener('change', () => { chosen = { id: 'custom', title: '其他' }; customArea.style.display = 'block'; sceneScroll(); });
   optsBox.append(el('div', { class: 'radio-item' }, [customRadio, el('label', { for: `${name}-custom`, text: '其他 / 自己填写' })]));
   wrap.append(optsBox);
@@ -488,18 +494,18 @@ function renderAiStepK(ctx, draft, step) {
   const confirmBtn = el('button', { class: 'btn btn--primary', type: 'button', text: step < 5 ? '确认并继续' : '完成' });
   confirmBtn.addEventListener('click', () => {
     if (!chosen) { toast('请先选择一个方向', 'error'); return; }
-    let optionId = chosen.id; let optionLabel = chosen.title; let customText = '';
+    let optionId = chosen.id; let optionLabel = [chosen.title, chosen.detail].filter(Boolean).join('：'); let customText = '';
     if (optionId === 'custom') {
       customText = customInput.value.trim();
       if (!customText) { toast('请填写你的考虑', 'error'); return; }
       optionLabel = '其他';
     }
-    const others = (draft.selections || []).filter((s) => s.step !== step);
+    const others = (draft.selections || []).filter((s) => s.step < step);
     others.push({ step, option_id: optionId, option_label: optionLabel, custom_text: customText });
     invalidateFrom(draft, step + 1);
-    const ok = saveDraftPatch(ctx, draft, { selections: others, step: step + 1 });
+    const ok = saveDraftPatch(ctx, draft, { selections: others, step: step + 1, revision: draft.revision, results: draft.results, _lastError: null });
     if (!ok) return;
-    runPracticeStep(ctx, draft, step + 1);
+    ctx.rerender();
   });
   const back = el('button', { class: 'btn btn--ghost', type: 'button', onclick: () => practiceGoto(ctx, draft, step - 1) }, ['返回上一步']);
   wrap.append(el('div', { class: 'row' }, [back, confirmBtn]));
@@ -554,7 +560,7 @@ function renderAiPractice(ctx, draft) {
   root.append(sceneBanner('practice', {
     kicker: '五步情境练习 · AI',
     title: '分步练习（AI 情境驱动）',
-    desc: '由模型按你的真实场景动态生成每一步的问题与选项；问题只发送给你在服务端配置的模型，密钥只在服务端。',
+    desc: '由模型按你的真实场景动态生成每一步的问题与选项；提交后，场景将发送给本站接入的 AI 服务。请避免填写姓名、联系方式等隐私信息。',
   }));
   root.append(stepper(draft.step, (s) => practiceGoto(ctx, draft, s)));
   if (draft.step === 1) root.append(renderAiStep1(ctx, draft));

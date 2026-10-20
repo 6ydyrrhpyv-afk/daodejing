@@ -3,54 +3,16 @@
 import { el, frag, toast, formatDate } from './util.mjs';
 import { buildBackup, validateBackup, mergeStates } from './validate.mjs';
 import { getSyncMeta, genSyncId, enableSync, disableSync, onSyncStatus } from './sync.mjs';
-import { loadSettings, PROVIDERS } from './ai.mjs';
 
 export function renderSettings(ctx) {
   const { store } = ctx;
   const root = el('div', { class: 'stack' });
   root.append(el('h2', { class: 'section-title', text: '设置与数据' }));
 
-  // 模式
-  const modeBox = el('section', { class: 'card' }, [
-    el('h3', { class: 'card__title', text: '练习模式' }),
-    el('p', { class: 'card__text', text: '引导练习：按你选择的情境分支给出固定材料。AI 辅助：在「问道 AI」页用你自己配置的模型（纯前端直连，不经服务端）解读与问答。' }),
-  ]);
-  const modeRow = el('div', { class: 'radio-row' });
-  const modes = [
-    ['guide', '引导练习（默认，不需要任何配置）'],
-    ['ai', 'AI 辅助（需要服务端已配置模型）'],
-  ];
-  for (const [value, label] of modes) {
-    const input = el('input', { type: 'radio', name: 'mode', value, id: `mode-${value}` });
-    if (store.state.mode === value) input.checked = true;
-    input.addEventListener('change', () => {
-      const result = store.update((s) => ({ ...s, mode: value }));
-      if (result.ok) { toast(value === 'ai' ? '已切换到 AI 辅助模式' : '已切换到引导练习模式', 'success'); ctx.rerender(); }
-      else toast(result.error, 'error');
-    });
-    modeRow.append(el('div', { class: 'radio-item' }, [input, el('label', { for: `mode-${value}`, text: label })]));
-  }
-  modeBox.append(modeRow);
-  root.append(modeBox);
-
-  // AI 状态（纯前端：用户自填 Key，不经任何服务端）
-  const aiBox = el('section', { class: 'card' }, [
-    el('h3', { class: 'card__title', text: 'AI 解读（纯前端）' }),
-    el('p', { class: 'card__text', text: '本站的 AI 解读已改为纯前端直连：你在「问道 AI」页填入自己的模型 Key（默认硅基流动免费模型），问题只发往你选择的模型平台，不经过本站服务器。另提供「游客免 Key 试聊」：由站点 Cloudflare Worker 代付少量免费额度，无需你填 Key 即可体验。' }),
-    el('p', { class: 'card__text', id: 'ai-status', text: '正在读取本机配置……' }),
-  ]);
-  root.append(aiBox);
-  const aiStatusNode = aiBox.querySelector('#ai-status');
-  try {
-    const s = loadSettings();
-    if (s.apiKey) {
-      aiStatusNode.textContent = `已配置：平台「${PROVIDERS[s.provider].name}」，模型 ${s.model}。Key 仅存于本浏览器。`;
-    } else {
-      aiStatusNode.textContent = '尚未配置 Key。前往「问道 AI」页：可点「游客免 Key 试聊」零配置体验，或填入自己的 Key 免费使用（默认硅基流动免费模型）。';
-    }
-  } catch {
-    aiStatusNode.textContent = '无法读取本机 AI 配置（可能是隐私模式）。本地引导练习仍可正常使用。';
-  }
+  root.append(el('section', { class: 'card' }, [
+    el('h3', { class: 'card__title', text: 'AI 服务' }),
+    el('p', { class: 'card__text', text: '分步练习与问道 AI 使用本站统一接入的服务，无需填写密钥或选择模型。分步练习中仍可主动选择标明“未使用 AI”的通用练习。' }),
+  ]));
 
   // 跨设备同步
   const syncBox = el('section', { class: 'card' }, [

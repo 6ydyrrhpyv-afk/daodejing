@@ -48,6 +48,16 @@ function sanitizeDraft(draft) {
   const understanding = draft.understanding && typeof draft.understanding === 'object' ? draft.understanding : {};
   const action = draft.action && typeof draft.action === 'object' ? draft.action : {};
   return {
+    mode: draft.mode === 'ai' ? 'ai' : 'generic',
+    sessionId: typeof draft.sessionId === 'string' ? draft.sessionId : '',
+    revision: Number.isInteger(draft.revision) && draft.revision > 0 ? draft.revision : 1,
+    scene: typeof draft.scene === 'string' ? draft.scene : '',
+    sceneSummary: typeof draft.sceneSummary === 'string' ? draft.sceneSummary : '',
+    clarificationAnswers: typeof draft.clarificationAnswers === 'string' ? draft.clarificationAnswers : '',
+    selections: Array.isArray(draft.selections) ? draft.selections.filter(s => s && Number.isInteger(s.step) && typeof s.option_id === 'string') : [],
+    results: draft.results && typeof draft.results === 'object' && !Array.isArray(draft.results) ? draft.results : {},
+    _clarify: Array.isArray(draft._clarify) ? draft._clarify.filter(q => typeof q === 'string') : [],
+    _lastError: draft._lastError && typeof draft._lastError === 'object' ? draft._lastError : null,
     theme: typeof draft.theme === 'string' ? draft.theme : '',
     question: typeof draft.question === 'string' ? draft.question : '',
     step: Number.isInteger(draft.step) ? Math.min(5, Math.max(1, draft.step)) : 1,

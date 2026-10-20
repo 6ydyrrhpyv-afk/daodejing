@@ -1,8 +1,8 @@
 // 问道 · AI 解读：章节感知的 AI 问答页（路由 #/ai 与 #/ai/<chapterId>）。
-// 纯前端：Key 存用户浏览器；默认硅基流动免费模型，可一键切 DeepSeek。
+// 与分步练习共用服务端 AI，无用户密钥配置界面。
 
 import { el, frag, toast, clear } from './util.mjs';
-import { loadSettings, saveSettings, hasKey, canChat, PROVIDERS, streamChat, buildSystemPrompt } from './ai.mjs';
+import { streamChat, buildSystemPrompt } from './ai.mjs';
 import { getChapter } from './data.mjs';
 
 // 对话历史在模块级保留，路由再进入时不清空（单轮会话）。
@@ -26,36 +26,9 @@ export function renderAI(ctx, params) {
     if (ch) { activeChapterId = params.id; contextEnabled = true; }
   }
 
-  const s = loadSettings();
-  const isGuest = s.provider === 'guest';
-
   const root = el('div', { class: 'stack ai-page' });
   root.append(el('h2', { class: 'section-title', text: '问道 · AI 解读' }));
-  root.append(el('p', {
-    class: 'card__text',
-    text: isGuest
-      ? '游客免 Key 试聊：由本站代付少量免费额度，无需配置即可体验。仅开放免费模型、有速率限制。'
-      : '用你自己的模型 Key 解读《道德经》、联系现实处事，问题只发往你选择的模型平台。也可点「游客免 Key 试聊」零配置先体验。',
-  }));
-
-  if (!canChat()) {
-    root.append(renderSetup(ctx, () => { ctx.rerender(); }));
-    return frag([root]);
-  }
-
-  // ---- 设置面板（可折叠）----
-  const settingsPanel = renderSettingsPanel(ctx, () => { ctx.rerender(); });
-  const settingsWrap = el('div', { class: 'ai-settings-wrap' }, [settingsPanel]);
-  const toggleBtn = el('button', {
-    type: 'button', class: 'btn btn--ghost btn--sm', 'aria-expanded': 'false', 'aria-controls': 'ai-settings',
-    onclick: () => {
-      const hidden = settingsWrap.dataset.open !== '1';
-      settingsWrap.dataset.open = hidden ? '1' : '0';
-      toggleBtn.setAttribute('aria-expanded', String(hidden));
-      settingsPanel.hidden = !hidden;
-    },
-  }, ['⚙ 设置 / 切换模型']);
-
+  root.append(el('p', { class: 'card__text', text: '使用本站接入的 AI 服务，无需配置。提交内容将发送给 AI 服务，请避免填写个人隐私。' }));
   // ---- 章节上下文选择 ----
   const chapterSelect = el('select', { class: 'field__input ai-chapter-select', id: 'ai-chapter', 'aria-label': '选择解读章节' });
   chapterSelect.append(el('option', { value: '', text: '不限定章节（自由提问）' }));
@@ -209,14 +182,10 @@ export function renderAI(ctx, params) {
 
   const foot = el('p', {
     class: 'field__hint ai-foot',
-    text: isGuest
-      ? '游客模式由本站代付少量免费额度，仅限免费模型、有速率限制；重要判断请回到原文与你的思考，或填入你自己的 Key 获得更高质量。'
-      : '回答由你自己的模型生成，非本站观点；本站不扮演老子给出决策。免费模型质量有限、有速率限制，重要判断请回到原文与你的思考。',
+    text: '回答由 AI 生成，仅供阅读与思考参考。重要判断请回到原文和现实情况。',
   });
 
   root.append(
-    el('div', { class: 'ai-topbar' }, [toggleBtn]),
-    settingsWrap,
     contextBar,
     suggestionRow,
     messagesEl,
@@ -234,167 +203,5 @@ function renderBubble(m) {
   return el('div', { class: `ai-bubble ai-bubble--${isUser ? 'user' : 'assistant'}` }, [
     el('p', { class: 'ai-bubble__role', text: isUser ? '你' : 'AI 解读' }),
     el('div', { class: 'ai-bubble__body', text: m.content || '' }),
-  ]);
-}
-
-function renderSetup(ctx, onChange) {
-  const settings = loadSettings();
-  const providerSelect = el('select', { class: 'field__input', id: 'ai-provider' });
-  for (const id of Object.keys(PROVIDERS)) {
-    const p = PROVIDERS[id];
-    const opt = el('option', { value: id, text: p.name });
-    if (id === settings.provider) opt.selected = true;
-    providerSelect.append(opt);
-  }
-  const modelSelect = el('select', { class: 'field__input', id: 'ai-model' });
-  const fillModels = (providerId) => {
-    clear(modelSelect);
-    for (const m of PROVIDERS[providerId].models) {
-      const opt = el('option', { value: m.id, text: m.label });
-      if (m.id === settings.model) opt.selected = true;
-      modelSelect.append(opt);
-    }
-  };
-  fillModels(settings.provider);
-  providerSelect.addEventListener('change', () => fillModels(providerSelect.value));
-
-  const keyInput = el('input', {
-    type: 'password', class: 'field__input', id: 'ai-key',
-    placeholder: '粘贴你的 API Key', autocomplete: 'off', spellcheck: 'false',
-  });
-  const saveBtn = el('button', { type: 'button', class: 'btn btn--primary', text: '保存并开始使用' });
-  saveBtn.addEventListener('click', () => {
-    try {
-      saveSettings({ provider: providerSelect.value, model: modelSelect.value, apiKey: keyInput.value });
-      toast('已保存（仅存于本浏览器）', 'success');
-      onChange();
-    } catch (e) {
-      toast(e.message, 'error');
-    }
-  });
-
-  const box = el('section', { class: 'card ai-setup' }, [
-    el('h3', { class: 'card__title', text: '第一步：填入你自己的模型 Key（免费）' }),
-    el('p', { class: 'card__text', text: '本站不提供账号体系，也不会替你付钱。你用自己的 Key，数据只发给你选的模型平台。默认用硅基流动的免费模型，零成本。' }),
-    el('div', { class: 'field' }, [
-      el('label', { class: 'field__label', for: 'ai-provider', text: '模型平台' }),
-      providerSelect,
-    ]),
-    el('div', { class: 'field' }, [
-      el('label', { class: 'field__label', for: 'ai-model', text: '模型' }),
-      modelSelect,
-    ]),
-    el('div', { class: 'field' }, [
-      el('label', { class: 'field__label', for: 'ai-key', text: 'API Key' }),
-      keyInput,
-      el('p', { class: 'field__hint', id: 'ai-key-hint' }),
-    ]),
-    el('div', { class: 'row row--wrap' }, [saveBtn]),
-  ]);
-
-  // 动态显示当前平台的 Key 获取说明
-  const hintEl = box.querySelector('#ai-key-hint');
-  const updateHint = () => { hintEl.textContent = PROVIDERS[providerSelect.value].keyHint; };
-  providerSelect.addEventListener('change', updateHint);
-  updateHint();
-
-  // 外链到平台（新窗口，不离开站点）
-  const docsLink = el('a', {
-    class: 'link', href: PROVIDERS[settings.provider].docsUrl, target: '_blank', rel: 'noopener noreferrer',
-    text: '打开对应平台注册 / 获取 Key',
-  });
-  providerSelect.addEventListener('change', () => { docsLink.href = PROVIDERS[providerSelect.value].docsUrl; });
-  box.append(el('p', { class: 'field__hint' }, [docsLink]));
-
-  // —— 游客免 Key 试聊入口（无需任何配置）——
-  const guestBtn = el('button', { type: 'button', class: 'btn btn--primary', text: '🆓 游客免 Key 试聊（无需配置）' });
-  guestBtn.addEventListener('click', () => {
-    try {
-      saveSettings({ provider: 'guest', apiKey: '', model: PROVIDERS.guest.defaultModel });
-      toast('已进入游客试聊模式', 'success');
-      onChange();
-    } catch (e) { toast(e.message, 'error'); }
-  });
-  const guestBox = el('section', { class: 'card ai-setup ai-setup--guest' }, [
-    el('h3', { class: 'card__title', text: '或者：游客免 Key 试聊' }),
-    el('p', { class: 'card__text', text: '不想填 Key？点下面按钮，用本站代付的少量免费额度直接体验《道德经》解读。仅开放免费模型、有速率限制，请勿滥用。' }),
-    el('div', { class: 'row row--wrap' }, [guestBtn]),
-  ]);
-
-  return frag([box, guestBox]);
-}
-
-function renderSettingsPanel(ctx, onChange) {
-  const settings = loadSettings();
-  const providerSelect = el('select', { class: 'field__input', id: 'ai-provider-2' });
-  for (const id of Object.keys(PROVIDERS)) {
-    const p = PROVIDERS[id];
-    const opt = el('option', { value: id, text: p.name });
-    if (id === settings.provider) opt.selected = true;
-    providerSelect.append(opt);
-  }
-  const modelSelect = el('select', { class: 'field__input', id: 'ai-model-2' });
-  const fillModels = (providerId) => {
-    clear(modelSelect);
-    for (const m of PROVIDERS[providerId].models) {
-      const opt = el('option', { value: m.id, text: m.label });
-      if (m.id === settings.model) opt.selected = true;
-      modelSelect.append(opt);
-    }
-  };
-  fillModels(settings.provider);
-  providerSelect.addEventListener('change', () => { fillModels(providerSelect.value); syncProviderUI(); });
-
-  const keyInput = el('input', {
-    type: 'password', class: 'field__input', id: 'ai-key-2',
-    placeholder: '留空则不修改', autocomplete: 'off', spellcheck: 'false',
-  });
-  const keyFieldWrap = el('div', { class: 'field' }, [
-    el('label', { class: 'field__label', for: 'ai-key-2', text: '更换 API Key（留空=不改）' }),
-    keyInput,
-  ]);
-  const guestNote = el('p', {
-    class: 'field__hint', hidden: true,
-    text: '游客模式：无需 Key，由站点代付少量免费额度。切换到其他平台时再填入你自己的 Key。',
-  });
-
-  const saveBtn = el('button', { type: 'button', class: 'btn btn--primary', text: '保存更改' });
-  saveBtn.addEventListener('click', () => {
-    const patch = { provider: providerSelect.value, model: modelSelect.value };
-    if (providerSelect.value === 'guest') patch.apiKey = '';
-    else if (keyInput.value.trim()) patch.apiKey = keyInput.value.trim();
-    try {
-      saveSettings(patch);
-      toast('已更新 AI 设置', 'success');
-      onChange();
-    } catch (e) { toast(e.message, 'error'); }
-  });
-  const clearBtn = el('button', {
-    type: 'button', class: 'btn btn--danger btn--sm', text: '清除本机 Key',
-    onclick: () => {
-      try {
-        saveSettings({ apiKey: '' });
-        toast('已清除本机 Key', 'success');
-        onChange();
-      } catch (e) { toast(e.message, 'error'); }
-    },
-  });
-
-  const syncProviderUI = () => {
-    const guest = providerSelect.value === 'guest';
-    keyFieldWrap.hidden = guest;
-    guestNote.hidden = !guest;
-    clearBtn.hidden = guest;
-  };
-  syncProviderUI();
-
-  return el('section', { class: 'card ai-settings', id: 'ai-settings', hidden: true }, [
-    el('h3', { class: 'card__title', text: 'AI 设置' }),
-    el('div', { class: 'field' }, [el('label', { class: 'field__label', for: 'ai-provider-2', text: '模型平台' }), providerSelect]),
-    el('div', { class: 'field' }, [el('label', { class: 'field__label', for: 'ai-model-2', text: '模型' }), modelSelect]),
-    keyFieldWrap,
-    guestNote,
-    el('p', { class: 'field__hint', text: '当前平台：' + PROVIDERS[settings.provider].name + ' · 模型：' + settings.model }),
-    el('div', { class: 'row row--wrap' }, [saveBtn, clearBtn]),
   ]);
 }
