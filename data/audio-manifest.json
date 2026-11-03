@@ -1,0 +1,253 @@
+{
+  "version": 1,
+  "tracks": {
+    "ddj-01/original/male": {
+      "url": "assets/audio/c9c55b1afd848e61d4e235c9.mp3",
+      "hash": "c9c55b1afd848e61d4e235c9",
+      "cues": [
+        {
+          "start": 0
+        },
+        {
+          "start": 1.015
+        },
+        {
+          "start": 2.205
+        },
+        {
+          "start": 3.495
+        },
+        {
+          "start": 5.285042
+        },
+        {
+          "start": 5.995042
+        },
+        {
+          "start": 7.575042
+        },
+        {
+          "start": 8.845041
+        },
+        {
+          "start": 10.445084
+        },
+        {
+          "start": 12.055083
+        },
+        {
+          "start": 13.785084
+        },
+        {
+          "start": 15.235084
+        },
+        {
+          "start": 17.190125
+        },
+        {
+          "start": 18.295124
+        },
+        {
+          "start": 20.235125
+        },
+        {
+          "start": 22.640167
+        },
+        {
+          "start": 24.005167
+        }
+      ],
+      "timestampsVerified": true,
+      "aiGenerated": true
+    },
+    "ddj-01/original/female": {
+      "url": "assets/audio/909dba0303c57a1ce5ede733.mp3",
+      "hash": "909dba0303c57a1ce5ede733",
+      "cues": [
+        {
+          "start": 0
+        },
+        {
+          "start": 0.915
+        },
+        {
+          "start": 2.085
+        },
+        {
+          "start": 2.975
+        },
+        {
+          "start": 4.325042
+        },
+        {
+          "start": 5.0450416
+        },
+        {
+          "start": 6.4050417
+        },
+        {
+          "start": 7.245042
+        },
+        {
+          "start": 8.640083
+        },
+        {
+          "start": 9.745083
+        },
+        {
+          "start": 11.135083
+        },
+        {
+          "start": 12.175083
+        },
+        {
+          "start": 13.810125
+        },
+        {
+          "start": 14.605125
+        },
+        {
+          "start": 16.035126
+        },
+        {
+          "start": 17.590168
+        },
+        {
+          "start": 18.785168
+        }
+      ],
+      "timestampsVerified": true,
+      "aiGenerated": true
+    },
+    "ddj-01/chinese/male": {
+      "url": "assets/audio/f829dc87db665e1f137e510b.mp3",
+      "hash": "f829dc87db665e1f137e510b",
+      "cues": [
+        {
+          "start": 0
+        },
+        {
+          "start": 2.725
+        },
+        {
+          "start": 4.9050417
+        },
+        {
+          "start": 7.1850414
+        },
+        {
+          "start": 9.625083
+        },
+        {
+          "start": 11.175083
+        },
+        {
+          "start": 13.515124
+        },
+        {
+          "start": 15.165124
+        },
+        {
+          "start": 18.700165
+        },
+        {
+          "start": 18.995165
+        },
+        {
+          "start": 21.295164
+        },
+        {
+          "start": 24.135206
+        },
+        {
+          "start": 26.895206
+        },
+        {
+          "start": 29.955248
+        },
+        {
+          "start": 32.54525
+        },
+        {
+          "start": 34.48525
+        },
+        {
+          "start": 37.30129
+        },
+        {
+          "start": 38.846287
+        },
+        {
+          "start": 40.73629
+        }
+      ],
+      "timestampsVerified": true,
+      "aiGenerated": true
+    },
+    "ddj-01/chinese/female": {
+      "url": "assets/audio/29ca69e2392d95596bd25729.mp3",
+      "hash": "29ca69e2392d95596bd25729",
+      "cues": [
+        {
+          "start": 0
+        },
+        {
+          "start": 2.645
+        },
+        {
+          "start": 4.5350413
+        },
+        {
+          "start": 6.495042
+        },
+        {
+          "start": 8.505083
+        },
+        {
+          "start": 9.8550825
+        },
+        {
+          "start": 11.985125
+        },
+        {
+          "start": 13.445125
+        },
+        {
+          "start": 16.410168
+        },
+        {
+          "start": 16.805168
+        },
+        {
+          "start": 18.885168
+        },
+        {
+          "start": 21.27021
+        },
+        {
+          "start": 23.64521
+        },
+        {
+          "start": 26.22525
+        },
+        {
+          "start": 28.375252
+        },
+        {
+          "start": 30.00525
+        },
+        {
+          "start": 32.33829
+        },
+        {
+          "start": 33.65329
+        },
+        {
+          "start": 35.273293
+        }
+      ],
+      "timestampsVerified": true,
+      "aiGenerated": true
+    }
+  }
+}
