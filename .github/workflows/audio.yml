@@ -1,0 +1,44 @@
+name: Generate reading audio
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: 'preview=第1章四段试听，all=81章全部音频（已生成的不重复收费）'
+        type: choice
+        options: [preview, all]
+        default: preview
+      budget:
+        description: '本次合成预算（元），按当前3元/万字符估算，实际以账单为准'
+        type: string
+        default: '2'
+permissions:
+  contents: write
+concurrency:
+  group: reading-audio-generation
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate with explicit budget
+        env:
+          VOLC_TTS_API_KEY: ${{ secrets.VOLC_TTS_API_KEY }}
+          AUDIO_SCOPE: ${{ inputs.scope }}
+          AUDIO_BUDGET: ${{ inputs.budget }}
+        run: |
+          flags=()
+          if [ "$AUDIO_SCOPE" = "all" ]; then flags+=(--all); fi
+          node scripts/generate-audio.mjs "${flags[@]}" --execute "--budget-yuan=$AUDIO_BUDGET"
+      - name: Save audio and manifest
+        run: |
+          git add assets/audio data/audio-manifest.json
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Generate two-voice reading audio'
+          git push
