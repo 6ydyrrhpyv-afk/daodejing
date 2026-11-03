@@ -127,10 +127,11 @@ function humanError(code, message) {
     case 'PRACTICE_NOT_CONFIGURED': return '练习服务尚未配置模型（真实模型联调未完成）。你可以改用下方「通用练习（未使用 AI 分析）」。';
     case 'UNAUTHORIZED': return '练习服务验证失败，请刷新后重试；无需自行填写 API。若仍失败，请联系网站维护者。';
     case 'RATE_LIMITED': return '请求过于频繁，已被限流（每用户每分钟最多 6 次、每日最多 30 次）。请稍后重试。';
-    case 'UPSTREAM_TIMEOUT': return '模型服务超时（30 秒）。可能是网络或模型繁忙，可重试一次。';
+    case 'UPSTREAM_TIMEOUT': return '模型服务超时。可能是网络或模型繁忙，可重试一次。';
     case 'NETWORK_ERROR': return '连不上练习服务。后端部署在 Cloudflare，国内部分网络可能访问超时——可切换网络或开启 VPN 后重试，也可改用「通用练习（未使用 AI 分析）」。';
     case 'BAD_MODEL_OUTPUT':
-    case 'PAYLOAD_INVALID': return '模型返回内容无法解析，本次未产生结果。可重试一次。';
+    case 'PAYLOAD_INVALID': return '本次内容未通过检查，未展示为练习结果。请重试。';
+    case 'QUALITY_REVIEW_FAILED': return '本次内容未能完成质量检查，请稍后重试。';
     case 'INVALID_INPUT': return message || '输入不合法，请检查场景描述（至少 4 字、不超过 1000 字）。';
     case 'STALE': return ''; // 过期响应，不提示
     default: return message || '网络或服务异常，本次未产生结果，可重试。';
@@ -501,7 +502,7 @@ function renderAiStepK(ctx, draft, step) {
       optionLabel = '其他';
     }
     const others = (draft.selections || []).filter((s) => s.step < step);
-    others.push({ step, option_id: optionId, option_label: optionLabel, custom_text: customText });
+    others.push({ step, option_id: optionId, option_label: optionLabel, custom_text: customText, question: cached.question, offered_options: cached.options.map(o => [o.title, o.detail].filter(Boolean).join('：')) });
     invalidateFrom(draft, step + 1);
     const ok = saveDraftPatch(ctx, draft, { selections: others, step: step + 1, revision: draft.revision, results: draft.results, _lastError: null });
     if (!ok) return;

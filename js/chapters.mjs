@@ -1,7 +1,7 @@
 // 原典阅读：桌面窄目录 + 宽阅读区；手机横向章节导航；题签区分内容分区
 // 本次升级：81 章主题配置 + 多种排版模式 + 标准/意境切换
 
-import { el, frag } from './util.mjs';
+import { el, frag, splitLines } from './util.mjs';
 import { getChapter, themeLabel } from './data.mjs';
 import { findQuote } from './citations.mjs';
 import { getChapterDesign, getTheme, applyTheme, resetTheme } from './chapter-themes.mjs';
@@ -88,7 +88,7 @@ export function renderChapters(ctx, params) {
   root.append(sceneBanner('reading', {
     kicker: '道德经全本 81 章',
     title: '原典阅读',
-    desc: `本站收录《道德经》全部 ${data.chapters.length} 章（王弼本），目录显示真实章号。释义为本站整理，非古代注家原话；不提供多家注解库，不做逐字校勘。`,
+    desc: `本站收录《道德经》全部 ${data.chapters.length} 章（王弼本），目录显示真实章号。含完整中文白话译文和本站章意提示，来源分别标注；白话不是古代注家原话，不代替版本校勘。`,
     eager: true,
   }));
 
@@ -272,7 +272,6 @@ function renderChapterDetail(ctx, params) {
     const enBlock = el('div', { class: 'original original--en' });
     enLines.forEach((line) => enBlock.append(el('p', { class: 'original__line', text: line })));
     // 为英译句段添加听书高亮与「从此句听」
-    wrapListenSentences(enBlock, chapter.chapter_id, 'english');
     const src = chapter.english_source || {};
     englishCard = el('section', { class: 'card card--inset' }, [
       tabLabel('英 译'),
@@ -286,10 +285,17 @@ function renderChapterDetail(ctx, params) {
   }
 
   // ---- 释义 ----
+  const chineseBlock = el('div', { class: 'chinese-explanation' }, splitLines(chapter.plain_explanation).map(text => el('p', { class: 'card__text original__line', text })));
+  wrapListenSentences(chineseBlock, chapter.chapter_id, 'chinese');
   const explainCard = el('section', { class: 'card' }, [
-    tabLabel('本站释义'),
-    el('p', { class: 'card__text', text: chapter.plain_explanation }),
-    el('p', { class: 'field__hint', text: `释义来源：${chapter.explanation_source}，非古代注家原话。本站未提供多家注解库，也不做逐字校勘。` }),
+    tabLabel('完整中文白话释义'),
+    chineseBlock,
+    chapter.chapter_summary ? el('p', { class: 'card__text', text: '章意提示：' + chapter.chapter_summary }) : null,
+    el('p', { class: 'field__hint', text: chapter.explanation_note || '白话为辅助理解，不代替原文。' }),
+    el('p', { class: 'field__hint' }, [
+      el('span', { text: '释义来源：' + chapter.explanation_source + '。' }),
+      chapter.explanation_url ? el('a', { href: chapter.explanation_url, target: '_blank', rel: 'noopener noreferrer', text: '查看来源及授权标注' }) : null,
+    ]),
   ]);
 
   // ---- 边界 ----
@@ -342,7 +348,7 @@ function renderChapterDetail(ctx, params) {
     el('a', {
       class: 'btn btn--sm btn--ghost', href: `#/ai/${chapter.chapter_id}`,
     }, ['AI 解读本章']),
-    el('span', { class: 'chapter-listen-hint', text: '使用设备语音朗读，可调速、连续播放' }),
+    el('span', { class: 'chapter-listen-hint', text: 'AI 合成朗读：云舟男声 / 小何女声，可调速、连续播放' }),
   ]);
 
   // ---- 布局：桌面侧栏 + 阅读区；手机端使用右侧滑出抽屉选章 ----

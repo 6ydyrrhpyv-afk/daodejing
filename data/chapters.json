@@ -1,11 +1,11 @@
 {
   "meta": {
     "dataset": "道德经·处事练习室 全本（王弼本）章节数据",
-    "version": "2.0.0",
-    "updated": "2026-09-22",
+    "version": "2.1.0",
+    "updated": "2026-10-31",
     "count": 81,
     "edition_default": "王弼本（维基文库繁体底本，本站转简体显示）",
-    "global_note": "本数据集收录《道德经》全部 81 章（王弼本）。原文以维基文库繁体底本录入，由本站转简体显示，并与两个公开电子本逐字比对（见各章 sources）；未与纸本／影印本做校勘，异文单列、不混排。释义、应用边界与主题均为「本站整理」，非古代注家原话，也不等同于原文。",
+    "global_note": "本数据集收录《道德经》全部 81 章（王弼本）。原文以维基文库繁体底本录入，由本站转简体显示，并与两个公开电子本逐字比对（见各章 sources）；未与纸本／影印本做校勘，异文单列、不混排。释义、应用边界与主题均为「本站整理」，非古代注家原话，也不等同于原文。 2026-10-31：增补81章CC0白话译文，原本站章意摘要另存chapter_summary；白话来源与原文来源分别标注。",
     "verification_glossary": {
       "已联网比对电子本": "原文已与列出的公开电子本逐字比对一致；未做纸本校勘，异文单列。",
       "待核验": "尚未完成比对，本站不将其作为有据的原文依据使用。"
@@ -38,8 +38,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "开篇论「道」无法被言语完全界定；「无」与「有」同出一源，是观察万物奥妙的两条路径。后文以「玄之又玄，众妙之门」收束，指向不可名状而能生万有的本源。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "能够用语言说清、限定的“道”，不是恒常不变的道；能够用名称确定的“名”，不是恒常不变的名。没有名称的状态，可以说是天地的开端；有了名称的状态，可以说是万物产生的根源。\n因此，常保持没有欲求的心境，可以观察道的幽微奥妙；从有欲求、有分别的角度，可以观察事物显现的边界。无与有出自同一根源，却有不同的名称，都可以称为幽深玄妙。深入这层玄妙，仍有更深的玄妙，这是认识种种奥妙的入口。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是对概念限度的哲学陈述，不是否定沟通或文档的价值；工作中仍需要可操作的命名、定义与对齐，不能因为「道不可道」就放弃把事情说清楚。",
       "themes": [
         "growth"
@@ -53,7 +53,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "开篇论「道」无法被言语完全界定；「无」与「有」同出一源，是观察万物奥妙的两条路径。后文以「玄之又玄，众妙之门」收束，指向不可名状而能生万有的本源。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-1",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "本章按本站“常无欲／常有欲”的断句解释。来源白话采用“常无／常有”的另一种断句，此处已调整；“无名／有名”也存在不同解读。",
+      "explanation_reference_original": "道可道，非常道。名可名，非常名。无，名天地之始；有，名万物之母。故常无，欲以观其妙；常有，欲以观其徼。此两者，同出而异名，同谓之玄。玄之又玄，众妙之门。"
     },
     {
       "chapter_id": "ddj-02",
@@ -81,8 +86,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "美丑、善恶、有无、难易、长短、高下、音声、前后都是相对而生的。圣人以「无为」处事、以「不言」施教，让万物自作而不推辞、生养而不占有、成就而不居功。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下都知道美之为美，就有「丑」的概念出现；都知道善之为善，就有「不善」的概念出现。所以有与无相生，难与易相成，长与短相形，高与下相倾，音与声相和，前与后相随。因此圣人以「无为」处事，以「不言」施教。万物自然生长而不加阻挠，生养而不据为己有，作为而不仗恃，成功而不居功。正因为不居功，所以功业不会离去。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "「无为」指不妄加干预，不是放弃职责；「功成而弗居」是姿态，不等于不记录贡献、不明确权责。现代协作仍需透明的结果归属。",
       "themes": [
         "management",
@@ -97,7 +102,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "美丑、善恶、有无、难易、长短、高下、音声、前后都是相对而生的。圣人以「无为」处事、以「不言」施教，让万物自作而不推辞、生养而不占有、成就而不居功。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-2",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天下皆知美之为美，斯恶已；皆知善之为善，斯不善已。故有无相生，难易相成，长短相形，高下相倾，音声相和，前后相随。是以圣人处无为之事，行不言之教；万物作焉而不辞，生而不有，为而不恃，功成而弗居。夫唯弗居，是以不去。"
     },
     {
       "chapter_id": "ddj-03",
@@ -125,8 +135,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "不刻意标榜贤能、不贵重难得之物、不展示可欲，使人心不纷扰；主张「虚其心、实其腹、弱其志、强其骨」式的简朴治理，令民无知无欲、为无为则无不治。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "不崇尚贤能之名，百姓便不争逐；不贵重难得之物，百姓便不行窃；不显露可欲之事，民心便不致纷乱。所以圣人治理天下，使百姓心思虚静、腹中饱足、志欲淡泊、筋骨强健。常使百姓保持无伪诈之知、无贪求之欲，并令那些自以为聪明者不敢妄为。以「无为」治理，天下便没有治理不好的。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是特定治理语境的论述，不等于否定选拔、激励与能力建设；现代组织仍需清晰的评价标准、成长通道与合理的物质回报。",
       "themes": [
         "management"
@@ -140,7 +150,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "不刻意标榜贤能、不贵重难得之物、不展示可欲，使人心不纷扰；主张「虚其心、实其腹、弱其志、强其骨」式的简朴治理，令民无知无欲、为无为则无不治。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-3",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "不尚贤，使民不争；不贵难得之货，使民不为盗；不见可欲，使民心不乱。是以圣人之治，虚其心，实其腹，弱其志，强其骨。常使民无知无欲，使夫智者不敢为也。为无为，则无不治。"
     },
     {
       "chapter_id": "ddj-04",
@@ -168,8 +183,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以「冲虚」形容道的作用无穷，像万物本源；提出「挫其锐、解其纷、和其光、同其尘」的浑融状态，深远似或存，不知其谁之子而在帝之先。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道体虚空，运用起来却永不满盈；它深邃难测，仿佛万物的本源。它能挫去锋锐、化解纷乱、调和光彩、混同尘垢。它湛然清澈，似有若无地存在著。我不知它是谁所生，似乎在天帝之先就已存在。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是修养层面的隐喻，不是要求人在冲突中抹平立场或放弃原则；涉及公平、合规与权益时，仍需明确表态与行动。",
       "themes": [
         "growth",
@@ -184,7 +199,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以「冲虚」形容道的作用无穷，像万物本源；提出「挫其锐、解其纷、和其光、同其尘」的浑融状态，深远似或存，不知其谁之子而在帝之先。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-4",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "道冲而用之或不盈，渊兮似万物之宗。挫其锐，解其纷，和其光，同其尘。湛兮似或存。吾不知谁之子，象帝之先。"
     },
     {
       "chapter_id": "ddj-05",
@@ -212,8 +232,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天地无心偏爱，以万物为刍狗；圣人效之，以百姓为刍狗。以风箱为喻：空虚而不屈、动而愈出，故「多言数穷，不如守中」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天地不偏私施仁，看待万物如同祭祀用的草狗，任其自生自化；圣人也不偏私，看待百姓如同刍狗，任其自然发展。天地之间，岂不像个大风箱吗？看似空虚却不会枯竭，越是鼓动风气越盛。话语政令越多反而越困窘，不如持守虚静中道。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "「不仁」是中性描述，不是鼓励冷漠；人际关系、带人与责任场景需要主动关怀。原文的「守中」指分寸，不是沉默不语。",
       "themes": [
         "management"
@@ -227,7 +247,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天地无心偏爱，以万物为刍狗；圣人效之，以百姓为刍狗。以风箱为喻：空虚而不屈、动而愈出，故「多言数穷，不如守中」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-5",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天地不仁，以万物为刍狗；圣人不仁，以百姓为刍狗。天地之间，其犹橐籥乎？虚而不屈，动而愈出。多言数穷，不如守中。"
     },
     {
       "chapter_id": "ddj-06",
@@ -255,8 +280,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以「谷神」「玄牝」比喻生生不息的本源，其门是天地之根；绵绵若存，用之不勤。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "虚空如谷的神妙作用永不停息，这就叫做「玄牝」。玄牝之门，乃是天地化生的根源。它绵绵不绝、若有若无地存在，作用无穷而不劳竭。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是生成论的隐喻，不提供具体方法；现代系统仍需明确的运行机制、维护与责任归属，不能只靠「用之不勤」的期望。",
       "themes": [
         "growth"
@@ -270,7 +295,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以「谷神」「玄牝」比喻生生不息的本源，其门是天地之根；绵绵若存，用之不勤。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-6",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "谷神不死，是谓玄牝。玄牝之门，是谓天地根。绵绵若存，用之不勤。"
     },
     {
       "chapter_id": "ddj-07",
@@ -298,8 +328,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天地因不自营其生而能长久；圣人退身后反得领先、外身反得保全，终因无私而成其私。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天地长久不息。天地之所以能长且久，是因为它们不为自己而生，所以能长存不灭。所以圣人谦退于人后，反而能领先众人；置身于度外，反而能保全自己。岂不是因为他无私吗？正因无私，反而能成全他自己。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "「后其身」是姿态描述，不等于回避决策责任；「无私成其私」是结果性描述，不能当作算计他人的策略或回避合理个人回报的理由。",
       "themes": [
         "management",
@@ -314,7 +344,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天地因不自营其生而能长久；圣人退身后反得领先、外身反得保全，终因无私而成其私。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-7",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天长地久。天地所以能长且久者，以其不自生，故能长生。是以圣人后其身而身先，外其身而身存。非以其无私邪？故能成其私。"
     },
     {
       "chapter_id": "ddj-08",
@@ -343,8 +378,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以水为喻：滋养万物而不与之争高下，甘居众人所不愿处的低位。后文把这种姿态落到具体行为上——择地、存心、交往、说话、为政、做事、行动时机，都以「合适」而不是「胜过」为标准。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "最高的善就像水一样。水善于滋养万物而不与之争，安处于众人所厌恶的低下之地，所以最接近道。居处善于选择卑下之地，心胸善于保持深沉渊静，待人善于以仁相交，言语善于信实，为政善于治理，做事善于发挥才能，行动善于把握时机。正因不争，所以没有过失。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是关于位置感与姿态的比喻，不支持「永远退让」。涉及安全、合规、被侵占的权益时，退让不等于合宜；水的「不争」与制度性的权责划分是两件事。",
       "themes": [
         "management",
@@ -359,7 +394,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以水为喻：滋养万物而不与之争高下，甘居众人所不愿处的低位。后文把这种姿态落到具体行为上——择地、存心、交往、说话、为政、做事、行动时机，都以「合适」而不是「胜过」为标准。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-8",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "上善若水。水善利万物而不争，处众人之所恶，故几于道。居善地，心善渊，与善仁，言善信，正善治，事善能，动善时。夫唯不争，故无尤。"
     },
     {
       "chapter_id": "ddj-09",
@@ -388,8 +428,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "容器中水满则溢，不如适时停止；器物磨得太尖利，难以长久保持。积聚过多无法守住，因富贵而骄横会自招祸患。事情做成之后收敛身位，被形容为合于「天之道」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "执持满盈，不如及时停止；锻打锋锐，难以长久保持。金玉堆满厅堂，没有人能永久守住；富贵而骄奢，是自找灾祸。功成之后便急流勇退，这才合于天道。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是关于「满」与「止」的提醒，不是反对积累或主张放弃成果。是否该退、何时退，取决于具体权责安排，不能由一句格言替代判断。",
       "themes": [
         "management",
@@ -404,7 +444,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "容器中水满则溢，不如适时停止；器物磨得太尖利，难以长久保持。积聚过多无法守住，因富贵而骄横会自招祸患。事情做成之后收敛身位，被形容为合于「天之道」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-9",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "持而盈之，不如其已；揣而锐之，不可长保。金玉满堂，莫之能守；富贵而骄，自遗其咎。功遂身退，天之道也。"
     },
     {
       "chapter_id": "ddj-10",
@@ -432,8 +477,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "连用六个「能……乎」的反问，讲身心合一、专气致柔、涤除尘疵、爱国治民而不恃巧智、天门开阖能为雌、明白四达能无为；归结为「生而不有、为而不恃、长而不宰」的玄德。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "精神与形体相抱守，能不离散吗？调和气息使身心柔和，能像婴儿一样吗？清除心灵观照中的杂念，能不留瑕疵吗？爱护国家、治理人民，能不凭机巧智术干预吗？面对事物的开合变化，能保持柔静吗？明白通达四方，能不妄加作为吗？\n生育万物，养育万物。使它们生长却不据为己有，有所作为却不仗恃功劳，帮助成长却不加以主宰，这叫作深厚而不显露的德。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是修身与治理的理想状态，不是可量化的操作清单；「无知」指不耍巧智，不是反对专业知识与必要的能力建设。",
       "themes": [
         "management",
@@ -448,7 +493,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "连用六个「能……乎」的反问，讲身心合一、专气致柔、涤除尘疵、爱国治民而不恃巧智、天门开阖能为雌、明白四达能无为；归结为「生而不有、为而不恃、长而不宰」的玄德。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-10",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "载营魄抱一，能无离乎？专气致柔，能婴儿乎？涤除玄览，能无疵乎？爱民治国，能无为乎？天门开阖，能为雌乎？明白四达，能无知乎？生之畜之，生而不有，为而不恃，长而不宰，是谓玄德。"
     },
     {
       "chapter_id": "ddj-11",
@@ -476,8 +526,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "车轮、器皿、房屋皆因中间的「无」才成其用，点出「有之以为利，无之以為用」——实体提供条件，空处发挥作用。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "三十根辐条共汇一个车毂，正因为车毂中空，车才能行走。揉土制成器皿，正因为器皿中空，器物才能盛物。开凿门窗造屋，正因为门窗中空，房屋才能居住。所以「有」带来便利，「无」才产生作用。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是关于「空」的功能性洞见，不是否定实体与资源；组织同时需要结构与留白，二者缺一不可，不能只取一端。",
       "themes": [
         "management",
@@ -492,7 +542,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "车轮、器皿、房屋皆因中间的「无」才成其用，点出「有之以为利，无之以為用」——实体提供条件，空处发挥作用。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-11",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "三十辐共一毂，当其无，有车之用。埏埴以为器，当其无，有器之用。凿户牖以为室，当其无，有室之用。故有之以为利，无之以为用。"
     },
     {
       "chapter_id": "ddj-12",
@@ -520,8 +575,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "过度感官刺激令人迷失（目盲、耳聋、口爽、心发狂、行妨），主张「为腹不为目」，取实质而弃浮华。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "缤纷的色彩令人眼花缭乱，喧杂的音声令人耳目失聪，浓烈的滋味令人口味败坏，纵情驰骋狩猎令人心神狂躁，珍奇难得之物令人行为不轨。所以圣人但求充实内在以安腹，不为悦目之外物所役，故舍弃外在的纷华，取内在的恬淡。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对过度消费的提醒，不是反对审美与体验；合理的设计、感官体验与精神生活是正当的，关键在是否替代了真实需要。",
       "themes": [
         "growth"
@@ -535,7 +590,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "过度感官刺激令人迷失（目盲、耳聋、口爽、心发狂、行妨），主张「为腹不为目」，取实质而弃浮华。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-12",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "五色令人目盲，五音令人耳聋，五味令人口爽，驰骋畋猎令人心发狂，难得之货令人行妨。是以圣人为腹不为目，故去彼取此。"
     },
     {
       "chapter_id": "ddj-13",
@@ -563,8 +623,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "得宠受辱都令人惊动，根源在「有身」；唯有以身为天下重任者，才可寄可托。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "受宠或受辱都令人惊惶，重视大患如重视自身。什么叫宠辱若惊？得宠原本是卑下之事，得到时惊喜、失去时惊恐，这就是宠辱若惊。什么叫贵大患若身？我之所以有大患，是因为我有此身躯；若无身躯，又有何患？所以能以重视自身的态度去治理天下的人，才可以把天下寄托给他；能以爱护自身的态度去治理天下的人，才可以把天下交付给他。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "讲的是对荣辱的执念，不是否定合理的自我价值与边界；受侵犯、被不公对待时，仍需依法依规则维护自身权益。",
       "themes": [
         "growth"
@@ -578,7 +638,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "得宠受辱都令人惊动，根源在「有身」；唯有以身为天下重任者，才可寄可托。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-13",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "宠辱若惊，贵大患若身。何谓宠辱若惊？宠为下，得之若惊，失之若惊，是谓宠辱若惊。何谓贵大患若身？吾所以有大患者，为吾有身，及吾无身，吾有何患？故贵以身为天下，若可寄天下；爱以身为天下，若可托天下。"
     },
     {
       "chapter_id": "ddj-14",
@@ -606,8 +671,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "描述「道」不可被感官穷尽的特质（夷、希、微），混而为一；其上不皦、其下不昧，复归于无物，是谓惚恍。主张执古之道以御今之有。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "看它看不见，称为「夷」；听它听不到，称为「希」；摸它摸不著，称为「微」。这三者无法穷究分辨，本就混然为一。它的上面不显光亮，下面不显昏暗，绵绵不绝难以名状，最终又复归于无形之境。这就是所谓「无状之状、无物之象」，叫做「惚恍」。迎向它看不见它的头，跟随它看不见它的尾。把握自古以来就有的「道」，以驾驭当今的万有。能知晓宇宙最初的根源，这就叫做道的纲纪。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对本源的认识论描述，不是反对实证与数据；现代决策仍要以事实为依据，「执古之道」不能替代对当下情况的调研。",
       "themes": [
         "growth"
@@ -621,7 +686,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "描述「道」不可被感官穷尽的特质（夷、希、微），混而为一；其上不皦、其下不昧，复归于无物，是谓惚恍。主张执古之道以御今之有。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-14",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "视之不见，名曰夷；听之不闻，名曰希；搏之不得，名曰微。此三者不可致诘，故混而为一。其上不皦，其下不昧。绳绳不可名，复归于无物。是谓无状之状，无物之象，是谓惚恍。迎之不见其首，随之不见其后。执古之道，以御今之有。能知古始，是谓道纪。"
     },
     {
       "chapter_id": "ddj-15",
@@ -649,8 +719,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "描摹得道之士的从容审慎：如冬涉川、如畏四邻、如冰将释、如谷；关键在于「不欲盈」，故能敝而不新成。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "古时善于行道的人，精微奥妙、通达幽深，难以认识。正因为难以认识，只能勉强描绘他们：谨慎得像冬天渡河，警觉得像防备四面邻人，庄重得像做客，舒展开来像冰将融化，敦厚得像未经雕琢的木材，旷达得像山谷，浑然相融得像浊水。\n谁能让浑浊的水静下来，慢慢变清？谁能让安定的状态经由持续而适度的活动，逐渐生发活力？持守这种道的人不求盈满。正因不自满，才能甘处朴旧，不急于追求新成的姿态。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是修养神态的刻画，不是要求优柔寡断；决策仍需在时机内落地，过度的「不盈」会变成拖延。",
       "themes": [
         "growth",
@@ -665,7 +735,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "描摹得道之士的从容审慎：如冬涉川、如畏四邻、如冰将释、如谷；关键在于「不欲盈」，故能敝而不新成。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-15",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。 末句“蔽不新成”与常见“蔽而新成”不同，前者重在不求新成，后者常解作去旧更新。",
+      "explanation_reference_original": "古之善为士者，微妙玄通，深不可识。夫唯不可识，故强为之容：豫兮若冬涉川，犹兮若畏四邻，俨兮其若客，涣兮若冰之将释，敦兮其若朴，旷兮其若谷，混兮其若浊。孰能浊以静之徐清？孰能安以动之徐生？保此道者不欲盈。夫唯不盈，故能蔽而新成。"
     },
     {
       "chapter_id": "ddj-16",
@@ -693,8 +768,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "极尽虚静以观万物往复归根；知「常」则明，不知常则妄作凶；知常方能容、公、全、天、久，没身不殆。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "使心灵虚空达于极致，持守清静笃实不移。万物纷纷兴作，我以此观照它们的循环往复。万物繁盛杂陈，最终各自回归其本根。归于本根叫做「静」，这就是回复本然之命；回复本然叫做「常」，了悟常理叫做「明」。不知常理，妄为乱作必招凶险。知常则能包容，包容则公正，公正则能周全，周全则合于天，合于天则合于道，合道则能长久，终身没有危险。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是观照与定力的修养，不是排斥行动；组织在变动中仍需快速响应，静观不能替代必要的干预。",
       "themes": [
         "growth"
@@ -708,7 +783,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "极尽虚静以观万物往复归根；知「常」则明，不知常则妄作凶；知常方能容、公、全、天、久，没身不殆。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-16",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "致虚极，守静笃。万物并作，吾以观复。夫物芸芸，各复归其根。归根曰静，是谓复命。复命曰常，知常曰明。不知常，妄作凶。知常容，容乃公，公乃王，王乃天，天乃道，道乃久，没身不殆。"
     },
     {
       "chapter_id": "ddj-17",
@@ -736,8 +816,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "描述四种治理层次：最好的统治者，下面的人只知道有他存在；其次亲近并称誉；其次畏惧；再其次轻慢。信用不足，才会出现不被信任。后句强调慎用言辞、少发号令，事情办成了，百姓说「我们本来如此」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "最上等的统治者，百姓只感觉到他存在；其次的统治者，百姓亲近并赞誉他；再次的，百姓畏惧他；最下的，百姓轻侮他。在上者诚信不足，在下者就不信任他。最上等的君主悠然自得，珍惜自己的言语。等到功业成就、事务顺遂，百姓都说：「我们本来就是这样的啊。」",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是对治理风格的排序性描述，不是可量化的管理模型。在现代组织中，「百姓皆谓我自然」不能直接翻译成「管理者可以缺位」——授权仍需明确责任边界与信息同步。",
       "themes": [
         "management",
@@ -752,7 +832,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "描述四种治理层次：最好的统治者，下面的人只知道有他存在；其次亲近并称誉；其次畏惧；再其次轻慢。信用不足，才会出现不被信任。后句强调慎用言辞、少发号令，事情办成了，百姓说「我们本来如此」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-17",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "太上，下知有之；其次，亲而誉之；其次，畏之；其次，侮之。信不足焉，有不信焉。悠兮其贵言。功成事遂，百姓皆谓我自然。"
     },
     {
       "chapter_id": "ddj-18",
@@ -780,8 +865,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以「大道废而后有仁义、智慧出而后有大伪、六亲不和而后有孝慈、国家昏乱而后有忠臣」的句式，指出标榜某种价值常因其反面盛行。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "大道废弃了，才标榜仁义；智巧出现了，才有大的虚伪；六亲不和睦了，才彰显孝慈；国家昏乱了，才凸显忠臣。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是反讽式的社会观察，不是主张摒弃伦理；现代仍需制度性的公平、责任与互助，不能因「标榜即失真」就否定价值本身。",
       "themes": [
         "management",
@@ -796,7 +881,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以「大道废而后有仁义、智慧出而后有大伪、六亲不和而后有孝慈、国家昏乱而后有忠臣」的句式，指出标榜某种价值常因其反面盛行。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-18",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "大道废，有仁义；慧智出，有大伪；六亲不和，有孝慈；国家昏乱，有忠臣。"
     },
     {
       "chapter_id": "ddj-19",
@@ -824,8 +914,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "主张弃绝机巧智伪，令民回归素朴少欲（绝圣弃智民利百倍、绝仁弃义民复孝慈、绝巧弃利盗贼无有），归结为「见素抱朴，少私寡欲」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "抛弃圣名与机智，百姓利益反而百倍增长；抛弃做作的仁义，百姓自会回复孝慈；抛弃机巧与货利，盗贼也就消失。这三句若只当作条文还不够，所以还要叫人有所归属：保持质朴、减少私欲。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对智巧异化的批评，不是反对教育与理性；现代社会离不开知识、技术与专业分工，问题在「巧利」而非知识本身。",
       "themes": [
         "growth",
@@ -840,7 +930,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "主张弃绝机巧智伪，令民回归素朴少欲（绝圣弃智民利百倍、绝仁弃义民复孝慈、绝巧弃利盗贼无有），归结为「见素抱朴，少私寡欲」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-19",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "绝圣弃智，民利百倍；绝仁弃义，民复孝慈；绝巧弃利，盗贼无有。此三者以为文不足，故令有所属：见素抱朴，少私寡欲。"
     },
     {
       "chapter_id": "ddj-20",
@@ -868,8 +963,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "写「我」与众人不同的从容：众人熙攘逐利，我独淡泊守本、如婴儿之未孩；可贵者在「贵食母」（守本源）。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "舍弃世俗之学就能无忧。「诺」与「啊」这两种应答，相差多少？善与恶，又相差多远？众人所畏惧的，不能不有所警惕。然而世俗的纷扰，辽阔而没有尽头啊！众人兴高采烈，像享用盛宴、像春日登台。我独自淡泊无动于衷，像婴儿尚未会笑；疲倦慵懒，仿佛无处可归。众人都自觉有余，唯独我像是不足。我真是愚人的心啊！浑沌昏昧。世俗人都精明炫耀，我独自昏暗；世俗人都明察苛刻，我独自宽厚淳朴。我恬静如大海，飘逸如无所止息的风。众人都有所作为，唯独我顽钝而似鄙陋。\n我与众人不同，而独自珍视从「道」这位母亲处所得的滋养。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是个人姿态的抒情，不是号召停止学习；专业成长、技能积累仍是必要的，文本反对的是外在的竞相追逐而非学习本身。",
       "themes": [
         "growth"
@@ -883,7 +978,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "写「我」与众人不同的从容：众人熙攘逐利，我独淡泊守本、如婴儿之未孩；可贵者在「贵食母」（守本源）。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-20",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "绝学无忧。唯之与阿，相去几何？善之与恶，相去若何？人之所畏，不可不畏。荒兮其未央哉！众人熙熙，如享太牢，如春登台。我独泊兮其未兆，如婴儿之未孩；儽儽兮若无所归。众人皆有余，而我独若遗。我愚人之心也哉！沌沌兮。俗人昭昭，我独昏昏；俗人察察，我独闷闷。澹兮其若海，飂兮若无止。众人皆有以，而我独顽似鄙。我独异于人，而贵食母。"
     },
     {
       "chapter_id": "ddj-21",
@@ -911,8 +1011,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "大德唯道是从；道虽恍惚，其中却有象、有物、有精、有信，自古及今其名不去，可借此观览万物本始。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "大德的表现，全然依从于道。道作为一种存在，恍惚不定。恍惚之中，却有形象；惚恍之中，却有实物。深远幽冥之中，却有精质；这精质非常真实，其中有可信验的征兆。从现在追溯到古时，它的名字未曾消失，借此观照万物的本源。我凭什么知道万物本源的样貌呢？就是凭这个道。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对道与德关系的形上描述，不是经验证据；具体判断仍需事实与数据，「其中有信」不能替代可核验的信息。",
       "themes": [
         "growth"
@@ -926,7 +1026,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "大德唯道是从；道虽恍惚，其中却有象、有物、有精、有信，自古及今其名不去，可借此观览万物本始。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-21",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "孔德之容，惟道是从。道之为物，惟恍惟惚。惚兮恍兮，其中有象；恍兮惚兮，其中有物。窈兮冥兮，其中有精；其精甚真，其中有信。自古及今，其名不去，以阅众甫。吾何以知众甫之状哉？以此。"
     },
     {
       "chapter_id": "ddj-22",
@@ -954,8 +1059,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以一组相反相成的句子说明：委曲反而能保全，屈就反而能伸直，低洼反而能充盈，破旧反而能生新，少取反而能得，多求反而迷乱。后文落到「不自见、不自是、不自伐、不自矜」，并归结于「不争」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "委曲反而能保全，屈枉反而能伸直，低洼反而能盈满，破旧反而能更新，少取反而能多得，贪多反而生迷惑。因此圣人持守「一」做为天下的法式。不自我显露，所以反而明白；不自以为是，所以反而彰显；不自我夸功，所以反而有功；不自高自大，所以反而长久。正因为不与人争，天下没有人能和他相争。古人说的「曲则全」，岂是虚言！它确实能使人保全而归于道。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这些句子是修辞性的对立统一，不是普遍因果律。现实中被曲待并不自动换来「全」；把忍让当作必然回报的策略会造成自我消耗。",
       "themes": [
         "collaboration",
@@ -970,7 +1075,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以一组相反相成的句子说明：委曲反而能保全，屈就反而能伸直，低洼反而能充盈，破旧反而能生新，少取反而能得，多求反而迷乱。后文落到「不自见、不自是、不自伐、不自矜」，并归结于「不争」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-22",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "曲则全，枉则直，洼则盈，敝则新，少则得，多则惑。是以圣人抱一为天下式。不自见，故明；不自是，故彰；不自伐，故有功；不自矜，故长。夫唯不争，故天下莫能与之争。古之所谓曲则全者，岂虚言哉！诚全而归之。"
     },
     {
       "chapter_id": "ddj-23",
@@ -998,8 +1108,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "少发号令才合自然；飘风不终朝、骤雨不终日，天地尚不能久，何况人。从事于道者与道相合，信不足则人不信。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "少发号施令才合于自然。所以狂风吹不了一整个早上，暴雨下不了一整天。谁使它如此？是天地。天地造作尚且不能持久，何况人为呢？所以从事于道的人：行道之人就与道相合，修德之人就与德相合，失道之人就与失道相合。与道相合，道也乐于接纳他；与德相合，德也乐于接纳他；与失道相合，失道也乐于接纳他。在上者诚信不足，在下者就不信任他。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是治理姿态的提醒，不是反对必要的沟通与承诺；关键事项仍需明确约定与跟进，「希言」不能变成失联。",
       "themes": [
         "management",
@@ -1014,7 +1124,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "少发号令才合自然；飘风不终朝、骤雨不终日，天地尚不能久，何况人。从事于道者与道相合，信不足则人不信。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-23",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "希言自然。故飘风不终朝，骤雨不终日。孰为此者？天地。天地尚不能久，而况于人乎？故从事于道者，道者同于道，德者同于德，失者同于失。同于道者，道亦乐得之；同于德者，德亦乐得之；同于失者，失亦乐得之。信不足焉，有不信焉。"
     },
     {
       "chapter_id": "ddj-24",
@@ -1042,8 +1157,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "踮起脚跟站不稳，跨大步走不远；自我表现反而不明，自以为是反而不彰，自我夸耀反而无功，自高自大反而不能长久。这些行为在文本中被比喻为剩饭赘疣，为物所恶，所以有道者不居于此。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "踮起脚跟站不稳，跨大步走不远。自我显露的反而不明，自以为是的反而不彰，自夸其功的反而无功，自高自大的反而不能长久。从道的角度看，这些行为就像剩饭与赘瘤，众人都厌恶，所以有道之人不会这样做。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是关于姿态与自我标榜的批评，不是对自信、表达与争取认可的否定。合理主张权益、展示成果不等于「自伐」。",
       "themes": [
         "collaboration",
@@ -1058,7 +1173,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "踮起脚跟站不稳，跨大步走不远；自我表现反而不明，自以为是反而不彰，自我夸耀反而无功，自高自大反而不能长久。这些行为在文本中被比喻为剩饭赘疣，为物所恶，所以有道者不居于此。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-24",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "企者不立，跨者不行。自见者不明，自是者不彰，自伐者无功，自矜者不长。其在道也，曰余食赘形，物或恶之，故有道者不处。"
     },
     {
       "chapter_id": "ddj-25",
@@ -1086,8 +1206,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道混成先于天地，寂寥独立不改、周行不殆，可为天下母；强名曰大，大曰逝、逝曰远、远曰反。域中有四大（道、天、地、王），人法地、地法天、天法道、道法自然。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "有一物混然天成，先于天地而存在。它寂静无声、空虚无形，独立自存而不改易，循环运行而永不衰竭，可以称作万物之母。我不知它的名字，勉强称之为「道」，再勉强形容它叫「大」。大则流行不息，流行则伸展远去，远去终又返回本源。所以道大、天大、地大、王亦大。宇宙之中有四大，王居其一。人取法于地，地取法于天，天取法于道，道取法于自然。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是宇宙秩序的层级描述，不是组织层级图；现代权责仍需制度界定，「道法自然」不能直接翻译成「顺着性子来」。",
       "themes": [
         "management"
@@ -1101,7 +1221,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道混成先于天地，寂寥独立不改、周行不殆，可为天下母；强名曰大，大曰逝、逝曰远、远曰反。域中有四大（道、天、地、王），人法地、地法天、天法道、道法自然。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-25",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "有物混成，先天地生。寂兮寥兮，独立而不改，周行而不殆，可以为天下母。吾不知其名，字之曰道，强为之名曰大。大曰逝，逝曰远，远曰反。故道大，天大，地大，王亦大。域中有四大，而王居其一焉。人法地，地法天，天法道，道法自然。"
     },
     {
       "chapter_id": "ddj-26",
@@ -1129,8 +1254,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "稳重是轻浮的根本，沉静是躁动的主宰；提醒圣人终日行不离辎重，虽处荣观而超然，不可「以身轻天下」。轻则失本，躁则失君。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "厚重是轻浮的根本，沉静是躁动的主宰。所以圣人整日行事不离开沉稳厚重。即使身处华美的环境，也安然超脱于外。怎能身为大国之主，却拿自身轻率地对待天下？轻率就失去根本，躁动就失去主宰。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是姿态与分寸的提醒，不是反对迅速行动；危机中仍需快速反应，沉稳与迅疾在不同场景各有其位。",
       "themes": [
         "management",
@@ -1145,7 +1270,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "稳重是轻浮的根本，沉静是躁动的主宰；提醒圣人终日行不离辎重，虽处荣观而超然，不可「以身轻天下」。轻则失本，躁则失君。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-26",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "重为轻根，静为躁君。是以圣人终日行不离辎重。虽有荣观，燕处超然。奈何万乘之主，而以身轻天下？轻则失本，躁则失君。"
     },
     {
       "chapter_id": "ddj-27",
@@ -1173,8 +1303,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "善行、善言、善数、善闭、善结皆不着痕迹；圣人常善救人救物，故无弃人弃物，是谓袭明。善人与不善人互为师资。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "善于行走的不留车辙痕迹，善于言谈的没有过失可指摘，善于计算的不需用筹策，善于关闭的不用门栓也无法被打开，善于捆绑的不用绳索也无法解开。所以圣人经常善于拯救人，因此没有被遗弃的人；经常善于救护物，因此没有被废弃的物。这就叫做承袭于明道。所以善人，是不善之人的老师；不善之人，是善人借镜的材料。不尊重老师、不爱惜借镜的材料，虽自以为聪明也往往大迷，这正是道的精微奥妙之处。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是方法高明的比喻，不是否定流程与记录；管理仍需可追溯、可复盘，关键信息不能只留在「无辙迹」的个人心中。",
       "themes": [
         "collaboration",
@@ -1189,7 +1319,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "善行、善言、善数、善闭、善结皆不着痕迹；圣人常善救人救物，故无弃人弃物，是谓袭明。善人与不善人互为师资。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-27",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "善行无辙迹，善言无瑕谪，善数不用筹策，善闭无关楗而不可开，善结无绳约而不可解。是以圣人常善救人，故无弃人；常善救物，故无弃物。是谓袭明。故善人者，不善人之师；不善人者，善人之资。不贵其师，不爱其资，虽智大迷，是谓要妙。"
     },
     {
       "chapter_id": "ddj-28",
@@ -1217,8 +1352,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "知雄守雌、知白守黑、知荣守辱，分别归于婴儿、无极、朴；朴散则为器，圣人用之则为官长，「大制不割」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "深知雄强之道，却安守于雌柔，做天下的溪涧。做天下的溪涧，常德不会离散，可以复归于婴儿般的纯真。深知光明之理，却安守于暗昧，做天下的法式。做天下的法式，常德不会偏差，可以复归于无极之境。深知荣耀之美，却安守于屈辱，做天下的虚谷。做天下的虚谷，常德才能充足，可以复归于素朴。素朴散开就成为各式器物，圣人运用它便能成为百官之长，所以最高的治理不去分割本体。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是守柔归朴的辩证，不是自我贬低；分工与制度仍必要，「不割」指不割裂整体，不等于不做切割与决断。",
       "themes": [
         "management",
@@ -1233,7 +1368,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "知雄守雌、知白守黑、知荣守辱，分别归于婴儿、无极、朴；朴散则为器，圣人用之则为官长，「大制不割」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-28",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "知其雄，守其雌，为天下谿。为天下谿，常德不离，复归于婴儿。知其白，守其黑，为天下式。为天下式，常德不忒，复归于无极。知其荣，守其辱，为天下谷。为天下谷，常德乃足，复归于朴。朴散则为器，圣人用之，则为官长，故大制不割。"
     },
     {
       "chapter_id": "ddj-29",
@@ -1261,8 +1401,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天下是神器，不可强为，为者败、执者失；万物或行或随、或歔或吹、或强或羸、或挫或隳。圣人去甚、去奢、去泰。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "想用人为的方式取得并掌控天下，我看是不可能成功的。天下是神圣的器物，不可妄加作为，也不可强行把持。妄为的会败坏它，强执的会失去它。所以万物或前行或追随，或暖嘘或冷吹，或强壮或羸弱，或遭受挫折或陷于坠落。所以圣人去除过分、去除奢侈、去除过度。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对强控的警告，不是反对承担责任；必要干预仍需果断，问题在「甚、奢、泰」的过度，而非行动本身。",
       "themes": [
         "management"
@@ -1276,7 +1416,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天下是神器，不可强为，为者败、执者失；万物或行或随、或歔或吹、或强或羸、或挫或隳。圣人去甚、去奢、去泰。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-29",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "将欲取天下而为之，吾见其不得已。天下神器，不可为也，不可执也。为者败之，执者失之。故物或行或随，或歔或吹，或强或羸，或载或隳。是以圣人去甚，去奢，去泰。"
     },
     {
       "chapter_id": "ddj-30",
@@ -1304,8 +1449,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "不以兵力逞强于天下，兵事必有回报（师之所处荆棘生，大军之后凶年）；有果而已，不敢取强，果而勿矜、勿伐、勿骄、不得已。物壮则老，是谓不道。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "以道辅佐君主的人，不靠武力逞强于天下，因为用兵之事容易招来报应。军队驻扎之处，荒芜只剩荆棘丛生；大战之后，必有凶荒之年。善于用兵者只求取得效果便止，不敢借此逞强。达到目的不夸耀，不自伐，不骄傲，视为不得已而为，达到目的也不逞强。事物壮盛便会走向衰老，这叫做不合于道，不合于道就会早早灭亡。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是反战与克制的论述，涉及安全防卫时需另行判断；文本不承诺退让必无代价，克制不等于不防守。",
       "themes": [
         "management"
@@ -1319,7 +1464,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "不以兵力逞强于天下，兵事必有回报（师之所处荆棘生，大军之后凶年）；有果而已，不敢取强，果而勿矜、勿伐、勿骄、不得已。物壮则老，是谓不道。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-30",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "以道佐人主者，不以兵强天下，其事好还。师之所处，荆棘生焉。大军之后，必有凶年。善有果而已，不敢以取强。果而勿矜，果而勿伐，果而勿骄，果而不得已，果而勿强。物壮则老，是谓不道，不道早已。"
     },
     {
       "chapter_id": "ddj-31",
@@ -1347,8 +1497,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "兵为不祥之器，有道者不处；君子居则贵左、用兵则贵右，不得已而用之以恬淡为上。胜而不美，乐杀人者不得志于天下；以丧礼处之。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "锋利的兵器，是不祥的器物，众人都厌恶它，所以有道之人不会仰赖它。君子平时以左方为贵，用兵之时以右方为贵。兵器是不祥之物，并非君子所重之器，不得已才使用它，最好以恬淡的心态对待。胜利了也不以为美，若以胜利为美，就是乐于杀人。乐于杀人者，必不能得志于天下。吉庆之事以左为尊，凶丧之事以右为尊。所以偏将军居左，上将军居右，这意思就是以丧礼对待战争。杀人众多，要以悲哀之心哀悼；战胜了，也要以丧礼的形式对待。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是反战伦理，现代安全与正当防卫属另一范畴；文本不否定必要的防卫，反对的是以杀人为美、为好战。",
       "themes": [
         "management",
@@ -1363,7 +1513,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "兵为不祥之器，有道者不处；君子居则贵左、用兵则贵右，不得已而用之以恬淡为上。胜而不美，乐杀人者不得志于天下；以丧礼处之。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-31",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "夫佳兵者，不祥之器，物或恶之，故有道者不处。君子居则贵左，用兵则贵右。兵者不祥之器，非君子之器，不得已而用之，恬淡为上。胜而不美，而美之者，是乐杀人。夫乐杀人者，则不可得志于天下矣。吉事尚左，凶事尚右。偏将军居左，上将军居右。言以丧礼处之。杀人之众，以悲哀泣之；战胜，以丧礼处之。"
     },
     {
       "chapter_id": "ddj-32",
@@ -1391,8 +1546,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道无名而朴小，天下莫能臣；侯王守之则万物自宾，天地相合降甘露，民莫之令而自均。始制有名，知止不殆；道在天下如川谷之于江海。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道永远没有名称，虽然质朴渺小，天下却没有能使它臣服的。侯王若能持守它，万物将自然归顺。天地阴阳和合，自然降下甘露，百姓不必命令也自然均平。万物始有制作便产生了名称，既有了名称，就应知道适可而止；知止才能避免危险。譬如道存在于天下，就像河川溪谷的水流归于江海。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是侯王守道的论述，不是否定命名与制度；现代管理需要明确的权责命名与边界，不能只靠「自宾自均」。",
       "themes": [
         "management"
@@ -1406,7 +1561,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道无名而朴小，天下莫能臣；侯王守之则万物自宾，天地相合降甘露，民莫之令而自均。始制有名，知止不殆；道在天下如川谷之于江海。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-32",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "道常无名，朴虽小，天下莫能臣也。侯王若能守之，万物将自宾。天地相合，以降甘露，民莫之令而自均。始制有名，名亦既有，夫亦将知止，知止可以不殆。譬道之在天下，犹川谷之于江海。"
     },
     {
       "chapter_id": "ddj-33",
@@ -1434,8 +1594,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "认识别人是智，认识自己是明；胜过别人是有力，胜过自己是强；知足者富；勉力而行者有志；不失其根本者能长久；身死而精神不亡者谓之寿。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "了解别人是「智」，了解自己才是「明」。能胜过别人是「有力」，能胜过自己才是「强」。知足的人才是富有，能坚持力行才有志向。不失其本分的人能长久，身死而道存才是真正的寿。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是关于自我认识与自我约束的格言，不是能力测评表。「知足」在涉及正当权益、劳动报酬与安全底线的场景中，不宜被用作不争取的理由。",
       "themes": [
         "growth",
@@ -1450,7 +1610,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "认识别人是智，认识自己是明；胜过别人是有力，胜过自己是强；知足者富；勉力而行者有志；不失其根本者能长久；身死而精神不亡者谓之寿。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-33",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "知人者智，自知者明。胜人者有力，自胜者强。知足者富，强行者有志。不失其所者久，死而不亡者寿。"
     },
     {
       "chapter_id": "ddj-34",
@@ -1478,8 +1643,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "大道泛溢无所不在，万物恃之而生而不辞、功成不名有；衣养万物而不为主，因终不自为大，故能成其大。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "大道广大流行啊，可以左也可以右。万物依靠它而生长，它从不推辞；成就了功业却不据为己有。它衣养万物而不自居为主，永远无欲，可称之为「小」；万物归附于它而不自居为主，可称之为「大」。正因它始终不自夸为大，所以能成就它的大。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是道的普遍性的描述，不是反对个人担当；团队仍需有人牵头、有人负责，普遍性不抵消具体的责任主体。",
       "themes": [
         "management",
@@ -1494,7 +1659,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "大道泛溢无所不在，万物恃之而生而不辞、功成不名有；衣养万物而不为主，因终不自为大，故能成其大。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-34",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "大道泛兮，其可左右。万物恃之而生而不辞，功成不名有。衣养万物而不为主，常无欲，可名于小；万物归焉而不为主，可名为大。以其终不自为大，故能成其大。"
     },
     {
       "chapter_id": "ddj-35",
@@ -1522,8 +1692,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "执守大道则天下归往而无害，安于平泰；之乐与饵只能留住过客。道之出口淡而无味、视不足见、听不足闻，却用之不竭。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "持守大道之象，天下便来归附。归附而不受伤害，便能安宁平和泰然。音乐与美食，能使过客驻足。但道从口中说出，淡然无味，看也看不见，听也听不到，用起来却无穷无尽。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是大道吸引力的比喻，不是否定具体价值与激励；组织仍需可观的回报与反馈，不能只靠「淡乎无味」的远景。",
       "themes": [
         "management"
@@ -1537,7 +1707,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "执守大道则天下归往而无害，安于平泰；之乐与饵只能留住过客。道之出口淡而无味、视不足见、听不足闻，却用之不竭。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-35",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "执大象，天下往。往而不害，安平太。乐与饵，过客止。道之出口，淡乎其无味，视之不足见，听之不足闻，用之不足既。"
     },
     {
       "chapter_id": "ddj-36",
@@ -1565,8 +1740,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "欲收必先放、欲弱必先强、欲废必先兴、欲夺必与，是谓微明；柔弱胜刚强；国之利器不可示人。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "想要收敛它，必先使它扩张；想要削弱它，必先使它强盛；想要废除它，必先使它兴盛；想要夺取它，必先给予它。这就是微妙的明智。柔弱胜过刚强。鱼不能离开深渊，国家的利器不可随意示人。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是态势观察与谨慎告诫，易被读成权谋；现代协作应建立在透明与信任上，「不可示人」不适用于应公开的权责与流程。",
       "themes": [
         "management",
@@ -1581,7 +1756,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "欲收必先放、欲弱必先强、欲废必先兴、欲夺必与，是谓微明；柔弱胜刚强；国之利器不可示人。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-36",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "将欲歙之，必固张之；将欲弱之，必固强之；将欲废之，必固兴之；将欲夺之，必固与之。是谓微明。柔弱胜刚强。鱼不可脱于渊，国之利器不可以示人。"
     },
     {
       "chapter_id": "ddj-37",
@@ -1609,8 +1789,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道无为而无所不为；侯王守之则万物自化，欲作则以无名之朴镇之，无名之朴亦将无欲，天下将自定。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道永远是无为的，却没有什么事不是它做成的。侯王若能持守此道，万物将会自然化育。化育之中若有贪欲萌动，我将以「无名之朴」来镇定它。「无名之朴」也就将令人归于无欲。不贪欲而能清静，天下自然安定。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是治理不妄为的论述，不是取消管理动作；复杂系统仍需主动调节，问题出现时不能只等「自定」。",
       "themes": [
         "management"
@@ -1624,7 +1804,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道无为而无所不为；侯王守之则万物自化，欲作则以无名之朴镇之，无名之朴亦将无欲，天下将自定。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-37",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "道常无为而无不为。侯王若能守之，万物将自化。化而欲作，吾将镇之以无名之朴。无名之朴，夫亦将无欲。不欲以静，天下将自定。"
     },
     {
       "chapter_id": "ddj-38",
@@ -1652,8 +1837,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "上德不标榜德故有德，下德不失德故无德；失道而后德、失德而后仁、失仁而后义、失义而后礼。礼是忠信之薄、乱之首；大丈夫处厚不处薄、处实不处华。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "上德的人不自以为有德，所以才是真有德；下德的人念念不忘德，反而失去了德。上德无心而为、出于自然，下德有心去为、刻意造作。上仁有所作为而出于无心，上义有所作为而出于有心。上礼有所作为，若无人回应，便伸臂强拉人就范。所以失了道才讲德，失了德才讲仁，失了仁才讲义，失了义才讲礼。礼，乃忠信浅薄的产物、乱事的开端；自诩先见之明，只是道之浮华、愚昧的起点。所以大丈夫立身于厚实，不居于浅薄；存于朴实，不居于浮华。故舍弃那虚华而取此敦厚。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对礼法渊源的批评性排序，不是否定规则与制度；现代组织仍需明确的规范，「处厚」不等于不要流程。",
       "themes": [
         "management",
@@ -1668,7 +1853,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "上德不标榜德故有德，下德不失德故无德；失道而后德、失德而后仁、失仁而后义、失义而后礼。礼是忠信之薄、乱之首；大丈夫处厚不处薄、处实不处华。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-38",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "上德不德，是以有德；下德不失德，是以无德。上德无为而无以为，下德为之而有以为。上仁为之而无以为，上义为之而有以为。上礼为之而莫之应，则攘臂而扔之。故失道而后德，失德而后仁，失仁而后义，失义而后礼。夫礼者，忠信之薄而乱之首；前识者，道之华而愚之始。是以大丈夫处其厚，不居其薄；处其实，不居其华。故去彼取此。"
     },
     {
       "chapter_id": "ddj-39",
@@ -1696,8 +1886,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天、地、神、谷、万物、侯王皆因得「一」而各安其位；贵以贱为本、高以下为基，侯王自称孤寡不谷正是以此为本。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "古来得「一」的：天得一而清明，地得一而安宁，神得一而灵妙，谿谷得一而盈满，万物得一而生长，侯王得一而能为天下准则。推到极处说：天若不能清明恐将崩裂，地若不能安宁恐将崩塌，神若不能灵妙恐将消歇，谿谷若不能盈满恐将枯竭，万物若不能生长恐将绝灭，侯王若不能保持贵高之位恐将颠覆。所以贵以贱为根本，高以下为基础。因此侯王自称「孤」、「寡」、「不谷」，这不正是以贱为根本吗？难道不是吗？所以追求过多的车马反而没有了车马。\n不愿如美玉般晶莹耀眼，宁可如石头般质朴无华。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是「一」统摄的论述，不是否定层级；组织仍需清晰的权责结构与自上而下的传导，问题在脱离根本的「贵」。",
       "themes": [
         "management"
@@ -1711,7 +1901,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天、地、神、谷、万物、侯王皆因得「一」而各安其位；贵以贱为本、高以下为基，侯王自称孤寡不谷正是以此为本。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-39",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "昔之得一者：天得一以清，地得一以宁，神得一以灵，谷得一以盈，万物得一以生，侯王得一以为天下贞。其致之，天无以清将恐裂，地无以宁将恐发，神无以灵将恐歇，谷无以盈将恐竭，万物无以生将恐灭，侯王无以贵高将恐蹶。故贵以贱为本，高以下为基。是以侯王自谓孤、寡、不谷。此非以贱为本邪？非乎？故致数舆无舆。不欲琭琭如玉，珞珞如石。"
     },
     {
       "chapter_id": "ddj-40",
@@ -1739,8 +1934,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道的运动是向相反方向回归，作用是柔弱；天下万物生于有，有生于无。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "向反方向运动，是道的运行规律；柔弱无争，是道的作用方式。天下万物生于「有」，而「有」又生于「无」。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是生成与运动的概括，不是因果律；现实问题仍需具体分析，「反者道之动」不能替代对当下条件的判断。",
       "themes": [
         "growth"
@@ -1754,7 +1949,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道的运动是向相反方向回归，作用是柔弱；天下万物生于有，有生于无。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-40",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "反者道之动，弱者道之用。天下万物生于有，有生于无。"
     },
     {
       "chapter_id": "ddj-41",
@@ -1782,8 +1982,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "上士勤行、中士若存若亡、下士大笑；不笑不足以为道。明道若昧、进道若退、大白若辱、大器晚成、大音希声、大象无形等，说明大成之象常看似其反。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "上等的士人听闻道，立即勤勉去实行；中等的士人听闻道，将信将疑；下等的士人听闻道，便大声嘲笑。不被嘲笑就不足以称为道。所以古来立言有这样的说法：明亮的道好似暗昧，前进的道好似后退，平坦的道好似崎岖。崇高的德好似低谷，最洁白的好似有污垢，广大的德好似不足，刚健的德好似怠惰，质朴纯真好似浑浊变易。最大的方正没有棱角，最大的器物最后完成，最大的声音听不见声响，最大的形象没有形迹。道隐微而无名，唯有道，善于施予又能成就万物。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是闻道反应的描摹，不是为拖延或低质辩护；「大器晚成」不等于无限期，关键节点仍要交付。",
       "themes": [
         "growth"
@@ -1797,7 +1997,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "上士勤行、中士若存若亡、下士大笑；不笑不足以为道。明道若昧、进道若退、大白若辱、大器晚成、大音希声、大象无形等，说明大成之象常看似其反。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-41",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。不笑不足以为道。故建言有之：明道若昧，进道若退，夷道若颣。上德若谷，大白若辱，广德若不足，建德若偷，质真若渝。大方无隅，大器晚成，大音希声，大象无形。道隐无名，夫唯道，善贷且成。"
     },
     {
       "chapter_id": "ddj-42",
@@ -1825,8 +2030,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道生一、一生二、二生三、三生万物；万物负阴抱阳、冲气为和。人之所恶的孤寡不谷，王公却用以自称；损之而益、益之而损；强梁者不得其死。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道生出浑一之气，浑一之气分而为阴阳，阴阳相合而生第三者，三再化生万物。万物背负阴而怀抱阳，藉冲虚之气调和而成。人们最厌恶的称呼莫过于孤、寡、不谷，而王公却以此自谓。所以事物有时减损反而增益，有时增益反而减损。别人所教的道理，我也用来教人——逞强凶暴的人不得善终，我把这话当作教化的根本。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是宇宙生成的图式，不是管理模型；「损之而益」不可机械套用，现实中的损益需依具体情境判断。",
       "themes": [
         "growth"
@@ -1840,7 +2045,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道生一、一生二、二生三、三生万物；万物负阴抱阳、冲气为和。人之所恶的孤寡不谷，王公却用以自称；损之而益、益之而损；强梁者不得其死。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-42",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "道生一，一生二，二生三，三生万物。万物负阴而抱阳，冲气以为和。人之所恶，唯孤、寡、不谷，而王公以为称。故物或损之而益，或益之而损。人之所教，我亦教之。强梁者不得其死，吾将以为教父。"
     },
     {
       "chapter_id": "ddj-43",
@@ -1868,8 +2078,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "至柔驰骋至坚，无有入无间，故知无为有益；不言之教、无为之益，天下希及。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下最柔弱的，能在天下最坚硬的东西中纵横穿行。「无形」能进入「无间隙」之处，我因此知道无为的益处。不靠言语的教化、无为的好处，天下能达到这一境界的人实在很少。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是柔能克刚的洞见，不是否定刚性与规则；关键处（安全、合规、底线）仍需硬约束，柔不可替代刚性保障。",
       "themes": [
         "collaboration",
@@ -1884,7 +2094,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "至柔驰骋至坚，无有入无间，故知无为有益；不言之教、无为之益，天下希及。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-43",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天下之至柔，驰骋天下之至坚。无有入无间，吾是以知无为之有益。不言之教，无为之益，天下希及之。"
     },
     {
       "chapter_id": "ddj-44",
@@ -1912,8 +2127,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "名声与身体哪一个更亲近？身体与货利哪一个更重要？得到与失去哪一个更有害？过分吝惜必致更大耗费，过多聚藏必致更重损失。知足则不致受辱，知止则不致危殆，可以长久。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "名声与生命，哪个更亲近？生命与财货，哪个更贵重？得与失，哪个更有害？所以过度贪爱往往付出巨大代价，囤积过多往往遭受重大损失。知足就不会受辱，知止就不会危险，这样才能长久。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是价值排序的反问，不是要求清贫。「知足／知止」适用于欲望与风险边界的自我约束，不能用来正当化对他人权益的侵占或不合理的分配。",
       "themes": [
         "growth",
@@ -1928,7 +2143,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "名声与身体哪一个更亲近？身体与货利哪一个更重要？得到与失去哪一个更有害？过分吝惜必致更大耗费，过多聚藏必致更重损失。知足则不致受辱，知止则不致危殆，可以长久。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-44",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "名与身孰亲？身与货孰多？得与亡孰病？是故甚爱必大费，多藏必厚亡。知足不辱，知止不殆，可以长久。"
     },
     {
       "chapter_id": "ddj-45",
@@ -1956,8 +2176,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "大成就似有缺、大盈似冲、大直似屈、大巧似拙、大辩似讷，而其用不弊不穷；躁胜寒、静胜热，清静为天下正。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "最圆满的成就好像仍有欠缺，但它的作用不会衰败；最充盈的状态好像空虚，但它的作用不会穷尽。最正直的好像弯曲，但作用不局限于一种形态；最高明的技巧好像笨拙，但作用不会停止；最善辩的好像言语迟钝，但表达的效用不失其当。\n活动能够抵御寒冷，安静能够克服燥热。清静可以成为天下的准则。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是「若」的辩证审美，不是以残缺为目标；交付仍需达标，把「大成若缺」当作不做完的理由会损害结果。",
       "themes": [
         "growth",
@@ -1972,7 +2192,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "大成就似有缺、大盈似冲、大直似屈、大巧似拙、大辩似讷，而其用不弊不穷；躁胜寒、静胜热，清静为天下正。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-45",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。 本站底本含“其用不居／不辍／不差”，并作“躁胜寒，静胜热”，译文已补足并对应。",
+      "explanation_reference_original": "大成若缺，其用不弊。大盈若冲，其用不穷。大直若屈，大巧若拙，大辩若讷。静胜躁，寒胜热，清静为天下正。"
     },
     {
       "chapter_id": "ddj-46",
@@ -2000,8 +2225,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "有道则战马用于农事，无道则兵戈生于郊野；祸莫大于不知足，咎莫大于欲得；知足之足，常足。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下有道，战马便退下来用于田间耕作施肥；天下无道，连怀孕的母马也被征用于战争，在郊野产下小马。祸患没有比不知满足更大的；过失没有比一味贪求占有更大的。所以，懂得知足而获得的满足，才是长久的满足。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是知足的劝诫，不是反对合理发展与报酬；正当权益、合理增长仍应主张，知足针对的是贪得无厌而非一切进取。",
       "themes": [
         "growth",
@@ -2016,7 +2241,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "有道则战马用于农事，无道则兵戈生于郊野；祸莫大于不知足，咎莫大于欲得；知足之足，常足。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-46",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "天下有道，却走马以粪；天下无道，戎马生于郊。罪莫大于可欲，祸莫大于不知足，咎莫大于欲得。故知足之足，常足矣。"
     },
     {
       "chapter_id": "ddj-47",
@@ -2044,8 +2274,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "不出门可知天下、不窥牖见天道；其出弥远其知弥少；圣人不行而知、不见而名、不为而成。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "不出家门，能知道天下事；不窥看窗外，能体会天道。向外奔走得越远，所知的反而越少。所以圣人不必亲自出行就能知晓，不必亲见就能明白，不必有为就能成就。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是内向体认的极端表述，不是否定调研与现场；决策仍需事实依据与一线信息，不能凭「不行而知」替代调研。",
       "themes": [
         "growth"
@@ -2059,7 +2289,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "不出门可知天下、不窥牖见天道；其出弥远其知弥少；圣人不行而知、不见而名、不为而成。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-47",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "不出户，知天下；不窥牖，见天道。其出弥远，其知弥少。是以圣人不行而知，不见而名，不为而成。"
     },
     {
       "chapter_id": "ddj-48",
@@ -2087,8 +2322,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "为学是每日增益，为道是每日减损；减损再减损，以至于「无为」；无为而无不为。取天下常以不生事，若多事则不足以取天下。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "求学是日日增益知见，求道是日日减损私欲。减损再减损，直至无为的境地。看似无为，实则无事不成。治理天下要常以清静无事为本，等到事烦政扰，就不足以治天下了。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "此处「为学／为道」是修养与治理语境下的对照，不是反对学习或主张不做事。「无为」在文本中指不强为、不妄为，不能简化为「什么都不做」。",
       "themes": [
         "growth",
@@ -2103,7 +2338,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "为学是每日增益，为道是每日减损；减损再减损，以至于「无为」；无为而无不为。取天下常以不生事，若多事则不足以取天下。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-48",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "为学日益，为道日损。损之又损，以至于无为。无为而无不为。取天下常以无事，及其有事，不足以取天下。"
     },
     {
       "chapter_id": "ddj-49",
@@ -2131,8 +2371,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "圣人以百姓心为心，善者与不善者皆善之、信与不信皆信之；在天下渾其心，百姓皆注其耳目，圣人皆孩之。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "圣人没有固执的成见，以百姓的心为自己的心。善的人，我善待他；不善的人，我也善待他，这样才能使德性归于善。守信的人，我信任他；不守信的人，我也信任他，这样才能使德性归于信。圣人居于天下，收敛自己的情感，为天下混同自己的心思；百姓都关注自己的耳目所求，圣人却把他们都看作纯真的孩子。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是包容的治理姿态，不是无原则迁就；违规与侵害仍需按规则处理，包容不等于放弃标准。",
       "themes": [
         "management",
@@ -2147,7 +2387,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "圣人以百姓心为心，善者与不善者皆善之、信与不信皆信之；在天下渾其心，百姓皆注其耳目，圣人皆孩之。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-49",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "圣人无常心，以百姓心为心。善者，吾善之；不善者，吾亦善之，德善。信者，吾信之；不信者，吾亦信之，德信。圣人在天下歙歙，为天下浑其心，百姓皆注其耳目，圣人皆孩之。"
     },
     {
       "chapter_id": "ddj-50",
@@ -2175,8 +2420,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "人生死各占其三，动而趋死者亦有三，因「生生之厚」；善摄生者陆行不遇兕虎、入军不被甲兵，以其无死地。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "人从出生走向死亡。属于长寿之徒的，占十分之三；属于早夭之徒的，占十分之三；本可生存，却因妄动而走向死路的，也占十分之三。为什么？因为他们养生过度。听说善于养生者，陆地行走不会遇上犀牛猛虎，从军打仗不会被武器所伤。犀牛无处用其角，猛虎无处下其爪，兵器无处刺入其刃。为什么？因为他无置死之地。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是养生与避祸的论述，不是承诺免于风险；安全仍需制度保障与主动防护，不能只靠「无死地」的心态。",
       "themes": [
         "growth"
@@ -2190,7 +2435,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "人生死各占其三，动而趋死者亦有三，因「生生之厚」；善摄生者陆行不遇兕虎、入军不被甲兵，以其无死地。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-50",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "出生入死。生之徒，十有三；死之徒，十有三；人之生，动之死地，亦十有三。夫何故？以其生生之厚。盖闻善摄生者，陆行不遇兕虎，入军不被甲兵。兕无所投其角，虎无所措其爪，兵无所容其刃。夫何故？以其无死地。"
     },
     {
       "chapter_id": "ddj-51",
@@ -2218,8 +2468,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道生、德畜、物形、势成；万物尊道贵德，生而不有、为而不恃、长而不宰，是谓玄德。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道生育万物，德畜养万物，外物赋予形体，环境助其成长。所以万物无不尊崇道而珍贵德。道的尊崇与德的珍贵，并非有谁指派，而是出于自然。故道生育万物，德畜养万物；使其生长发育，使其安定成熟，使其得到遮蔽护佑。生育而不据为己有，作为而不仗恃，长养而不主宰，这就叫做深奥的「玄德」。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是生成论的概括，不是管理指令；组织仍需明确的责任归属，把「不宰」理解成不负责会损害执行。",
       "themes": [
         "management",
@@ -2234,7 +2484,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道生、德畜、物形、势成；万物尊道贵德，生而不有、为而不恃、长而不宰，是谓玄德。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-51",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。 本章已按本站显示的王弼本语句调整译文；未混入来源异文。",
+      "explanation_reference_original": "道生之，德畜之，物形之，势成之。是以万物莫不尊道而贵德。道之尊，德之贵，夫莫之命而常自然。故道生之，德畜之；长之育之；亭之毒之；养之覆之。生而不有，为而不恃，长而不宰，是谓玄德。"
     },
     {
       "chapter_id": "ddj-52",
@@ -2262,8 +2517,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以母与子喻本与末；既得母以知子，复守母没身不殆。塞兑闭门则终身不勤；见小曰明、守柔曰强，用其光复归其明。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下万物有其根源，可以看作天下的母亲。既然得了「母」，就能知道由它生出的「子」；既知道了「子」，再回头持守那个「母」，终身就不会危险。堵塞嗜欲的孔窍，关闭嗜欲的门径，终身不会劳累；打开嗜欲的孔窍，去成就世俗之事，终身无可救药。能察见细微叫做「明」，能持守柔弱叫做「强」。运用智慧之光，回归内心明觉，不给自身留下祸殃，这就叫做承袭常道。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是守本的修养，不是封闭信息；现代协作需要适度开放与共享，关键在「守母」而非隔绝。",
       "themes": [
         "growth",
@@ -2278,7 +2533,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以母与子喻本与末；既得母以知子，复守母没身不殆。塞兑闭门则终身不勤；见小曰明、守柔曰强，用其光复归其明。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-52",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天下有始，以为天下母。既得其母，以知其子；既知其子，复守其母，没身不殆。塞其兑，闭其门，终身不勤。开其兑，济其事，终身不救。见小曰明，守柔曰强。用其光，复归其明，无遗身殃，是为袭常。"
     },
     {
       "chapter_id": "ddj-53",
@@ -2306,8 +2566,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "行于大道唯怕走入邪径；大道甚夷而人好蹊径。朝政败坏、田仓空虚而衣着利剑、饮食有余，是「盗夸」，非道也哉。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "假使我稍微有点认知，行走在大道上，最怕的就是走入岔路。大道本来十分平坦，但是世人却偏爱走小径。宫廷打扫得极为洁净，田地却一片荒芜，仓库十分空虚；统治者却穿著华服、佩带利剑，饱食精美的饮食，拥有用不完的财货，这就叫做「强盗头子」。实在是太不合道了！",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对统治者奢靡的批判，可类比组织中的资源错配；但需以事实而非印象判断，不能凭「好径」的观感否定合理路径。",
       "themes": [
         "management"
@@ -2321,7 +2581,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "行于大道唯怕走入邪径；大道甚夷而人好蹊径。朝政败坏、田仓空虚而衣着利剑、饮食有余，是「盗夸」，非道也哉。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-53",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "使我介然有知，行于大道，唯施是畏。大道甚夷，而民好径。朝甚除，田甚芜，仓甚虚；服文彩，带利剑，厌饮食，财货有余，是谓盗夸。非道也哉！"
     },
     {
       "chapter_id": "ddj-54",
@@ -2349,8 +2614,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "善建、善抱者不可拔脱，泽及子孙；修德于身、家、乡、国、天下，其德递广；以身观身、以家观家、以乡观乡、以国观国、以天下观天下。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "善于建立的不会被拔除，善于怀抱的不会脱落，这样子孙的祭祀就能世代不绝。将道修养于自身，他的德便是真实；修养于家，他的德便有余；修养于乡里，他的德便长久；修养于邦国，他的德便丰盛；修养于天下，他的德便普及。所以从自身观照他人之身，从一家观照他家，从一乡观照他乡，从一国观照他国，从天下观照天下。我怎么会知道天下是这样子？就凭这个道理。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是修德由近及远的论述，不是管理方法论；组织推广仍需机制与资源，不能只靠「修之于身」的自然外溢。",
       "themes": [
         "management",
@@ -2365,7 +2630,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "善建、善抱者不可拔脱，泽及子孙；修德于身、家、乡、国、天下，其德递广；以身观身、以家观家、以乡观乡、以国观国、以天下观天下。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-54",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "善建者不拔，善抱者不脱，子孙以祭祀不辍。修之于身，其德乃真；修之于家，其德乃余；修之于乡，其德乃长；修之于国，其德乃丰；修之于天下，其德乃普。故以身观身，以家观家，以乡观乡，以国观国，以天下观天下。吾何以知天下然哉？以此。"
     },
     {
       "chapter_id": "ddj-55",
@@ -2393,8 +2663,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "厚德者比于赤子，毒虫不螫、猛兽不据；精和之至。知和曰常、知常曰明；心使气曰强，物壮则老，谓之不道。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "怀德深厚的人，可以比作初生的婴儿。毒蜂毒蛇不会去螫他，猛兽不会去抓他，凶鸟不会去搏击他。他筋骨柔弱却能握得紧固，不知男女交合的事，小生殖器却自然勃举，这是精气充足到极点。整天哭嚎而声音不沙哑，这是和气充足到极点。知道和气叫做「常」，了悟常道叫做「明」；过度求生反成灾殃，心役使气便叫做逞强。事物壮盛便会走向衰老，这叫做不合于道，不合于道就会早早灭亡。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是以赤子喻德的隐喻，不是要求天真无知；成人仍需能力与判断，「赤子」指状态的纯净而非放弃成熟。",
       "themes": [
         "growth"
@@ -2408,7 +2678,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "厚德者比于赤子，毒虫不螫、猛兽不据；精和之至。知和曰常、知常曰明；心使气曰强，物壮则老，谓之不道。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-55",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "含德之厚，比于赤子。蜂虿虺蛇不螫，猛兽不据，攫鸟不搏。骨弱筋柔而握固，未知牝牡之合而全作，精之至也。终日号而不嗄，和之至也。知和曰常，知常曰明，益生曰祥，心使气曰强。物壮则老，谓之不道，不道早已。"
     },
     {
       "chapter_id": "ddj-56",
@@ -2436,8 +2711,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "知者不滥言、言者未必知；塞兑闭门、挫锐解纷、和光同尘，是谓玄同；故不可得而亲疏利害贵贱。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "真知者不多言，多言者非真知。堵塞嗜欲的孔窍，关闭嗜欲的门径，挫去锋锐，化解纷乱，调和光彩，混同尘垢，这就叫做「玄同」。所以不能用亲近去待他，也不能用疏远去待他；不能用利去诱他，也不能用害去胁他；不能使他更贵，也不能使他更贱。因此他才成为天下最尊贵的。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对言与知的提醒，不是反对沟通；关键信息必须明示，把「不言」当挡箭牌会损害协作与责任。",
       "themes": [
         "collaboration",
@@ -2452,7 +2727,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "知者不滥言、言者未必知；塞兑闭门、挫锐解纷、和光同尘，是谓玄同；故不可得而亲疏利害贵贱。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-56",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "知者不言，言者不知。塞其兑，闭其门，挫其锐，解其纷，和其光，同其尘，是谓玄同。故不可得而亲，不可得而疏；不可得而利，不可得而害；不可得而贵，不可得而贱。故为天下贵。"
     },
     {
       "chapter_id": "ddj-57",
@@ -2480,8 +2760,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以正治国、以奇用兵、以无事取天下；忌讳多则民贫、利器多则国昏、巧饰多则奇物起、法令繁则盗贼多。圣人无为而民自化、自正、自富、自朴。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "以正道治国，以奇谋用兵，以无为无事取天下。我怎么知道是这样的？就凭这些事实：天下禁忌越多，百姓就越贫穷；百姓利器越多，国家就越昏乱；人们技巧越多，怪异之物就越多；法令越是严明，盗贼就越层出不穷。所以圣人说：我无所妄为，百姓自然得以化育；我好清静，百姓自然得以归正；我不扰民，百姓自然得以富足；我没有贪欲，百姓自然趋于朴素。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是简政的论述，不是反对必要法规；现代治理需要清晰的规则与执行，问题在「多」的繁琐而非规则本身。",
       "themes": [
         "management"
@@ -2495,7 +2775,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以正治国、以奇用兵、以无事取天下；忌讳多则民贫、利器多则国昏、巧饰多则奇物起、法令繁则盗贼多。圣人无为而民自化、自正、自富、自朴。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-57",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "以正治国，以奇用兵，以无事取天下。吾何以知其然哉？以此：天下多忌讳，而民弥贫；民多利器，国家滋昏；人多伎巧，奇物滋起；法令滋彰，盗贼多有。故圣人云：我无为，而民自化；我好静，而民自正；我无事，而民自富；我无欲，而民自朴。"
     },
     {
       "chapter_id": "ddj-58",
@@ -2523,8 +2808,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "政宽则民淳，政苛则民缺；祸福相依，正复为奇、善复为妖，人之迷其日固久。圣人方而不割、廉而不刿、直而不肆、光而不耀。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "政治宽厚朴实，百姓便淳厚老实；政治严苛苛察，百姓便狡黠多事。祸呀，是福所依附的；福呀，是祸所潜伏的。谁能知道祸福的究竟？它没有定准。正可以变为奇，善可以变为妖。人们对此的迷惑，由来已久。所以圣人方正却不伤人，廉洁却不刺人，直率却不放肆，光明却不刺眼。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是宽严与祸福转化的洞察，不是模糊是非；原则仍须守住，「不割」指分寸而非无立场。",
       "themes": [
         "management",
@@ -2539,7 +2824,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "政宽则民淳，政苛则民缺；祸福相依，正复为奇、善复为妖，人之迷其日固久。圣人方而不割、廉而不刿、直而不肆、光而不耀。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-58",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "其政闷闷，其民淳淳；其政察察，其民缺缺。祸兮福之所倚，福兮祸之所伏。孰知其极？其无正。正复为奇，善复为妖。人之迷，其日固久。是以圣人方而不割，廉而不刿，直而不肆，光而不耀。"
     },
     {
       "chapter_id": "ddj-59",
@@ -2567,8 +2857,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "治人事天莫过于「啬」（爱惜、积蓄）；早服谓之重积德，则无不克、莫知其极，可以有国、长久；是深根固柢、长生久视之道。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "治理百姓、奉事天道，没有比爱惜精神更重要的。只有爱惜精神，才叫早早归服于道；早早归服于道，叫做不断积德。不断积德就没有什么不能克服，没有什么不能克服就无人能知其限度；无人能知其限度，便可以拥有国家。掌握治国的根本「道」，就可以长久。这就是根深柢固、长生久视的道理。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是积蓄力量的论述，不是吝啬不投入；必要投入仍要果断，啬指不浪费而非不支出。",
       "themes": [
         "management",
@@ -2583,7 +2873,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "治人事天莫过于「啬」（爱惜、积蓄）；早服谓之重积德，则无不克、莫知其极，可以有国、长久；是深根固柢、长生久视之道。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-59",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "治人事天，莫若啬。夫唯啬，是谓早服。早服谓之重积德。重积德则无不克，无不克则莫知其极。莫知其极，可以有国。有国之母，可以长久。是谓深根固柢，长生久视之道。"
     },
     {
       "chapter_id": "ddj-60",
@@ -2611,8 +2906,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "治大国如烹小鱼，不可多动；以道莅天下则鬼不神、人不伤，两不相伤德交归。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "治理大国就像烹煮小鱼，不可频繁翻动。以道治理天下，鬼神就不再显灵作祟。并非鬼神真不灵，而是它的灵验不会伤人；不仅鬼神不伤人，圣人也不伤害百姓。鬼神与圣人都不伤人，所以德泽便交相归于民。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是「少翻动」的比喻，不是反对必要的调整与监管；问题出现仍需干预，频繁扰动与完全放任都非本意。",
       "themes": [
         "management"
@@ -2626,7 +2921,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "治大国如烹小鱼，不可多动；以道莅天下则鬼不神、人不伤，两不相伤德交归。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-60",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "治大国若烹小鲜。以道莅天下，其鬼不神。非其鬼不神，其神不伤人；非其神不伤人，圣人亦不伤人。夫两不相伤，故德交归焉。"
     },
     {
       "chapter_id": "ddj-61",
@@ -2654,8 +2954,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "大国如江海之下流，天下所归；牝以静胜牡。大国下小国则取小国，小国下大国则取大国；各得所欲，大者宜为下。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "大国要像河川的下游，是天下交会之处，是天下的雌柔。雌柔常因清静而胜过雄强，这是以静处下的缘故。所以大国若能对小国谦下，就能得到小国的归附；小国若能对大国谦下，就能得到大国的庇护。所以或是谦下以求得，或是谦下而被接纳。大国不过想兼蓄小国，小国不过想被大国接纳。两方各得所求，但大国尤其应谦下。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是谦下相处的论述，不是无原则退让；谈判仍需对等的权利义务，大小之间的「下」是姿态而非让步底线。",
       "themes": [
         "collaboration",
@@ -2670,7 +2970,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "大国如江海之下流，天下所归；牝以静胜牡。大国下小国则取小国，小国下大国则取大国；各得所欲，大者宜为下。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-61",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "大国者下流，天下之交，天下之牝。牝常以静胜牡，以静为下。故大国以下小国，则取小国；小国以下大国，则取大国。故或下以取，或下而取。大国不过欲兼畜人，小国不过欲入事人。夫两者各得其所欲，大者宜为下。"
     },
     {
       "chapter_id": "ddj-62",
@@ -2698,8 +3003,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道是万物的深藏之所，善人与不善人皆所保；美言可市、尊行可加人。立天子置三公，不如进此道；古贵此道在「求以免罪」。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "道是万物的深奥宝藏，是善人的珍宝，也是不善之人赖以保全的依靠。美好的言词可以赢得敬重，高尚的行为可以为人所加礼。人即使不善，又怎能抛弃他不顾呢？所以拥立天子、设置三公，虽然有拱抱的玉璧为先导、四马之车随从，还不如坐而进献此道。古人之所以重视此道，是为什么呢？难道不正是因为：求道便能得到，有罪也可以免除吗？所以才为天下所贵。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是道的贵重性的论述，不是否定制度与法律；现实仍需规则与程序，「进此道」不能替代具体的合规与救济。",
       "themes": [
         "management",
@@ -2714,7 +3019,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道是万物的深藏之所，善人与不善人皆所保；美言可市、尊行可加人。立天子置三公，不如进此道；古贵此道在「求以免罪」。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-62",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "道者万物之奥，善人之宝，不善人之所保。美言可以市，尊行可以加人。人之不善，何弃之有？故立天子，置三公，虽有拱璧以先驷马，不如坐进此道。古之所以贵此道者何？不曰：求以得，有罪以免邪？故为天下贵。"
     },
     {
       "chapter_id": "ddj-63",
@@ -2742,8 +3052,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "以无为为为，以无事为事，以无味为味。大起于小，多起于少，报怨以德。处理困难要从容易处着手，做大事要从细微处开始；天下的难事必从易处做起，大事必从细处做起。因此圣人始终不自以为大，所以能成其大。轻易许诺必少信用，把事情看得太容易必多困难。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "以无为的态度行事，以无事的心境处事，以无味为真味。将大事看小、多事看少，以德报怨。处理难事要从容易之处下手，成就大事要从细微之处著力。天下难事，必由易处发端；天下大事，必由细微积成。所以圣人始终不自为大，因而能成就其大。轻易承诺必少诚信，事事看作容易必多遭难。所以圣人遇事仍慎重对待，故终究没有难成之事。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "「报怨以德」是文本的伦理主张，在涉及侵害、骚扰、违法的情形下不宜作为处理原则；「图难于其易」是行动切分的方法提示，不保证结果。",
       "themes": [
         "growth",
@@ -2759,7 +3069,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "以无为为为，以无事为事，以无味为味。大起于小，多起于少，报怨以德。处理困难要从容易处着手，做大事要从细微处开始；天下的难事必从易处做起，大事必从细处做起。因此圣人始终不自以为大，所以能成其大。轻易许诺必少信用，把事情看得太容易必多困难。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-63",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "为无为，事无事，味无味。大小多少，报怨以德。图难于其易，为大于其细。天下难事，必作于易；天下大事，必作于细。是以圣人终不为大，故能成其大。夫轻诺必寡信，多易必多难。是以圣人犹难之，故终无难矣。"
     },
     {
       "chapter_id": "ddj-64",
@@ -2788,8 +3103,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "局面安稳时容易维持，征兆未显现时容易谋划；脆弱时容易消解，细微时容易散去。要在事情尚未发生时就处理，在尚未混乱时就治理。合抱大树生于细芽，九层高台起于一筐土，千里之行始于脚下。强为者败，执持者失。圣人无为故无败，无执故无失。人们做事常在接近成功时失败，慎终如始则无败事。圣人以「不欲」为欲，不贵重难得之货，学人所不学，复归众人所过之处，以辅助万物之自然而不敢妄为。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "局面安定时容易维持，事情未显征兆时容易图谋；事物脆弱时容易分解，事物细微时容易消散。要在未发生之前处理，要在未乱之前治理。合抱粗的大树，生于最细的萌芽；九层高台，从一筐土堆起；千里远路，是从脚下第一步开始。妄为的必失败，强执的必失去。所以圣人无为，因此不败；无执，因此不失。世人做事，常常在快成功时失败。若能慎终如始，便不会有失败。所以圣人欲求世人所不欲，不珍视难得的财货；学世人所不学，把众人的过错翻转过来。\n借此辅助万物的自然发展，而不敢妄为。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "「为之于未有」强调的是时机与预防，不等于可以精确预测所有风险。「不敢为」在文本中针对的是「妄为」，不是否定必要的干预与制度建设。",
       "themes": [
         "growth",
@@ -2805,7 +3120,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "局面安稳时容易维持，征兆未显现时容易谋划；脆弱时容易消解，细微时容易散去。要在事情尚未发生时就处理，在尚未混乱时就治理。合抱大树生于细芽，九层高台起于一筐土，千里之行始于脚下。强为者败，执持者失。圣人无为故无败，无执故无失。人们做事常在接近成功时失败，慎终如始则无败事。圣人以「不欲」为欲，不贵重难得之货，学人所不学，复归众人所过之处，以辅助万物之自然而不敢妄为。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-64",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "其安易持，其未兆易谋；其脆易泮，其微易散。为之于未有，治之于未乱。合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。为者败之，执者失之。是以圣人无为故无败，无执故无失。民之从事，常于几成而败之。慎终如始，则无败事。是以圣人欲不欲，不贵难得之货；学不学，复众人之所过。以辅万物之自然，而不敢为。"
     },
     {
       "chapter_id": "ddj-65",
@@ -2833,8 +3153,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "古之善为道者非以明民，将以愚之；民难治因其智多。以智治国国之贼，不以智治国国之福；知此是玄德，与物反而后大顺。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "古代善于行道的人，不是要使百姓变得机巧多智，而是要使他们淳朴浑厚。百姓难治，是因为机巧太多。所以用机巧治国，是国家的祸害；不用机巧治国，才是国家的福气。能了解这两者的，就掌握了治国的法则。常常了解这个法则，就叫做玄德。玄德深啊，远啊，与一般事物的取向相反啊！如此才能达到大顺之境。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是反智巧的论述，不是反对教育；现代组织需要知识与能力，「愚」指不耍机心、不炫智，而非不要专业。",
       "themes": [
         "management",
@@ -2849,7 +3169,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "古之善为道者非以明民，将以愚之；民难治因其智多。以智治国国之贼，不以智治国国之福；知此是玄德，与物反而后大顺。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-65",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "古之善为道者，非以明民，将以愚之。民之难治，以其智多。故以智治国，国之贼；不以智治国，国之福。知此两者亦稽式。常知稽式，是谓玄德。玄德深矣，远矣！与物反矣！然后乃至大顺。"
     },
     {
       "chapter_id": "ddj-66",
@@ -2877,8 +3202,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "江海善下故能为百谷王；欲上民必言下之、欲先民必身后之。圣人处上而民不重、处前而民不害，乐推不厌，以其不争。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "江海之所以能成为百川之王，是因为它善于处在低下之位，所以能成为百川之王。因此想要在百姓之上，必须言语上对他们谦下；想要在百姓之前，必须将自身放在他们之后。所以圣人居于上位，百姓不感到沉重；居于前列，百姓不觉得受害；因此天下乐于推崇他而不厌弃。正因为他不与人争，所以天下没有人能与他争。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是谦下领导的论述，不是放弃引领；关键决策仍需有人负责，谦下是姿态而非回避担责。",
       "themes": [
         "management",
@@ -2893,7 +3218,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "江海善下故能为百谷王；欲上民必言下之、欲先民必身后之。圣人处上而民不重、处前而民不害，乐推不厌，以其不争。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-66",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "江海所以能为百谷王者，以其善下之，故能为百谷王。是以欲上民，必以言下之；欲先民，必以身后之。是以圣人处上而民不重，处前而民不害，是以天下乐推而不厌。以其不争，故天下莫能与之争。"
     },
     {
       "chapter_id": "ddj-67",
@@ -2921,8 +3251,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "道大似不肖；有三宝：慈、俭、不敢为天下先。慈故勇、俭故广、不敢先故成器长；舍慈且勇、舍俭且广、舍后且先则死。慈以战则胜、守则固。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下都说我讲的道太大了，大得似乎不像任何具体事物。正因为它大，所以才不像具体事物；如果它像某种具体事物，那它老早就变得很渺小了！我有三项珍宝，我牢牢持守著：第一是慈爱，第二是节俭，第三是不敢居天下人之先。因为慈爱所以才能勇敢，因为节俭所以才能宽广，因为不敢居天下人之先所以才能成为众人之长。如今舍弃慈爱而求勇敢，舍弃节俭而求宽广，舍弃居后而抢居先，必死可视为！慈爱这东西，用以征战就能胜利，用以防守就能坚固。上天要救助谁，就用慈爱来护卫他。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是以三宝立身的论述，「不敢为天下先」是分寸不是退缩；该牵头、该首发时仍要牵头，不能一律退后。",
       "themes": [
         "management",
@@ -2937,7 +3267,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "道大似不肖；有三宝：慈、俭、不敢为天下先。慈故勇、俭故广、不敢先故成器长；舍慈且勇、舍俭且广、舍后且先则死。慈以战则胜、守则固。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-67",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天下皆谓我道大，似不肖。夫唯大，故似不肖。若肖，久矣其细也夫！我有三宝，持而保之：一曰慈，二曰俭，三曰不敢为天下先。慈故能勇，俭故能广，不敢为天下先，故能成器长。今舍慈且勇，舍俭且广，舍后且先，死矣！夫慈，以战则胜，以守则固。天将救之，以慈卫之。"
     },
     {
       "chapter_id": "ddj-68",
@@ -2965,8 +3300,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "善为士者不尚武、善战者不怒、善胜者不与、善用人者为之下；是谓不争之德、用人之力、配天之极。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "善于做将帅的不逞勇武，善于作战的不轻易动怒，善于战胜敌人的不正面交锋，善于用人的对人谦下。这就叫做「不争之德」，这就叫做「用人之力」，这就叫做合于天道、自古以来的最高准则。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是「不争而善胜」的论述，不是回避竞争；必要时仍要正面应对，不怒不等于不行动。",
       "themes": [
         "management",
@@ -2981,7 +3316,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "善为士者不尚武、善战者不怒、善胜者不与、善用人者为之下；是谓不争之德、用人之力、配天之极。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-68",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "善为士者不武，善战者不怒，善胜敌者不与，善用人者为之下。是谓不争之德，是谓用人之力，是谓配天古之极。"
     },
     {
       "chapter_id": "ddj-69",
@@ -3009,8 +3349,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "引古语「不敢为主而为客、不敢进寸而退尺」；行无行、攘无臂、执无兵、乃无敌；祸莫大于轻敌，轻敌几丧吾宝；抗兵相若，哀者胜。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "用兵者有这样的话：我不敢主动挑衅，而宁愿被动应战；不敢前进一寸，而宁愿后退一尺。这就叫做行军却像没有行阵可摆，挥臂却像没有手臂可举，奋击却像没有敌人可冲，持兵却像没有兵器可拿。祸患没有比轻敌更大的，轻敌几乎要使我丧失「三宝」。所以两军对抗，怀哀悯之心的一方终会胜利。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是谨慎用兵的论述，现代竞争可借鉴其「不轻敌」；但不等于永远退让，该进取时仍要进取。",
       "themes": [
         "management",
@@ -3025,7 +3365,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "引古语「不敢为主而为客、不敢进寸而退尺」；行无行、攘无臂、执无兵、乃无敌；祸莫大于轻敌，轻敌几丧吾宝；抗兵相若，哀者胜。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-69",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "用兵有言：吾不敢为主，而为客；不敢进寸，而退尺。是谓行无行，攘无臂，扔无敌，执无兵。祸莫大于轻敌，轻敌几丧吾宝。故抗兵相加，哀者胜矣。"
     },
     {
       "chapter_id": "ddj-70",
@@ -3053,8 +3398,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "吾言易知易行，而天下莫能知莫能行；言有宗、事有君；知我者希则我贵。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "我的话很容易理解，很容易实行。但天下却没有人能真正理解，没有人能真正实行。我的言论有宗旨，我所说的事有主脑。世人正因为不明白这宗旨，所以才不了解我。能了解我的人少，能效法我的人就更可贵了。所以圣人外表穿著粗布衣，内里却怀藏美玉。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对知易行难的感叹，不是为不落地辩护；价值仍要在行动中验证，不能因「莫能行」就降低实践要求。",
       "themes": [
         "growth",
@@ -3069,7 +3414,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "吾言易知易行，而天下莫能知莫能行；言有宗、事有君；知我者希则我贵。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-70",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "吾言甚易知，甚易行。天下莫能知，莫能行。言有宗，事有君。夫唯无知，是以不我知。知我者希，则我者贵。是以圣人被褐怀玉。"
     },
     {
       "chapter_id": "ddj-71",
@@ -3097,8 +3447,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "知道自己不知为上，不知而自以为知是病；圣人不病因其病病，是以不病。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "知道自己有所不知，是最上等的；不知道却自以为知道，是缺点。正因为把缺点当成缺点来警惕，所以才没有缺点。圣人之所以没有缺点，正是因为他把缺点当成缺点，所以才没有缺点。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是知止与自知的提醒，不是否定专业判断；该决断时仍需决断，承认未知不等于放弃决策。",
       "themes": [
         "growth",
@@ -3113,7 +3463,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "知道自己不知为上，不知而自以为知是病；圣人不病因其病病，是以不病。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-71",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "知不知，上；不知知，病。夫唯病病，是以不病。圣人不病，以其病病，是以不病。"
     },
     {
       "chapter_id": "ddj-72",
@@ -3141,8 +3496,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "民不畏威则大威至；无狎其所居、无厌其所生；夫唯不厌，是以不厌。不自见、自贵，故去彼取此。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "百姓不再畏惧威吓时，更大的灾祸就要降临了。不要挤迫百姓的居处，不要压榨百姓的生计。只有不压榨他们，他们才不会厌弃你。所以圣人有自知之明而不自我显耀，自爱其身而不自抬身价。所以舍弃那一面而取这一面。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对压迫反噬的警告，不是纵容违规；管理仍需权威与边界，问题在「威」的滥用而非权威本身。",
       "themes": [
         "management",
@@ -3157,7 +3512,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "民不畏威则大威至；无狎其所居、无厌其所生；夫唯不厌，是以不厌。不自见、自贵，故去彼取此。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-72",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "民不畏威，则大威至。无狎其所居，无厌其所生。夫唯不厌，是以不厌。是以圣人自知不自见，自爱不自贵。故去彼取此。"
     },
     {
       "chapter_id": "ddj-73",
@@ -3185,8 +3545,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "勇于敢则被杀、勇于不敢则活，两者或利或害；天之所恶孰知其故；天网恢恢疏而不失。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "勇于刚强行事就会丧命，勇于柔弱不争就能存活。这两种勇，一个有利一个有害。上天所厌恶的，谁能知道其中缘由？所以圣人遇事仍慎重对待。天道是不争而善于取胜，不言而善于回应，不召而自然到来，舒缓自然而善于筹谋。天网广大无边，虽然网眼疏阔却不会漏失。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是「敢与不敢」的辩证，不是教人怯懦；该担当时仍要担当，不敢不等于不负责。",
       "themes": [
         "growth",
@@ -3201,7 +3561,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "勇于敢则被杀、勇于不敢则活，两者或利或害；天之所恶孰知其故；天网恢恢疏而不失。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-73",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "勇于敢则杀，勇于不敢则活。此两者，或利或害。天之所恶，孰知其故？是以圣人犹难之。天之道，不争而善胜，不言而善应，不召而自来，𦈎然而善谋。天网恢恢，疏而不失。"
     },
     {
       "chapter_id": "ddj-74",
@@ -3229,8 +3594,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "民不畏死，奈何以死惧之；若使民常畏死，奇者吾得执而杀之；常有司杀者杀，代司杀者杀是代大匠斫，鲜不伤手。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "如果百姓连死都不怕，怎能用死亡来威吓他们？如果能使百姓害怕死亡，那么对于那些作奸犯科的人，我可以将他逮捕处死，谁还敢为非作歹？事实上常常有专管杀罚的（天道）来行刑。代替主杀者去杀人，就好比代替工匠去砍木。代替木匠砍木的人，很少有不伤到自己手的。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是慎杀与专业分工的论述，现代管理可借指不越权代劳；权责边界须清晰，越位代庖常自伤。",
       "themes": [
         "management"
@@ -3244,7 +3609,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "民不畏死，奈何以死惧之；若使民常畏死，奇者吾得执而杀之；常有司杀者杀，代司杀者杀是代大匠斫，鲜不伤手。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-74",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "民不畏死，奈何以死惧之？若使民常畏死，而为奇者，吾得执而杀之，孰敢？常有司杀者杀。夫代司杀者杀，是谓代大匠斲。夫代大匠斲者，希有不伤其手矣。"
     },
     {
       "chapter_id": "ddj-75",
@@ -3272,8 +3642,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "民饥因其上食税之多；民难治因其上有为；民轻死因其求生之厚；无以生为者贤于贵生。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "百姓之所以饥饿，是因为统治者征收的赋税太多，所以饥饿。百姓之所以难治，是因为统治者妄加作为，所以难治。百姓之所以轻视死亡，是因为统治者求自己活得太奢厚，所以百姓宁可冒死求生。只有不刻意厚养自己生命的人，才比那些贵养生命的人更高明。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对重敛与扰民的批评，不是反对必要税收与治理；资源分配需合理，问题在「多」与「有为」的过度。",
       "themes": [
         "management",
@@ -3288,7 +3658,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "民饥因其上食税之多；民难治因其上有为；民轻死因其求生之厚；无以生为者贤于贵生。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-75",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "民之饥，以其上食税之多，是以饥。民之难治，以其上之有为，是以难治。民之轻死，以其上求生之厚，是以轻死。夫唯无以生为者，是贤于贵生。"
     },
     {
       "chapter_id": "ddj-76",
@@ -3316,8 +3691,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "人生柔弱、死则坚强；草木同理。坚强者死之徒、柔弱者生之徒；兵强则不胜、木强则兵；强大处下、柔弱处上。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "人活著的时候身体柔软，死了之后身体僵硬。万物草木生长时柔嫩脆弱，死了之后变得枯硬。所以坚强的属于死亡那一类，柔弱的属于生存那一类。因此军队逞强就不能取胜，树木壮大就会招来砍伐。强大的反而居下，柔弱的反而居上。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是柔弱生机的论述，不是否定力量与制度；关键处仍需刚性保障，「柔弱处上」是态势而非放弃实力。",
       "themes": [
         "growth",
@@ -3332,7 +3707,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "人生柔弱、死则坚强；草木同理。坚强者死之徒、柔弱者生之徒；兵强则不胜、木强则兵；强大处下、柔弱处上。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-76",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "人之生也柔弱，其死也坚强。万物草木之生也柔脆，其死也枯槁。故坚强者死之徒，柔弱者生之徒。是以兵强则不胜，木强则兵。强大处下，柔弱处上。"
     },
     {
       "chapter_id": "ddj-77",
@@ -3360,8 +3740,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天之道如张弓，高者抑、下者举，损有余补不足；人之道则不然，损不足以奉有余。孰能有余以奉天下？唯有道者；圣人为而不恃、功成不处、不欲见贤。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天道难道不像张弓射箭吗？弓位高了就把它压低，弓位低了就把它抬高；弦过长了就减短一些，弦过短了就补足一些。天道是减少有余，补给不足。人道却不是这样，反而是减少不足来奉养有余。谁能将有余的拿出来奉养天下？只有有道之人能做到。所以圣人有所作为而不仗恃，功业成就而不居功，他不愿显露自己的贤能。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对分配不均的批评，现代需制度调节；「损有余补不足」是理想方向非机械操作，不能据此否定合理的差别回报。",
       "themes": [
         "management",
@@ -3376,7 +3756,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天之道如张弓，高者抑、下者举，损有余补不足；人之道则不然，损不足以奉有余。孰能有余以奉天下？唯有道者；圣人为而不恃、功成不处、不欲见贤。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-77",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天之道，其犹张弓与？高者抑之，下者举之；有余者损之，不足者补之。天之道，损有余而补不足。人之道，则不然，损不足以奉有余。孰能有余以奉天下？唯有道者。是以圣人为而不恃，功成而不处，其不欲见贤。"
     },
     {
       "chapter_id": "ddj-78",
@@ -3404,8 +3789,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "天下莫柔弱于水，而攻坚强者莫之能胜；弱胜强、柔胜刚，天下莫不知莫能行。圣人言「受国之垢是谓社稷主，受国不祥是谓天下王」；正言若反。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "天下没有比水更柔弱的，然而攻克坚强之物却没有什么能胜过它，因为没有东西能取代水的这种特性。柔弱胜过刚强，天下没有人不知道，却没有人能做到。所以圣人说：能承担国家屈辱的，才配做社稷之主；能承担国家灾殃的，才堪为天下之王。真实的道理，听起来往往像是反话。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是柔弱胜刚强的洞见，不是要求无底线承接指责；担当须与权责匹配，把「受国之垢」当作无限背锅会损害组织。",
       "themes": [
         "management",
@@ -3420,7 +3805,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "天下莫柔弱于水，而攻坚强者莫之能胜；弱胜强、柔胜刚，天下莫不知莫能行。圣人言「受国之垢是谓社稷主，受国不祥是谓天下王」；正言若反。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-78",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "天下莫柔弱于水，而攻坚强者莫之能胜，其无以易之。弱之胜强，柔之胜刚，天下莫不知，莫能行。是以圣人云：受国之垢，是谓社稷主；受国不祥，是为天下王。正言若反。"
     },
     {
       "chapter_id": "ddj-79",
@@ -3448,8 +3838,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "调解大怨必有余怨，不足以为善；圣人执左契而不责于人；有德司契、无德司彻；天道无亲，常与善人。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "用调解的方式化解深重的怨仇，往往还会留下余怨，怎么算得上是真正的善处？所以圣人虽持有债权的左契，却不向人索讨。有德的人就像持左契者，虽有权却宽厚；无德的人则像掌彻税者，苛刻索取。天道没有偏私，永远站在善人这一边。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是契约与宽容的论述，不是放弃追责；侵权与违约仍需依法处理，宽容不能替代必要的问责。",
       "themes": [
         "collaboration",
@@ -3464,7 +3854,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "调解大怨必有余怨，不足以为善；圣人执左契而不责于人；有德司契、无德司彻；天道无亲，常与善人。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-79",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "和大怨，必有余怨，安可以为善？是以圣人执左契，而不责于人。有德司契，无德司彻。天道无亲，常与善人。"
     },
     {
       "chapter_id": "ddj-80",
@@ -3492,8 +3887,8 @@
       ],
       "verification_status": "已联网比对电子本",
       "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "小国寡民，使民有什伯之器而不用、重死而不远徙；虽有舟舆无所乘、甲兵无所陈；邻国相望、鸡犬相闻，民至老死不相往来。",
-      "explanation_source": "本站整理",
+      "plain_explanation": "国小、人少。使百姓即使有各种器械也不必使用，使百姓重视死亡而不向远处迁徙。虽然有船车，没有必要乘坐它；虽然有武器盔甲，没有必要陈列它。使百姓回复到结绳记事的纯朴生活。让他们觉得食物甘美、衣服漂亮、住处安适、习俗快乐。邻国相互望得到，鸡鸣狗叫声彼此听得见，百姓到老死都不互相往来。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "这是对淳朴自足的构想，不是现代组织目标；规模与连接有其价值，不能简单倒推「越小越好、越隔绝越好」。",
       "themes": [
         "management",
@@ -3508,15 +3903,20 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "小国寡民，使民有什伯之器而不用、重死而不远徙；虽有舟舆无所乘、甲兵无所陈；邻国相望、鸡犬相闻，民至老死不相往来。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-80",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "小国寡民。使有什伯之器而不用，使民重死而不远徙。虽有舟舆，无所乘之；虽有甲兵，无所陈之。使人复结绳而用之。甘其食，美其服，安其居，乐其俗。邻国相望，鸡犬之声相闻，民至老死不相往来。"
     },
     {
       "chapter_id": "ddj-81",
       "chapter_number": 81,
       "title_hint": "信言不美，美言不信",
       "edition": "王弼本（维基文库繁体底本，本站转简体显示）",
-      "original_text": "信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。王弼老子道德经二卷，真得老子之学欤，盖严君平指归之流也。其言仁义与礼，不能自用，必待道以用之，天地万物各得于一，岂特有功于老子哉。凡百学者，盖不可不知乎此也。予于是知弼本深于老子，而易则末矣。其于易，多假诸老子之旨，而老子无资于易者，其有余不足之迹，断可见也。呜呼，学其难哉！弼知佳兵者不祥之器，至于战胜，以丧礼处之，非老子之言，乃不知常善救人，故无弃人；常善救物，故无弃物。独得诸河上公，而古本无有也。赖傅弈能辩之尔。然弼題是書曰道德经，不析乎道德，而上下之，犹近于古欤！其文字则多谬误，殆有不可读者，令人惜之。尝谓，弼之于老子，张湛之于列子，郭象之于庄子，杜预之于左氏，范甯之于谷梁，毛萇之于詩，郭璞之于尔雅，完然成一家之学，后世虽有作者，未易加也。予既缮写弼書，并以记之。政和乙未十月丁丑嵩山晁说之鄜畤记。克伏诵咸平圣语，有曰：「老子道德经治世之要，明皇解虽灿然可观，王弼所注，言简意深，真得老氏清净之旨。」克自此求弼所注甚力，而近世希有，盖久而后得之，往岁摄建宁学官，尝以刊行，既又得晁以道先生所題本，不分道德而上下之，亦无篇目，喜其近古，缮写藏之，乾道庚寅，分教京口，复镂板以傳，若其字之谬讹，前人已不能证，克焉敢輒易，姑俟夫知者。三月二十四日左从事郎充镇江府府学教授熊克谨记",
-      "original_text_traditional": "信言不美，美言不信。善者不辯，辯者不善。知者不博，博者不知。聖人不積，既以為人己愈有，既以與人己愈多。天之道，利而不害；聖人之道，為而不爭。王弼老子道德經二卷，真得老子之學歟，蓋嚴君平指歸之流也。其言仁義與禮，不能自用，必待道以用之，天地萬物各得於一，豈特有功於老子哉。凡百學者，蓋不可不知乎此也。予於是知弼本深於老子，而易則末矣。其於易，多假諸老子之旨，而老子無資於易者，其有餘不足之迹，斷可見也。嗚呼，學其難哉！弼知佳兵者不祥之器，至於戰勝，以喪禮處之，非老子之言，乃不知常善救人，故無棄人；常善救物，故無棄物。獨得諸河上公，而古本無有也。賴傅弈能辯之爾。然弼題是書曰道德經，不析乎道德，而上下之，猶近於古歟！其文字則多謬誤，殆有不可讀者，令人惜之。嘗謂，弼之於老子，張湛之於列子，郭象之於莊子，杜預之於左氏，范甯之於穀梁，毛萇之於詩，郭璞之於爾雅，完然成一家之學，後世雖有作者，未易加也。予既繕寫弼書，并以記之。政和乙未十月丁丑嵩山晁說之鄜畤記。克伏誦咸平聖語，有曰：「老子道德經治世之要，明皇解雖燦然可觀，王弼所注，言簡意深，真得老氏清淨之旨。」克自此求弼所注甚力，而近世希有，蓋久而後得之，往歲攝建寧學官，嘗以刊行，既又得晁以道先生所題本，不分道德而上下之，亦無篇目，喜其近古，繕寫藏之，乾道庚寅，分教京口，復鏤板以傳，若其字之謬訛，前人已不能證，克焉敢輒易，姑俟夫知者。三月二十四日左從事郎充鎮江府府學教授熊克謹記",
+      "original_text": "信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。",
+      "original_text_traditional": "信言不美，美言不信。善者不辯，辯者不善。知者不博，博者不知。聖人不積，既以為人己愈有，既以與人己愈多。天之道，利而不害；聖人之道，為而不爭。",
       "variants": [
         "本站以王弼本为底本录入，未做逐字汇校，暂未列异文"
       ],
@@ -3535,9 +3935,9 @@
         }
       ],
       "verification_status": "已联网比对电子本",
-      "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。",
-      "plain_explanation": "信言不美、美言不信；善者不辩、辩者不善；知者不博、博者不知。圣人不积，既以为人己愈有、既以与人己愈多；天之道利而不害，圣人之道为而不争。",
-      "explanation_source": "本站整理",
+      "verification_note": "2026-09-22 与上述两个公开电子本逐字比对一致；未与纸本／影印本做校勘，异文单列未混排。 2026-10-31 对照维基文库章节边界，移除误并入的晁说之、熊克跋等后人文字，正文止于“为而不争”。",
+      "plain_explanation": "真实的话语不华美，华美的话语不真实。良善的人不辩驳，喜辩驳的人不善。真知者不渊博，自夸渊博者不真知。圣人不囤积，越是为别人付出自己越富有，越是给予别人自己越丰盈。天道是利益万物而不加害，圣人之道是有所作为而不争夺。",
+      "explanation_source": "鼎稔道学馆《道德经》CC0 白话；本站转简体，部分语句按现有底本调整",
       "application_boundary": "是对言辞与积累的辩证，不是反对表达与储备；必要的信息与资源储备仍重要，「不积」指不囤积居奇而非不做准备。",
       "themes": [
         "collaboration",
@@ -3552,7 +3952,12 @@
         "url": "https://en.wikisource.org/wiki/T%C3%A2o_Teh_King",
         "accessed": "2026-09-23",
         "license": "Public Domain"
-      }
+      },
+      "chapter_summary": "本章讨论真实与修饰、知与博、给予与积聚的关系，最后以利而不害、为而不争收束。",
+      "explanation_url": "https://lius.cc/canon/daode-jing#chapter-81",
+      "explanation_license": "CC0（来源页面对“白话”部分的标注）",
+      "explanation_note": "白话译文是一种理解；涉及古义和版本的不同解释，不代表唯一结论。",
+      "explanation_reference_original": "信言不美，美言不信。善者不辩，辩者不善。知者不博，博者不知。圣人不积，既以为人己愈有，既以与人己愈多。天之道，利而不害；圣人之道，为而不争。"
     }
   ]
 }

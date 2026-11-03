@@ -1,18 +1,18 @@
-// 听书播放器（全站单例）：基于浏览器 Web Speech API（SpeechSynthesis）。
-// 设计要点：
-//  - 全站共用一个播放器实例与一条语音队列，绝不多个组件各自创建并发朗读。
-//  - 语音列表异步加载，优先中文声音；多中文声音可试听/选择并记住，设备无原声时回退。
-//  - 无中文声音或不支持时明确提示，绝不假装正在播放。
-//  - 文本按合理标点切句，逐句用真实播放事件（utterance.onstart）高亮，不用固定计时器猜测进度。
-//  - 任务令牌（taskId）确保快速切换章节/模式/语速时取消旧任务、忽略旧事件，不叠音、不串章。
-//  - 进度（章节/模式/句序/语速/音色/连续）仅存当前设备，刷新后提供「继续上次收听」，由用户点击恢复，不自动出声。
-//  - 播放器出现/收起/尺寸变化时，设置 --listen-player-h 并派发 listen:playerchange，供道家宇宙重新计算图谱安全区。
-
+// 固定两种云端合成音源；音频预生成，无浏览器系统音色。
 import { el, splitLines } from './util.mjs';
 
 const STORAGE_KEY = 'ddj-practice-room/listen/v1';
 const SPEEDS = [0.75, 1, 1.25, 1.5];
-const SUPPORTED = (typeof window !== 'undefined') && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+const SUPPORTED = typeof Audio !== 'undefined';
+let audio = null;
+let manifestPromise = null;
+const VOICES = [{voiceURI:'male', name:'云舟 · 男声', lang:'zh-CN'}, {voiceURI:'female', name:'小何 · 女声', lang:'zh-CN'}];
+function audioManifest() {
+  if (!manifestPromise) manifestPromise = fetch(new URL('../data/audio-manifest.json', import.meta.url)).then(r => { if (!r.ok) throw new Error('音频目录尚未发布'); return r.json(); }).catch(e => { manifestPromise = null; throw e; });
+  return manifestPromise;
+}
+function cancelAudio() { if (audio) { audio.onended = null; audio.ontimeupdate = null; audio.onerror = null; audio.pause(); audio.removeAttribute('src'); audio.load(); audio = null; } }
+
 
 // ---------- 单例状态 ----------
 const player = {
@@ -58,7 +58,7 @@ function chapterTitle(ch) {
   return ch ? `第 ${ch.chapter_number} 章 · ${ch.title_hint}` : '';
 }
 function modeLabel(m) {
-  return m === 'english' ? '译文' : m === 'both' ? '先原文再译文' : '原文';
+  return m === 'chinese' ? '中文释义' : m === 'both' ? '原文与中文释义' : '原文';
 }
 
 // ---------- 进度存储 ----------
@@ -68,6 +68,7 @@ function loadSaved() {
     if (!raw) return null;
     const p = JSON.parse(raw);
     if (!p || typeof p.chapterId !== 'string') return null;
+    if (!['original', 'chinese', 'both'].includes(p.mode)) { p.mode = 'original'; p.sentence = 0; }
     return p;
   } catch { return null; }
 }
@@ -95,45 +96,9 @@ function clearSaved() {
 }
 
 // ---------- 语音 ----------
-let voices = [];
-function refreshVoices() {
-  if (!SUPPORTED) return;
-  try { voices = window.speechSynthesis.getVoices() || []; } catch { voices = []; }
-  renderVoiceOptions();
-}
-function isZh(v) {
-  if (!v || !v.lang) return false;
-  const l = v.lang.toLowerCase();
-  if (l.startsWith('zh')) return true;
-  const n = (v.name || '').toLowerCase();
-  return /中文|普通话|国语|chinese|mandarin|yue|粤|cantonese|taiwan|hong kong/.test(n);
-}
-function isEn(v) {
-  if (!v || !v.lang) return false;
-  return v.lang.toLowerCase().startsWith('en');
-}
-function candidateVoices(lang) {
-  const pool = lang === 'zh' ? voices.filter(isZh) : voices.filter(isEn);
-  return pool;
-}
-// 选择最合适的声音：记住的优先，否则首个可用
-function pickVoice(lang) {
-  const pool = candidateVoices(lang);
-  if (!pool.length) return null;
-  if (player.voiceURI) {
-    const hit = pool.find((v) => v.voiceURI === player.voiceURI);
-    if (hit) return hit;
-  }
-  // 优先精确匹配地区（zh-CN / en-US），否则首个
-  const exact = pool.find((v) => v.lang.toLowerCase() === (lang === 'zh' ? 'zh-cn' : 'en-us'));
-  return exact || pool[0];
-}
-function noVoiceReason(lang) {
-  if (!SUPPORTED) return '当前浏览器不支持语音合成（Web Speech API），无法听书。请使用较新版本的 Chrome / Edge / Safari。';
-  return lang === 'zh'
-    ? '未找到中文语音。请到系统设置开启中文语音（如 macOS：系统设置 → 辅助功能 → 语音内容；Windows：设置 → 时间和语言 → 语音），或更换已安装中文语音的浏览器。'
-    : '未找到英文语音。请到系统设置开启英文语音，或更换浏览器。';
-}
+let voices = VOICES;
+function refreshVoices() { renderVoiceOptions(); }
+function noVoiceReason() { return '当前浏览器无法播放音频，请更换较新版本浏览器。'; }
 
 // ---------- 高亮 + 跟随 ----------
 function clearHighlight() {
@@ -161,27 +126,22 @@ function maybeStopFollow() {
 // ---------- 朗读引擎 ----------
 function buildSegments(chapter, mode) {
   const orig = segmentChapter(chapter.original_text, 'zh').map((t) => ({ text: t, lang: 'zh' }));
-  const hasEn = !!(chapter.english_text && chapter.english_text.trim());
-  const eng = hasEn ? segmentChapter(chapter.english_text, 'en').map((t) => ({ text: t, lang: 'en' })) : [];
+  const chinese = segmentChapter(chapter.plain_explanation, 'zh').map(text => ({ text, lang: 'zh' }));
   let segs;
-  if (mode === 'english') segs = eng;
-  else if (mode === 'both') segs = orig.concat(eng);
+  if (mode === 'chinese') segs = chinese;
+  else if (mode === 'both') segs = orig.concat(chinese);
   else segs = orig;
-  return { segs, origLen: orig.length, hasEn };
+  return { segs, origLen: orig.length };
 }
 
 // 开始一个新的会话（取消旧的）
 function startSession({ chapterId, mode = 'original', sentence = 0 }) {
+  if (!['original', 'chinese', 'both'].includes(mode)) { mode = 'original'; sentence = 0; }
   const ch = getChapterById(chapterId);
   if (!ch) { setStatus(`未找到章节 ${chapterId}`); return; }
   if (!SUPPORTED) { setStatus(noVoiceReason('zh')); setPlayState('error'); showPlayer(true); return; }
 
   const built = buildSegments(ch, mode);
-  if (mode === 'english' && built.segs.length === 0) {
-    setStatus(`本章暂无译文（英译），无法朗读译文。可改为朗读原文。`);
-    setPlayState('error'); showPlayer(true); updateMeta();
-    return;
-  }
   player.session = { chapterId, mode, segs: built.segs, origLen: built.origLen, segIndex: Math.max(0, Math.min(sentence, built.segs.length - 1)) };
   player.continuous = player.saved?.chapterId === chapterId && player.saved?.mode === mode ? !!player.saved.continuous : player.continuous;
   setPlayState('playing');
@@ -193,39 +153,53 @@ function startSession({ chapterId, mode = 'original', sentence = 0 }) {
 }
 
 // 朗读当前句
-function speakCurrent() {
+async function speakCurrent() {
   if (!player.session) return;
-  const idx = player.session.segIndex;
-  if (idx >= player.session.segs.length) { onSequenceEnd(); return; }
-  const seg = player.session.segs[idx];
-  const voice = pickVoice(seg.lang);
-  if (!voice) {
-    setStatus(noVoiceReason(seg.lang));
-    setPlayState('error');
-    return;
-  }
   const token = ++player.taskId;
-  const u = new SpeechSynthesisUtterance(seg.text);
-  u.voice = voice; u.lang = voice.lang; u.rate = player.speed; u.pitch = 1;
-  u.onstart = () => {
+  cancelAudio();
+  const session = player.session;
+  const mode = session.mode === 'both' ? (session.segIndex < session.origLen ? 'original' : 'chinese') : session.mode;
+  const offset = session.mode === 'both' && mode === 'chinese' ? session.origLen : 0;
+  const voice = player.voiceURI === 'female' ? 'female' : 'male';
+  setStatus('正在载入音频…');
+  try {
+    const manifest = await audioManifest();
     if (token !== player.taskId) return;
-    onSentenceStart(idx);
-  };
-  u.onend = () => {
+    const track = manifest.tracks?.[`${session.chapterId}/${mode}/${voice}`];
+    if (!track) throw new Error('本章音频尚未发布，请稍后再试');
+    const a = new Audio(new URL(track.url, new URL('../', import.meta.url)).href);
+    audio = a;
+    a.playbackRate = player.speed;
+    const index = Math.max(0, session.segIndex - offset);
+    const seek = track.cues?.[index]?.start;
+    if (index && seek === undefined) setStatus('本段尚无定位信息，从本章开头播放');
+    a.onloadedmetadata = () => { if (token === player.taskId && seek !== undefined) a.currentTime = seek; };
+    a.ontimeupdate = () => {
+      if (token !== player.taskId || player.playState !== 'playing') return;
+      let found = -1;
+      for (let i = 0; i < (track.cues || []).length; i++) {
+        if (track.cues[i] && a.currentTime >= track.cues[i].start) found = i;
+        else break;
+      }
+      if (found >= 0 && session.segIndex !== offset + found) onSentenceStart(offset + found);
+    };
+    a.onended = () => {
+      if (token !== player.taskId) return;
+      if (session.mode === 'both' && mode === 'original') { session.segIndex = session.origLen; speakCurrent(); }
+      else onSequenceEnd();
+    };
+    a.onerror = () => { if (token === player.taskId) { setPlayState('error'); setStatus('音频加载失败，请检查网络后重试'); } };
+    await a.play();
     if (token !== player.taskId) return;
-    onSentenceEnd(idx);
-  };
-  u.onerror = (e) => {
+    setPlayState('playing');
+    if (track.cues?.length) onSentenceStart(offset + (seek !== undefined ? index : 0));
+    else { clearHighlight(); setStatus('AI 合成朗读 · 本章暂不支持逐句定位'); }
+    if (track.cues?.length) setStatus('AI 合成朗读');
+  } catch (e) {
     if (token !== player.taskId) return;
-    const code = e && e.error;
-    if (code === 'canceled' || code === 'interrupted') return; // 取消/打断：忽略
-    // 真实朗读失败（如无可用音频输出、语音被系统拒绝）：如实提示并停止，绝不假装已读完
-    setStatus('朗读出错：' + (code || '未知错误') + '（请检查设备语音或浏览器权限）');
-    stop();
-  };
-  player.pendingUtterance = u;
-  try { window.speechSynthesis.speak(u); }
-  catch (err) { setStatus('朗读出错：' + (err && err.message ? err.message : err)); }
+    setPlayState('error');
+    setStatus(e.name === 'NotAllowedError' ? '请点击播放按钮开始收听' : e.message);
+  }
 }
 
 function onSentenceStart(idx) {
@@ -234,8 +208,9 @@ function onSentenceStart(idx) {
   updatePos();
   // 高亮映射（both 模式下原文在前、译文在后）
   let hlMode, hlIdx;
-  if (idx < player.session.origLen) { hlMode = 'original'; hlIdx = idx; }
-  else { hlMode = 'english'; hlIdx = idx - player.session.origLen; }
+  const mode = player.session.mode;
+  if (mode === 'both') { hlMode = idx < player.session.origLen ? 'original' : 'chinese'; hlIdx = idx < player.session.origLen ? idx : idx - player.session.origLen; }
+  else { hlMode = mode; hlIdx = idx; }
   highlightSegment(player.session.chapterId, hlMode, hlIdx);
   setStatus('');
 }
@@ -275,7 +250,7 @@ function onSequenceEnd() {
 function togglePlay() {
   if (!player.session) {
     // 无会话：从已存进度恢复，否则第 1 章
-    if (player.saved && getChapterById(player.saved.chapterId)) resumeSaved();
+    if (player.saved && getChapterById(player.saved.chapterId)) Listen.resumeSaved();
     else startSession({ chapterId: 'ddj-01', mode: 'original', sentence: 0 });
     return;
   }
@@ -290,27 +265,19 @@ function togglePlay() {
   }
 }
 function pause() {
-  if (!SUPPORTED) return;
-  try { window.speechSynthesis.pause(); } catch {}
-  setPlayState('paused');
+  if (!audio) { player.taskId++; setPlayState('paused'); return; }
+  audio.pause(); setPlayState('paused');
 }
-function resume() {
-  if (!SUPPORTED) return;
-  if (player.playState === 'playing') return;
-  setPlayState('playing');
-  // 若当前没有正在朗读（被 cancel 或未起播），从当前句开始
-  let speaking = false;
-  try { speaking = window.speechSynthesis.speaking; } catch {}
-  if (speaking) { try { window.speechSynthesis.resume(); } catch {} }
-  else speakCurrent();
+async function resume() {
+  if (!audio) { speakCurrent(); return; }
+  const token = player.taskId;
+  try { await audio.play(); if (token === player.taskId) setPlayState('playing'); }
+  catch { if (token === player.taskId) { setPlayState('error'); setStatus('播放失败，请点击重试'); } }
 }
 function stop() {
-  player.taskId++; // 作废所有挂起事件的令牌
-  if (SUPPORTED) { try { window.speechSynthesis.cancel(); } catch {} }
-  clearHighlight();
-  setPlayState('idle');
-  setStatus('已停止');
+  player.taskId++; cancelAudio(); clearHighlight(); setPlayState('idle'); setStatus('已停止');
 }
+
 function changeChapter(delta) {
   if (!player.session) return;
   const ch = getChapterById(player.session.chapterId);
@@ -326,17 +293,10 @@ function setMode(mode) {
   startSession({ chapterId: player.session.chapterId, mode, sentence: 0 });
 }
 function setSpeed(sp) {
-  player.speed = sp;
-  saveProgress();
-  syncSettingsUI();
-  // 立即以新语速重读当前句，获得即时反馈
-  if (player.session && (player.playState === 'playing' || player.playState === 'paused')) {
-    if (SUPPORTED) { try { window.speechSynthesis.cancel(); } catch {} }
-    player.taskId++;
-    setPlayState('playing');
-    speakCurrent();
-  }
+  player.speed = sp; saveProgress(); syncSettingsUI();
+  if (audio) audio.playbackRate = sp;
 }
+
 function toggleContinuous() {
   player.continuous = !player.continuous;
   saveProgress();
@@ -350,12 +310,7 @@ export const Listen = {
     buildUI();
     player.saved = loadSaved();
     refreshVoices();
-    if (SUPPORTED) {
-      window.speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
-      // 部分浏览器首次 getVoices 为空，延时补读
-      setTimeout(refreshVoices, 250);
-      setTimeout(refreshVoices, 1000);
-    }
+    audioManifest().catch(() => {});
     setupFollowGuard();
     if (player.saved) showResumeBar();
   },
@@ -371,7 +326,7 @@ export const Listen = {
     const ch = getChapterById(player.saved.chapterId);
     if (!ch) { showResumeBar(); return; }
     player.speed = SPEEDS.includes(player.saved.speed) ? player.saved.speed : 1;
-    player.voiceURI = player.saved.voiceURI || null;
+    player.voiceURI = player.saved.voiceURI === 'female' ? 'female' : 'male';
     player.continuous = !!player.saved.continuous;
     startSession({ chapterId: player.saved.chapterId, mode: player.saved.mode || 'original', sentence: player.saved.sentence || 0 });
   },
@@ -412,14 +367,14 @@ function buildUI() {
     el('div', { class: 'listen-player__settings', hidden: true }, [
       settingGroup('朗读内容', el('div', { class: 'seg' }, [
         segBtn('original', '原文'),
-        segBtn('english', '译文'),
-        segBtn('both', '先原文再译文'),
+        segBtn('chinese', '中文释义'),
+        segBtn('both', '原文与中文释义'),
       ])),
       settingGroup('语速', el('div', { class: 'seg' }, SPEEDS.map((s) => segBtn('speed:' + s, s + '×')))),
       settingGroup('连续播放', el('button', { type: 'button', class: 'btn btn--sm', 'data-act': 'toggle-continuous', text: '关闭' })),
       settingGroup('声音', el('div', { class: 'listen-player__voices' })),
       el('button', { type: 'button', class: 'btn btn--sm btn--ghost listen-player__followtoggle', 'data-act': 'toggle-follow', text: '跟随朗读：开' }),
-      el('p', { class: 'listen-player__note', text: '使用设备语音，不同设备音色可能不同。' }),
+      el('p', { class: 'listen-player__note', text: 'AI 合成朗读 · 云舟男声 / 小何女声 · 各设备统一音源。' }),
     ]),
   ]);
 
@@ -557,56 +512,19 @@ function syncSettingsUI() {
 function renderVoiceOptions() {
   if (!player.els.voices) return;
   const wrap = player.els.voices;
-  wrap.innerHTML = '';
-  if (!SUPPORTED) {
-    wrap.append(el('p', { class: 'listen-player__voicenote', text: '浏览器不支持语音合成。' }));
-    return;
+  wrap.replaceChildren();
+  for (const v of VOICES) {
+    const selected = (player.voiceURI || 'male') === v.voiceURI;
+    const button = el('button', { type:'button', class:'btn btn--sm', 'aria-pressed': String(selected), text:v.name + (selected ? ' · 已选' : '') });
+    button.addEventListener('click', () => {
+      if ((player.voiceURI || 'male') === v.voiceURI) return;
+      const playing = player.playState === 'playing';
+      player.taskId++; cancelAudio();
+      player.voiceURI = v.voiceURI; saveProgress(); renderVoiceOptions();
+      if (playing) speakCurrent();
+    });
+    wrap.append(button);
   }
-  const zh = voices.filter(isZh);
-  const en = voices.filter(isEn);
-  if (!zh.length && !en.length) {
-    wrap.append(el('p', { class: 'listen-player__voicenote', text: '暂未加载到任何声音，请确认系统已安装语音（中文/英文）。' }));
-    return;
-  }
-  const mk = (v, label) => {
-    const row = el('div', { class: 'listen-player__voice' }, [
-      el('span', { class: 'listen-player__voicename', text: `${label}：${v.name}（${v.lang}）` }),
-      el('button', { type: 'button', class: 'btn btn--sm btn--ghost', 'data-voice': v.voiceURI, text: '试听' }),
-      el('button', { type: 'button', class: 'btn btn--sm', 'data-voice-select': v.voiceURI, text: player.voiceURI === v.voiceURI ? '已选' : '选择' }),
-    ]);
-    return row;
-  };
-  if (zh.length) {
-    wrap.append(el('p', { class: 'listen-player__voicelabel', text: '中文声音' }));
-    zh.forEach((v) => wrap.append(mk(v, '中')));
-  }
-  if (en.length) {
-    wrap.append(el('p', { class: 'listen-player__voicelabel', text: '英文声音' }));
-    en.forEach((v) => wrap.append(mk(v, '英')));
-  }
-  wrap.querySelectorAll('[data-voice]').forEach((b) => b.addEventListener('click', () => previewVoice(b.getAttribute('data-voice'))));
-  wrap.querySelectorAll('[data-voice-select]').forEach((b) => b.addEventListener('click', () => {
-    player.voiceURI = b.getAttribute('data-voice-select');
-    saveProgress();
-    renderVoiceOptions();
-  }));
-}
-function previewVoice(voiceURI) {
-  if (!SUPPORTED) return;
-  const v = voices.find((x) => x.voiceURI === voiceURI);
-  if (!v) return;
-  const wasPlaying = player.playState === 'playing';
-  try { window.speechSynthesis.cancel(); } catch {}
-  player.taskId++;
-  const u = new SpeechSynthesisUtterance('这是一段试听语音，用于确认音色是否合适。');
-  u.voice = v; u.lang = v.lang; u.rate = player.speed;
-  const token = ++player.taskId;
-  u.onend = () => {
-    if (token !== player.taskId) return;
-    if (wasPlaying && player.session) speakCurrent();
-    else setPlayState('idle');
-  };
-  try { window.speechSynthesis.speak(u); } catch {}
 }
 
 // ---------- 跟随滚动防护 ----------

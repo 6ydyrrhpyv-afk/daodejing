@@ -3,8 +3,9 @@ let access = null;
 let pending = null;
 export async function practiceUrl(path) {
   const config = await import('./practice-config.mjs').catch(() => ({}));
-  const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
-  return (local ? '' : (config.PRACTICE_API_BASE || '')).replace(/\/+$/, '') + path;
+  // Explicit remote endpoint also works in a static localhost preview.
+  // Empty config retains same-origin support for Node-hosted deployments.
+  return (config.PRACTICE_API_BASE || '').replace(/\/+$/, '') + path;
 }
 export async function practiceToken(forceRefresh = false) {
   if (forceRefresh) access = null;
